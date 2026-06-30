@@ -4,7 +4,10 @@ import HeaderLink from './HeaderLink.astro';
 ---
 
 <header>
-	<h1 class="title"><a href="/">{SITE_TITLE}</a></h1>
+	<div class="title">
+		<img src="../assets/svgs/floral_title.svg" alt="">
+		<a href="/" aria-label="Site Home Page">{SITE_TITLE}</a>
+	</div>
 	<nav>
 		<div class="internal-links">
 			<HeaderLink href="/">Home</HeaderLink>
@@ -12,13 +15,13 @@ import HeaderLink from './HeaderLink.astro';
 			<HeaderLink href="/about">About</HeaderLink>
 		</div>
 		<div class="social-links">
-			<a href="https://www.youtube.com/@Aristocratic_Arietta" target="_blank">
+			<a href="https://www.youtube.com/@Aristocratic_Arietta" target="_self">
 				<span class="sr-only">Find Arietta on YouTube</span>
 				<svg viewBox="0 0 396.53 396.53" aria-hidden="true" width="32" height="32">
 					<path fill="currentColor" d="M388.13,102.83c-4.64-17.09-17.67-30.41-35.05-35.05-30.7-8.4-154.96-8.4-154.96-8.4,0,0-123.97,0-154.67,8.4-17.09,4.63-30.41,17.96-35.34,35.05C0,133.53,0,198.12,0,198.12,0,198.12,0,262.71,8.11,293.71c4.92,16.8,18.25,30.41,35.34,35.05,30.7,8.4,154.67,8.4,154.67,8.4,0,0,124.26,0,154.96-8.4,17.38-4.63,30.41-18.25,35.05-35.05,8.4-30.99,8.4-95.59,8.4-95.59,0,0,0-64.59-8.4-95.29ZM158.73,257.79v-119.05l102.83,59.38-102.83,59.67Z"></path>
 				</svg>
 			</a>
-			<a href="https://app.element.io/#/user/%40aristocratic-arietta%3Amozilla.org" target="_blank">
+			<a href="https://app.element.io/#/user/%40aristocratic-arietta%3Amozilla.org" target="_self">
 				<span class="sr-only">Find Arietta on Matrix/Element</span>
 				<svg viewBox="0 0 520 520" aria-hidden="true" width="32" height="32">
 					<path fill="currentColor" d="M 13.7,11.9 v 496.2 h 35.7 V 520 H 0 V 0 h 49.4 v 11.9 H 13.7 z"></path>
@@ -26,13 +29,13 @@ import HeaderLink from './HeaderLink.astro';
 					<path fill="currentColor" d="M 506.3,508.1 V 11.9 h -35.7 V 0 H 520 v 520 h -49.4 v -11.9 H 506.3 z"></path>
 				</svg>
 			</a>
-			<a href="mailto:aristocraticarietta@proton.me" target="_blank">
+			<a href="mailto:aristocraticarietta@proton.me" target="_self">
 				<span class="sr-only">Send Arietta an E-Mail</span>
 				<svg viewBox="0 -960 960 960" aria-hidden="true" width="32" height="32">
 					<path fill="currentColor" d="M146.67-160q-27 0-46.84-19.83Q80-199.67 80-226.67v-506.66q0-27 19.83-46.84Q119.67-800 146.67-800h666.66q27 0 46.84 19.83Q880-760.33 880-733.33v506.66q0 27-19.83 46.84Q840.33-160 813.33-160H146.67ZM480-454.67 146.67-670v443.33h666.66V-670L480-454.67Zm0-66.66 330.67-212H150l330 212ZM146.67-670v-63.33V-226.67-670Z"></path>
 				</svg>
 			</a>
-			<a href="https://github.com/AristocraticArietta" target="_blank">
+			<a href="https://github.com/AristocraticArietta" target="_self">
 				<span class="sr-only">Find Arietta on GitHub</span>
 				<svg viewBox="0 0 16 16" aria-hidden="true" width="32" height="32">
 					<path fill="currentColor" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"></path>
@@ -44,7 +47,6 @@ import HeaderLink from './HeaderLink.astro';
 <style>
 	header {
 		margin: 0;
-		padding: 1em 1em 0 1em;
 		background: white;
 		box-shadow: 0 2px 8px rgba(var(--black), 5%);
 		display: flex;
@@ -52,17 +54,23 @@ import HeaderLink from './HeaderLink.astro';
 		justify-content: center;
 	}
 	.title {
-		margin: 0;
-		text-align: center;
+		width: 100%;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
 	}
 	.title a {
-		font: 2em var(--font-amarante);
+		width: fit-content;
+		height: fit-content;
+		margin: 0;
+		text-align: center;
+		font: 4em var(--font-amarante);
 		background: var(--title-background);
 		background-clip: text;
 		-webkit-background-clip: text;
 		color: transparent;
 	}
-
 	a {
 		text-decoration: none;
 	}
