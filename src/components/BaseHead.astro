@@ -35,6 +35,19 @@ const { title, description, image = FallbackImage } = Astro.props;
 <Font cssVariable="--font-cormorant" preload />
 <Font cssVariable="--font-amarante" preload />
 
+<!-- Website-Wide Scripts -->
+<script is:inline>
+    const getTheme = () => {
+      if (typeof localStorage !== 'undefined' && localStorage.getItem('theme')) {
+        return localStorage.getItem('theme');
+      }
+      return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+    };
+
+    const theme = getTheme();
+    document.documentElement.setAttribute('data-theme', theme);
+</script>
+
 <!-- Canonical URL -->
 <link rel="canonical" href={canonicalURL} />
 

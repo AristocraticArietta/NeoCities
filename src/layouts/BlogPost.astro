@@ -15,6 +15,12 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
 	<head>
 		<BaseHead title={title} description={description} />
 		<style>
+			body {
+				display: flex;
+				align-items: center;
+				justify-content: stretch;
+				flex-direction: column;
+			}
 			main {
 				width: calc(100% - 2em);
 				max-width: 100%;

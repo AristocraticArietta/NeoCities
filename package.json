@@ -12,6 +12,7 @@
     "astro": "astro"
   },
   "dependencies": {
+    "@alpinejs/focus": "^3.15.12",
     "@astrojs/alpinejs": "^1.0.0",
     "@astrojs/mdx": "^7.0.0",
     "@astrojs/rss": "^4.0.18",

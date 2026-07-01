@@ -1,15 +1,17 @@
 // @ts-check
-
+import alpinejs from '@astrojs/alpinejs';
 import mdx from '@astrojs/mdx';
 import sitemap from '@astrojs/sitemap';
 import { defineConfig, fontProviders } from 'astro/config';
 
-import alpinejs from '@astrojs/alpinejs';
-
 // https://astro.build/config
 export default defineConfig({
     site: 'http://localhost',
-    integrations: [mdx(), sitemap(), alpinejs()],
+    integrations: [mdx(), sitemap(), 
+        alpinejs({
+            entrypoint: '/src/alpine'
+        })
+    ],
     fonts: [
         {
             provider: fontProviders.local(),
