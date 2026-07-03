@@ -111,24 +111,52 @@ body {
 	line-height: 1.7;
 }
 main {
-	padding: 0.5em;
 	font-size: 1.25em;
 	display: flex;
 	flex-direction: column;
 	text-align: center;
 	gap: 1em;
+	padding: 0.5em;
 }
 article {
 	order: 1;
 	text-align: justify;
 }
+.fun-things-container {
+	order: 3;
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	align-items: center;
+	gap: 1em;
+}
+.fun-things-container a {
+	text-decoration: none;
+	line-height: 1em;
+}
 .other {
 	order: 2;
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	align-items: center;
+	gap: 1em;
 }
-.blinkies {
-	order: 3
+.sidebar {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	gap: 0.25em;
+	border: var(--border-glass);
+	border-radius: var(--radius-glass);
+	background-color: var(--bg-glass);
+	box-shadow: var(--shadow-glass);
+	padding: 0.5em 0;
+	width: 100%;
 }
-
 h1,
 h2,
 h3,
@@ -186,7 +214,6 @@ table {
 img {
 	max-width: 100%;
 	height: auto;
-	border-radius: 8px;
 }
 code {
 	padding: 2px 5px;
@@ -243,6 +270,7 @@ hr {
 	main {
 		padding: 1em;
 		flex-direction: row;
+		justify-content: space-between;
 		gap: 1em;
 	}
 	article {
@@ -251,7 +279,7 @@ hr {
 	.other {
 		order: 1;
 	}
-	.blinkies {
+	.fun-things-container {
 		order: 3;
 	}
 }

@@ -1,0 +1,124 @@
+---
+import { getCollection } from "astro:content";
+
+const allPosts = await getCollection("blog");
+
+// Sort by the most recently touched date (updatedDate if it exists, otherwise pubDate)
+const recentPosts = allPosts
+  .sort((a, b) => {
+    const dateA = a.data.updatedDate || a.data.pubDate;
+    const dateB = b.data.updatedDate || b.data.pubDate;
+    return dateB.valueOf() - dateA.valueOf();
+  })
+  .slice(0, 5);
+---
+
+<section class="sidebar" aria-label="Recent Posts">
+    <h2 class="header">Recent Posts</h2>
+    <ul class="recent-posts">
+        {recentPosts.map((post) => {
+            const isUpdated = !!post.data.updatedDate;
+            const displayDate = post.data.updatedDate || post.data.pubDate;
+
+            return (
+                <li class="post">
+                    <a href={`/blog/${post.id}`}>{post.data.title}</a>
+                    <br>
+                    <span class="meta-time">
+                        {isUpdated ? (
+                            <span class="update-badge">Updated </span>
+                        ) : (
+                            <span class="pub-badge">Posted </span>
+                        )}
+                        <relative-time data-date={displayDate.toISOString()}>
+                            {displayDate.toLocaleDateString()}
+                        </relative-time>
+                    </span>
+                </li>
+            );
+        })}
+    </ul>
+</section>
+<style>
+  .recent-posts {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: start;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+  }
+  .header {
+    padding: 0.5rem 0;
+  }
+  .post {
+    width: 100%;
+    padding: 0.5em 0;
+    border: none;
+    border-top: var(--border-glass);
+  }
+  .meta-time {
+    font-size: 0.75em;
+  }
+</style>
+<script>
+  // 1. Initialize the native API
+  // 'numeric: auto' changes "1 day ago" to "yesterday"
+  const rtf = new Intl.RelativeTimeFormat("en", { numeric: "auto" });
+
+  // 2. Define cutoffs for each unit in seconds
+  const UNITS: Record<Intl.RelativeTimeFormatUnit, number> = {
+    year: 31536000,
+    month: 2592000,
+    week: 604800,
+    day: 86400,
+    hour: 3600,
+    minute: 60,
+    second: 1,
+    years: 0,
+    quarter: 0,
+    quarters: 0,
+    months: 0,
+    weeks: 0,
+    days: 0,
+    hours: 0,
+    minutes: 0,
+    seconds: 0
+};
+
+  // 3. Helper to calculate the difference and pick the right unit
+  function formatRelativeTime(targetDate: number | Date): string | undefined {
+    // Difference between target date and right now, in seconds
+    const targetMs = typeof targetDate === "number" ? targetDate : targetDate.getTime();
+    const elapsedSeconds = (targetMs - Date.now()) / 1000;
+
+    // Loop through units from largest to smallest
+    for (const unit in UNITS) {
+      const unitKey = unit as Intl.RelativeTimeFormatUnit;
+      const unitSeconds = UNITS[unitKey];
+      if (Math.abs(elapsedSeconds) >= unitSeconds || unitKey === "second") {
+        // Divide the total seconds by the unit's seconds to get the scaled value
+        const value = Math.round(elapsedSeconds / unitSeconds);
+        return rtf.format(value, unitKey);
+      }
+    }
+  }
+
+  // 4. Define the Web Component
+  class RelativeTime extends HTMLElement {
+    connectedCallback() {
+      const isoDate = this.dataset.date;
+      if (isoDate) {
+        const date = new Date(isoDate);
+        const formatted = formatRelativeTime(date);
+        if (formatted !== undefined) {
+          this.textContent = formatted;
+        }
+      }
+    }
+  }
+  
+  customElements.define("relative-time", RelativeTime);
+</script>

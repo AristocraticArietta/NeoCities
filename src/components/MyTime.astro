@@ -1,0 +1,57 @@
+<section class="clock-widget sidebar" aria-label="Local Time">
+  <h3>My Local Time: </h3>
+  <local-clock>
+    {/* Fallback while JS loads */}
+    --:--:-- --
+  </local-clock>
+</section>
+
+<script>
+  // 1. Configure the formatter for America/Phoenix
+  const formatter = new Intl.DateTimeFormat("en-US", {
+    timeZone: "America/Phoenix",
+    hour: "numeric", // Uses 1-12 without a leading zero
+    minute: "2-digit",
+    second: "2-digit",
+    hour12: true,
+  });
+
+  // 2. Define the Web Component
+  class LocalClock extends HTMLElement {
+    interval: number | undefined;
+
+    connectedCallback() {
+      // Set the time immediately so there's no 1-second delay
+      this.updateTime();
+      
+      // Update the text content every 1000 milliseconds
+      this.interval = window.setInterval(() => this.updateTime(), 1000);
+    }
+
+    disconnectedCallback() {
+      // Clean up the interval if the component is ever removed from the DOM
+      if (this.interval) window.clearInterval(this.interval);
+    }
+
+    updateTime() {
+      this.textContent = formatter.format(new Date());
+    }
+  }
+
+  // 3. Register the custom element
+  customElements.define("local-clock", LocalClock);
+</script>
+
+<style>
+  /* Optional: Ensure the clock has a fixed width so it doesn't jitter when numbers change */
+  local-clock {
+    font-family: var(--font-sourcecodepro);
+    font-variant-numeric: tabular-nums;
+    font-size: 1.25em;
+  }
+  .clock-widget {
+    padding: 0.5em 0;
+    justify-content: center;
+    gap: 0;
+  }
+</style>

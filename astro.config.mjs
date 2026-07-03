@@ -7,10 +7,10 @@ import { defineConfig, fontProviders } from 'astro/config';
 // https://astro.build/config
 export default defineConfig({
     site: 'http://localhost',
-    integrations: [mdx(), sitemap(), 
-        alpinejs({
-            entrypoint: '/src/alpine'
-        })
+    integrations: [mdx(), sitemap(),
+    alpinejs({
+        entrypoint: '/src/alpine'
+    })
     ],
     fonts: [
         {
@@ -51,5 +51,22 @@ export default defineConfig({
                 ],
             },
         },
+        {
+            provider: fontProviders.local(),
+            name: 'Source Code Pro',
+            cssVariable: '--font-sourcecodepro',
+            fallbacks: ['monospace'],
+            options: {
+                variants: [
+                    {
+                        src: ['./src/assets/fonts/SourceCodePro-Regular.ttf'],
+                        weight: 400,
+                        style: 'normal',
+                        display: 'swap',
+                    },
+                ],
+            },
+        },
     ],
+    output: 'static'
 });

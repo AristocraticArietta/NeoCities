@@ -1,8 +1,41 @@
 {
   "extends": "astro/tsconfigs/strict",
-  "include": [".astro/types.d.ts", "**/*"],
-  "exclude": ["dist"],
+  "include": [
+    ".astro/types.d.ts",
+    "**/*"
+  ],
+  "exclude": [
+    "dist"
+  ],
   "compilerOptions": {
-    "strictNullChecks": true
+    "paths": {
+      "@components/*": [
+        "./src/components/*"
+      ],
+      "@layouts/*": [
+        "./src/layouts/*"
+      ],
+      "@content/*": [
+        "./src/content/*"
+      ],
+      "@assets/*": [
+        "./src/assets/*"
+      ],
+      "@styles/*": [
+        "./src/styles/*"
+      ],
+      "@public/*": [
+        "./public/*"
+      ],
+      "@scripts/*": [
+        "./src/scripts/*"
+      ],
+      "@src/*": [
+        "./src/*"
+      ]
+    },
+    "strictNullChecks": true,
+    "allowJs": true,
+    "target": "ES6"
   }
 }

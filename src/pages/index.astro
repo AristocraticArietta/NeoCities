@@ -1,8 +1,19 @@
 ---
-import BaseHead from '../components/BaseHead.astro';
-import Footer from '../components/Footer.astro';
-import Navigation from '../components/Nav.astro';
-import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
+import BaseHead from '@components/BaseHead.astro';
+import Blinkies from '@components/Blinkies.astro'
+import Buttons from '@components/Buttons.astro'
+import Footer from '@components/Footer.astro';
+import MyTime from '@components/MyTime.astro';
+import Navigation from '@components/Nav.astro';
+import RecentPosts from '@components/RecentPosts.astro';
+import Stamps from '@components/Stamps.astro';
+import { SITE_DESCRIPTION, SITE_TITLE } from '@src/consts';
+import { getCollection } from 'astro:content';
+
+const allPosts = await getCollection('blog')
+const recentPosts = allPosts
+	.sort((a, b) => +new Date(b.data.pubDate) - +new Date(a.data.pubDate))
+	.slice(0, 5);
 ---
 
 <!doctype html>
@@ -14,17 +25,13 @@ import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
 		<Navigation />
 		<main>
 			<section class="other" aria-label="Other Fun Stuff">
-				<div>
-					<h3>Recent Posts</h3>
-				</div>
-				<div>
-					<h3>My Time</h3>
-				</div>
+				<RecentPosts/>
+				<MyTime/>
 				<div>
 					<h3>Last.FM</h3>
 				</div>
 			</section>
-			<article>
+			<article class="home-page">
 				<h1>Welcome to my page!</h1>
 				<p>
 					Welcome to the official <a href="https://astro.build/">Astro</a> blog starter template. This template
@@ -56,24 +63,25 @@ import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
 					by <a href="https://twitter.com/Charca">Maxi Ferreira</a>.
 				</p>
 			</article>
-			<section class="blinkies" aria-label="Blinkie Collection">
-				<h3>Blinkie Fun!</h3>
+			<section class="fun-things-container" aria-label="Blinkie Collection">
+				<Buttons/>
+				<Stamps/>
+				<Blinkies/>
 			</section>
 		</main>
 		<Footer />
 	</body>
 </html>
 <style>
+@media (min-width: 1000px) {
+	.home-page {
+		max-width: calc(60% - 1em);
+	}
 	.other {
-		display: flex;
-		flex-direction: column;
-		justify-content: start;
-		align-items: center;
+		max-width: calc(15% - 0.5em);
 	}
-	.blinkies {
-		display: flex;
-		flex-direction: column;
-		justify-content: start;
-		align-items: center;
+	.fun-things-container {
+		max-width: calc(25% - 0.5em);
 	}
+}
 </style>
