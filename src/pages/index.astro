@@ -1,12 +1,9 @@
 ---
 import BaseHead from '@components/BaseHead.astro';
-import Blinkies from '@components/Blinkies.astro'
-import Buttons from '@components/Buttons.astro'
 import Footer from '@components/Footer.astro';
 import MyTime from '@components/MyTime.astro';
 import Navigation from '@components/Nav.astro';
 import RecentPosts from '@components/RecentPosts.astro';
-import Stamps from '@components/Stamps.astro';
 import { SITE_DESCRIPTION, SITE_TITLE } from '@src/consts';
 import { getCollection } from 'astro:content';
 
@@ -63,11 +60,6 @@ const recentPosts = allPosts
 					by <a href="https://twitter.com/Charca">Maxi Ferreira</a>.
 				</p>
 			</article>
-			<section class="fun-things-container" aria-label="Blinkie Collection">
-				<Buttons/>
-				<Stamps/>
-				<Blinkies/>
-			</section>
 		</main>
 		<Footer />
 	</body>
@@ -75,13 +67,10 @@ const recentPosts = allPosts
 <style>
 @media (min-width: 1000px) {
 	.home-page {
-		max-width: calc(60% - 1em);
+		max-width: max-content;
 	}
 	.other {
-		max-width: calc(15% - 0.5em);
-	}
-	.fun-things-container {
-		max-width: calc(25% - 0.5em);
+		max-width: 20%;
 	}
 }
 </style>

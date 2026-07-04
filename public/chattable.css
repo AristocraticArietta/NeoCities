@@ -1,0 +1,418 @@
+:root {
+   --notification-sfx: https://file.xobyte.org/adafbd39-206c-4103-8e9f-d12b569cba36;
+   --background-color: rgb(236, 233, 216);
+   --shadow-glass: 0 0 2em rgba(0, 0, 0, 0.3);
+   --radius-glass: 1em;
+   --bg-glass: rgba(255, 255, 255, 0.2);
+   --border-glass: 0.1em solid rgba(255, 255, 255, 0.5);
+   --text-primary: #2E272A;
+   --accent: rgba(207, 45, 113, 1);
+	 --accent2: rgba(18, 103, 74, 1);
+   --accent3: rgba(56, 97, 146, 1);
+}
+*::selection {
+   color: #EEE;
+   background-color: #55E;
+   opacity: 1;
+}
+@font-face {
+  font-family: "Cormorant";
+  src:
+    local("Cormorant"),
+    url(https://files.catbox.moe/s4ar4a.ttf) format(truetype);
+}
+body, html {
+  background-color: #7C83BC;
+  font-family: "Cormorant", serif;
+  color: var(--text-primary);
+}
+#main {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+#background {
+  width: 100%;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+  overflow: scroll;
+}
+.msgWrapper {
+  display: flex;
+  width: calc(100% - 3em);
+  justify-content: center;
+  align-items: center;
+  margin: 1em;
+  position: relative;
+  margin-top: 3em;
+  border-radius: 0 0 1em 1em;
+  border: var(--border-glass);
+  border-top: none;
+  transition: transform 300ms ease-in-out;
+  background-color: var(--bg-glass);
+}
+.msgWrapper:hover {
+  transform: scale(1.05);
+}
+.msgWrapper:before {
+  content: "Message";
+  height: 1em;
+  width: calc(100% - 1em);
+  position: absolute;
+  bottom: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font: inherit;
+  color: inherit;
+  font-weight: bold;
+  background-color: var(--bg-glass);
+  border: var(--border-glass);
+  border-bottom: none;
+  padding: 0.5em;
+  border-radius: 1em 1em 0 0;
+  user-select: none;
+}
+.allMessages {
+  display: block;
+  background-color: var(--bg-glass);
+  border-radius: 0 0 var(--radius-glass) var(--radius-glass);
+  margin: 0;
+  line-height: 1em;
+  font-size: 1em;
+  position: relative;
+  width: 100%;
+  box-sizing: border-box;
+  cursor: default;
+}
+.allMessages:before {
+   content: attr(time);
+   float: right;
+   pointer-events: none;
+   font-style: italic;
+   font-size: 0.75em;
+   color: var(--accent3);
+}
+.senderInfo {
+  margin-left: 0.25em !important;
+}
+.senderInfo:before {
+  content: "From:";
+  font-weight: normal;
+  font-size: 1em;
+  color: var(--text-primary);
+  margin-right: 0.25em;
+}
+.sent .senderInfo {
+  color: var(--accent2);
+}
+.received .senderInfo {
+  color: var(--accent);
+}
+.msgBody {
+  border: var(--border-glass);
+  border-radius: var(--radius-glass);
+  margin: 0.25em;
+  padding: 0.5em;
+  margin-top: 1.5em;
+  position: relative;
+}
+.msgBody::before {
+  content: "Message:";
+  width: 100%;
+  display: block;
+  position: absolute;
+  bottom: calc(100% + 0.25em);
+  left: 0;
+}
+#textInput {
+   background-color: var(--bg-glass);
+   box-sizing: border-box;
+   padding: 0.75em;
+   width: 100%;
+   border: var(--border-glass);
+   border-radius: var(--radius-glass);
+   display: flex;
+   flex-direction: row;
+   justify-content: space-between;
+   align-items: center;
+}
+#input, #nameEntry {
+   background-color: var(--bg-glass);
+   border: var(--border-glass);
+   padding: 0.25em;
+   box-sizing: border-box;
+   border-radius: var(--radius-glass);
+   font-family: inherit;
+   font-size: 1em;
+}
+#input:empty::before {
+  color: var(--text-primary);
+}
+
+ a {
+   font-family: inherit;
+   color: inherit !important;
+}
+ #timestamp {
+   display: none;
+   color: #555;
+   font-size: 10pt;
+}
+#top_banner {
+  width: calc(100% - 3em);
+  padding: 0;
+  background: none;
+  background-color: var(--bg-glass);
+  border-radius: var(--radius-glass);
+  border: var(--border-glass);
+  font: inherit;
+  color: inherit;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#top_banner a {
+  content: none;
+  font-size: 0;
+}
+#top_banner a::before {
+  content: "Aristocratic Arietta";
+  font-size: 1rem;
+}
+input, button {
+  font-family: inherit;
+}
+blockquote {
+   border: var(--border-glass);
+   border-radius: var(--radius-glass);
+   line-height: 1em;
+   position: relative;
+}
+.mod, .owner {
+  background-color: transparent;
+  background-image: url('/media/crown.png');
+  background-size: 100% 100%;
+  border-radius: 0;
+}
+.owner {
+   filter: hue-rotate(-60deg);
+}
+.mod {
+   filter: hue-rotate(-180deg);
+}
+#emojiTrayToggle {
+  background-size: 100% 100%;
+  background-position: center;
+  width: 2em;
+  height: 2em;
+  aspect-ratio: 1;
+  position: relative;
+  border-radius: 0;
+  border: var(--border-glass);
+  border-radius: var(--radius-glass);
+}
+#emojiTray {
+  background-color: var(--bg-glass);
+  color: var(--text-primary);
+}
+#settings {
+  right: 1.5em;
+  top: 0;
+  width: 2em;
+  height: 2em;
+}
+#settingsWindow {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+  overflow: scroll;
+}
+#settingsWindow iframe {
+  width: 100%;
+  height: 100%;
+  font-size: inherit;
+}
+body {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+  box-sizing: border-box;
+  gap: 3em;
+}
+#loginBanner {
+  border-radius: var(--radius-glass);
+  background-color: rgba(200, 200, 200, 0.75);
+  width: max-content;
+  height: min-content;
+  color: #2E272A !important;
+  font: 1.5em var(--font-cormorant), serif;
+  transition: transform 300ms ease-in-out;
+  text-align: center;
+}
+#loginBanner:hover {
+  transform: scale(1.1);
+}
+#settingsMenu {
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  overflow: scroll;
+  width: 100%;
+  height: fit-content;
+  gap: 1em;
+  background-color: transparent;
+  border-radius: var(--radius-glass);
+}
+#settingsMenu h2 {
+  padding: 1em;
+  width: calc(100% - 2em);
+  background-color: var(--bg-glass);
+  border: var(--border-glass);
+  border-radius: var(--radius-glass);
+  margin-bottom: 1em;
+  text-align: center;
+}
+#settingsMenu p {
+  width: calc(100% - 2em);
+  padding: 1em;
+  border: var(--border-glass);
+  border-radius: var(--radius-glass);
+  background-color: var(--bg-glass);
+}
+#settingsMenu #dltranscript, #settingsMenu #confirmation {
+  background-color: transparent;
+  border: none;
+  border-radius: 0;
+}
+#settingsMenu p label {
+  margin: 0;
+}
+#settingsMenu hr {
+  border: var(--border-glass);
+  width: 100%;
+}
+#settingsMenu #footer {
+  background-color: var(--bg-glass);
+  border: var(--border-glass);
+  border-radius: var(--radius-glass);
+  padding: 1.5em;
+  width: calc(100% - 3em);
+  margin: 0;
+}
+#settingsMenu #logoutBtn {
+  top: 0;
+  right: 0;
+  padding: 0.5em;
+  transition: transform 300ms ease-in-out;
+  width: fit-content;
+}
+#settingsMenu #logoutBtn:hover {
+  transform: scale(1.1);
+  color: inherit;
+}
+#save {
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: inherit;
+  padding: 0.25em 0.5em;
+  font-size: 1.5em;
+  position: relative;
+  border: var(--border-glass);
+  border-radius: var(--radius-glass);
+  background-color: rgba(200, 200, 200, 0.75);
+  cursor: pointer;
+  transition: transform 300ms ease-in-out;
+}
+#save:hover {
+  transform: scale(1.1);
+}
+#closeSettingsBtn {
+  background-color: rgb(106, 42, 42);
+  color: inherit;
+  border: var(--border-glass);
+  border-radius: var(--radius-glass);
+  font-family: inherit;
+}
+#is_typing {
+  background-color: var(--bg-glass);
+  border: var(--border-glass);
+  border-radius: var(--radius-glass);
+  overflow: visible;
+  width: auto;
+  padding: 0.5em;
+}
+#is_typing:before {
+  content: "Typing";
+  font-size: 0.5em;
+}
+#is_typing > span {
+   background-color: var(--text-primary);
+   height: 0.25em;
+   width: 0.25em;
+   border-radius: calc(infinity * 1px);
+}
+.subreddit {
+  display: inline;
+  font: 1em sans-serif;
+  width: 1em;
+  height: 1em;
+  color: inherit;
+  content: 'C';
+  margin: 0;
+}
+.subreddit::before {
+  display: inline-block;
+  font: 1em sans-serif;
+  width: 1em;
+  height: 1em;
+  color: inherit;
+  content: 'C';
+  margin: 0;
+  border-radius: calc(infinity * 1px);
+  border: none;
+  box-shadow: none;
+  text-decoration: none;
+}
+#ctxMenu {
+  min-width: 10em !important;
+  max-width: 50vw !important;
+  box-sizing: border-box;
+  background-color: var(--bg-glass) !important;
+  color: var(--text-primary) !important;
+  margin: 0px !important;
+  padding: 0px !important;
+  z-index: 100000000 !important;
+  border: var(--border-glass) !important;
+  border-radius: var(--radius-glass) !important;
+  box-shadow: var(--shadow-glass) !important;
+  overflow: hidden !important;
+}
+.ctxMenuOption {
+  margin: 0 !important;
+  padding: 0.5em !important;
+  background-color: transparent !important;
+  cursor: default !important;
+  user-select: none !important;
+  border: 0.1em solid transparent !important;
+  width: 100% !important;
+  box-sizing: border-box !important;
+  backdrop-filter: blur(0.5em) !important;
+}
+.ctxMenuOption:hover {
+  background-color: rgba(255, 255, 255, 0.5) !important;
+  border: var(--border-glass) !important;
+}
