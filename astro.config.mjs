@@ -6,7 +6,7 @@ import { defineConfig, fontProviders } from 'astro/config';
 
 // https://astro.build/config
 export default defineConfig({
-    site: 'https://aristocraticarietta.neocities.org',
+    site: 'https://aristocratic-arietta.neocities.org',
     integrations: [mdx(), sitemap(),
     alpinejs({
         entrypoint: '/src/alpine'
