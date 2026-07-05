@@ -14,7 +14,7 @@ const recentPosts = allPosts
 ---
 
 <section class="sidebar" aria-label="Recent Posts">
-    <h2 class="header">Recent Posts</h2>
+    <h2>Recent Posts</h2>
     <ul class="recent-posts">
         {recentPosts.map((post) => {
             const isUpdated = !!post.data.updatedDate;
@@ -44,20 +44,17 @@ const recentPosts = allPosts
     display: flex;
     flex-direction: column;
     justify-content: start;
-    align-items: start;
+    align-items: center;
     list-style: none;
     padding: 0;
     margin: 0;
     width: 100%;
   }
-  .header {
-    padding: 0.5rem 0;
-  }
   .post {
-    width: 100%;
-    padding: 0.5em 0;
+    padding: 0.25em 0;
     border: none;
     border-top: var(--border-glass);
+    width: 100%;
   }
   .meta-time {
     font-size: 0.75em;

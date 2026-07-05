@@ -22,12 +22,12 @@ const recentPosts = allPosts
 		<Navigation />
 		<main>
 			<section class="other" aria-label="Other Fun Stuff">
-				<div class="sidebar">
+				<section class="sidebar">
 					<h3>Neocities Profile</h3>
-					<a href="https://neocities.org/site/aristocratic-arietta">
+					<a href="https://neocities.org/site/aristocratic-arietta" class="my-button">
 						<img src="/buttons/aristocraticarietta.png" alt="">
 					</a>
-				</div>
+				</section>
 				<RecentPosts/>
 				<MyTime/>
 				<div>
@@ -71,12 +71,24 @@ const recentPosts = allPosts
 	</body>
 </html>
 <style>
+	.my-button {
+		text-decoration: none;
+	}
+	.home-page {
+		order: 1;
+	}
+	.other {
+		order: 2;
+		width: 100%;
+	}
 @media (min-width: 1000px) {
 	.home-page {
 		max-width: max-content;
+		order: 2;
 	}
 	.other {
 		max-width: 20%;
+		order: 1;
 	}
 }
 </style>

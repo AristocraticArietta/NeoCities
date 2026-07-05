@@ -37,30 +37,14 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
 					<h1>{title}</h1>
 					<hr />
 				</div>
-				<div class="prose">
-					<slot />
-				</div>
+				<slot />
 			</article>
 		</main>
 		<Footer />
 	</body>
 </html>
 <style>
-	main {
-		width: calc(100% - 1em);
-		max-width: 100%;
-	}
-	article {
-		text-align: left;
-		width: 100%;
-		display: flex;
-		flex-direction: column;
-		justify-content: space-evenly;
-		align-items: center;
-		gap: 0.1em;
-	}
 	.hero-image {
-		margin: 0.5em;
 		display: flex;
 		flex-direction: column;
 		align-items: center;
@@ -71,16 +55,10 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
 		border-radius: var(--radius-glass);
 		box-shadow: var(--box-shadow);
 	}
-	.prose {
-		font-size: 1rem;
-		margin: 0.85em;
-	}
 	.title {
-		margin: 0.5em;
 		text-align: center;
 		line-height: 1;
 		width: 100%;
-		max-width: calc(100% - 1em);
 	}
 	.title h1 {
 		margin-bottom: 0.5em;
