@@ -21,8 +21,8 @@ const { title, description, image = FallbackImage } = Astro.props;
 <!-- Global Metadata -->
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
-<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-<link rel="icon" href="/favicon.ico" />
+<link rel="icon" href="/Violet_blossom.ico" />
+<link rel="icon" type="image/svg+xml" href="/Violet_blossom.svg" />
 <link rel="sitemap" href="/sitemap-index.xml" />
 <link
   rel="alternate"
@@ -50,9 +50,10 @@ const { title, description, image = FallbackImage } = Astro.props;
   const theme = getTheme();
   document.documentElement.setAttribute("data-theme", theme);
 </script>
+<!--
 <script src="https://iframe.chat/scripts/main.min.js" is:inline></script>
 <script is:inline>chattable.initialize({stylesheet: "/chattable.css"});</script>
-
+ -->
 <!-- Canonical URL -->
 <link rel="canonical" href={canonicalURL} />
 

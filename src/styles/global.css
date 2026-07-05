@@ -28,6 +28,14 @@
 	--toggle-thumb: #0f172a;
 	--toggle-icon: #38bdf8; /* Moon blue */
 }
+@keyframes flashAnimation {
+	0%, 100% {
+		background: repeating-linear-gradient(90deg in hsl longer hue, red 0 50%) 0/200%;
+	}
+	50% {
+		background-position: 100%;
+	}
+}
 /* Reset button styling */
 .theme-toggle {
 	position: fixed;
@@ -103,6 +111,10 @@ body {
 	transition: background-color 0.2s ease, color 0.2s ease;
 	font-size: 1.25em;
 	line-height: 1.7;
+	display: flex;
+	flex-direction: column;
+	align-items: stretch;
+	justify-content: stretch;
 }
 main {
 	display: flex;
@@ -110,15 +122,15 @@ main {
 	justify-content: center;
 	text-align: center;
 	gap: 1em;
-	padding: 0.5em;
+	margin: 0.5em;
 }
-article {
+.home-page {
 	order: 1;
 	text-align: justify;
+	margin: 0.5em;
 }
 .other {
 	order: 2;
-	width: 100%;
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
@@ -138,6 +150,9 @@ article {
 	box-sizing: border-box;
 	padding: 0.5em 0;
 	width: 100%;
+}
+.flash-it {
+	animation: flashAnimation 1s ease-in-out 0s 5;
 }
 h1,
 h2,
@@ -179,16 +194,15 @@ a {
 }
 a:hover {
 	text-decoration-style: dashed;
-	background-color: var(--bg-glass);
-	border-radius: var(--radius-glass);
-	box-shadow: var(--shadow-glass);
-	border: var(--border-glass);
 }
-p {
+.home-page p {
 	margin-bottom: 1em;
 }
 .prose p {
-	margin-bottom: 2em;
+	margin: 0 0 2em 0;
+}
+p:last-child {
+	margin: 0;
 }
 textarea {
 	width: 100%;
@@ -205,9 +219,14 @@ img {
 	height: auto;
 }
 code {
-	padding: 2px 5px;
-	background-color: rgb(var(--accent-dark));
-	border-radius: 2px;
+	font-family: var(--font-sourcecodepro);
+	font-size: 1rem;
+	line-height: 1rem;
+    background-color: var(--accent2);
+	padding: 0.25em;
+	border-radius: var(--radius-glass);
+	border: var(--border-glass);
+	box-shadow: var(--shadow-glass);
 }
 pre {
 	padding: 1.5em;
@@ -225,6 +244,35 @@ blockquote {
 hr {
 	border: none;
 	border-top: 1px solid rgb(var(--accent-dark));
+}
+.emoji {
+	display: inline;
+	width: 1em;
+	height: 1em;
+	vertical-align: center;
+}
+.self-link {
+	display: inline;
+}
+.self-link:hover::before {
+transform: scale(1.1);
+}
+.self-link::before {
+	content: "";
+	display: inline-block;
+	background-image: url("/Violet_blossom.ico");
+	background-size: 100%;
+	width: 1.25em;
+	height: 1.25em;
+	text-decoration: none;
+	margin-right: 0.25em;
+	vertical-align: middle;
+	border: var(--border-glass);
+	border-radius: 0.5em;
+	background-color: var(--bg-glass);
+	box-shadow: none;
+	box-sizing: border-box;
+	transition: transform 0.2s ease;
 }
 @media (min-width: 1000px) {
 	h1,
@@ -261,11 +309,12 @@ hr {
 		flex-direction: row;
 		gap: 1em;
 	}
-	article {
+	.home-page {
 		order: 2;
 	}
 	.other {
 		order: 1;
+		width: 100%;
 	}
 }
 

@@ -1,0 +1,135 @@
+---
+import BaseHead from '@components/BaseHead.astro';
+import Blinkies from '@components/Blinkies.astro';
+import Buttons from '@components/Buttons.astro';
+import Footer from '@components/Footer.astro';
+import Navigation from '@components/Nav.astro';
+import Stamps from '@components/Stamps.astro';
+import { SITE_DESCRIPTION } from '@src/consts';
+---
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <BaseHead title={'Blinkies, Buttons, and Stamps'} description={SITE_DESCRIPTION} />
+    </head>
+    <body>
+        <Navigation />
+        <main>
+            <article aria-label="Other Fun Stuff">
+                <div class="sidebar content">
+                    <h3>About Buttons, Stamps, and Blinkies</h3>
+                    <p>I make buttons, stamps, and blinkies occassionally. Making them brings me joy! I also really like collecting them from old websites, especially the political blinkies. A reminder of another era! <img src="/gifs/nukoTearsDrowning.gif" alt="" class="emoji"></p>
+                    <p>I hope you enjoy them too, as you may use them freely on your own website, as long as you don't claim them as your own. :) If you're feeling like you want to, wrap them in an <code>&lt;a&gt;</code> tag that links back to me at <a href="https://aristocratic-arietta.neocities.org/" class="self-link">aristocratic-arietta.neocities.org</a>!</p>
+                    <p id="button-link">Here's an example of what I mean (You can click on it to copy it to your clipboard!): </p>
+                    <div 
+                        class="textarea-bg"
+                        x-data="{ flashing: false }"
+                        x-init="if (window.location.hash === '#button-link') flashing = true"
+                        :class="{ 'flash-it': flashing }"
+                    >
+                        <textarea
+                            readonly 
+                            wrap="on"
+                            id="link"
+                            @click="$el.select(); navigator.clipboard.writeText($el.value);"
+                        >&lt;a href="https://aristocratic-arietta.neocities.org/" target="_self" &gt;&lt;img src="https://aristocratic-arietta.neocities.org/buttons/aristocraticarietta.png" alt=""&gt;&lt;/a&gt;</textarea>
+                    </div>
+                </div>
+                <Buttons/>
+                <Stamps/>
+                <Blinkies/>
+            </article>
+            <section class="chat" aria-label="Chat & Guestbook">
+                <div class="sidebar chattable-error">
+                    <h3>Chatbox</h3>
+                    <p>
+                        Normally, my chatbox from Chattable goes here. The Chattable service seems to be down at the moment, so I have turned it off. I will turn it back on once the service is back up and running.
+                    </p>
+                </div>
+                <!--
+                <iframe src="https://iframe.chat/embed?chat=AristocraticArietta" id="chattable"></iframe>
+                -->
+                <div class="sidebar guestbook">
+                    <p><a href="https://aristocraticarietta.atabook.org/">Sign my guestbook!</a></p>
+                    
+                </div>
+            </section>
+        </main>
+        <Footer />
+    </body>
+</html>
+<style>
+    main {
+        gap: 0;
+    }
+    article {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 1em;
+        width: calc(100% - 1em);
+        margin: 0.5em;
+    }
+    textarea {
+        font: 1rem var(--font-sourcecodepro);
+        resize: none;
+        scrollbar-width: none;
+        width: 100%;
+    }
+    .textarea-bg {
+        width: 100%;
+        padding: 1em;
+        border-radius: var(--radius-glass);
+    }
+    #chattable {
+        width: 100%;
+        min-height: 40vh;
+        border-radius: var(--radius-glass);
+        border: var(--border-glass);
+    }
+    .chat {
+        width: calc(100% - 1em);
+        margin: 0.5em;
+        display: flex;
+        flex-direction: column;
+        justify-content: start;
+        align-items: center;
+        gap: 1em;
+    }
+    .chattable-error {
+        width: 100%;
+        min-width: 25vw;
+        text-align: left;
+        padding: 0.5em;
+    }
+    .content {
+        padding: 0.5em;
+        text-align: left;
+    }
+    p {
+        width: 100%;
+    }
+    iframe {
+        box-shadow: var(--shadow-glass);
+    }
+    @media (min-width: 1000px) {
+        article {
+            width: 75%;
+        }
+        .textarea-bg {
+            width: 25%;
+        }
+        .content {
+            flex-basis: 1;
+        }
+        .chat {
+            flex-basis: 0;
+        }
+        #chattable {
+            width: 20vw;
+            height: 100%;
+        }
+	}
+</style>
+
