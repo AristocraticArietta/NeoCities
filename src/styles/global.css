@@ -17,6 +17,7 @@
 	--blur-med: blur(0.5em);
 	--radius-glass: 1em;
 	--gap-regular: 1em;
+	--german-flag-gradient: linear-gradient(to bottom, #000 33.3%, #f00 33.3%, #f00 66.6%, #ffd700 66.6%, #ffd700 100%);
 }
 [data-theme="dark"] {
 	color-scheme: dark;
@@ -238,14 +239,14 @@ pre > code {
 	all: unset;
 }
 blockquote {
-	border-left: 4px solid var(--accent-dark);
-	padding: 0 0 0 20px;
+	border-left: 0.25em solid var(--accent);
+	padding: 0 0 0 1em;
 	margin: 0;
 	font-size: 1.333em;
 }
 hr {
 	border: none;
-	border-top: 1px solid rgb(var(--accent-dark));
+	border-top: var(--border-glass);
 }
 .emoji {
 	display: inline;
@@ -276,6 +277,18 @@ transform: scale(1.1);
 	box-sizing: border-box;
 	transition: transform 0.2s ease;
 }
+.german-text::after {
+	background-image: url("/german_flag2.svg");
+	background-position: 0%;
+	background-repeat: repeat-x;
+	background-size: 1em;
+	width: 1em;
+	height: 1em;
+	display: inline-block;
+	content: "";
+	vertical-align: middle;
+	margin-left: 0.25em;
+	}
 @media (min-width: 1000px) {
 	h1,
 	h2,
