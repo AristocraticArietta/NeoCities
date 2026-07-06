@@ -50,10 +50,10 @@ const { title, description, image = FallbackImage } = Astro.props;
   const theme = getTheme();
   document.documentElement.setAttribute("data-theme", theme);
 </script>
-<!--
+
 <script src="https://iframe.chat/scripts/main.min.js" is:inline></script>
 <script is:inline>chattable.initialize({stylesheet: "/chattable.css"});</script>
- -->
+
 <!-- Canonical URL -->
 <link rel="canonical" href={canonicalURL} />
 

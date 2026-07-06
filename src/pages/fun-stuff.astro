@@ -40,15 +40,15 @@ import { SITE_DESCRIPTION } from '@src/consts';
                 <Blinkies/>
             </article>
             <section class="chat" aria-label="Chat & Guestbook">
+                <!-- 
                 <div class="sidebar chattable-error">
                     <h3>Chatbox</h3>
                     <p>
                         Normally, my chatbox from Chattable goes here. The Chattable service seems to be down at the moment, so I have turned it off. I will turn it back on once the service is back up and running.
                     </p>
                 </div>
-                <!--
-                <iframe src="https://iframe.chat/embed?chat=AristocraticArietta" id="chattable"></iframe>
                 -->
+                <iframe src="https://iframe.chat/embed?chat=AristocraticArietta" id="chattable"></iframe>
                 <div class="sidebar guestbook">
                     <p><a href="https://aristocraticarietta.atabook.org/">Sign my guestbook!</a></p>
                 </div>
@@ -97,6 +97,9 @@ import { SITE_DESCRIPTION } from '@src/consts';
     }
     iframe {
         box-shadow: var(--shadow-glass);
+    }
+    .guestbook {
+        min-height: 50%;
     }
     @media (min-width: 1000px) {
         article {
