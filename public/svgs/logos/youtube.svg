@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="16pt"
+   height="16pt"
+   viewBox="0 0 16 16"
+   version="1.1"
+   id="svg1"
+   inkscape:version="1.4.3 (0d15f75, 2025-12-25)"
+   sodipodi:docname="youtube.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="mm"
+     inkscape:zoom="11.873288"
+     inkscape:cx="8.0011535"
+     inkscape:cy="15.117969"
+     inkscape:window-width="1920"
+     inkscape:window-height="1051"
+     inkscape:window-x="-9"
+     inkscape:window-y="-9"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1" />
+  <defs
+     id="defs1" />
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <path
+       id="path1"
+       fill="currentColor"
+       fill-rule="evenodd"
+       d="M13.738 3.306a1.814 1.814 0 0 1 1.293 1.259c.314 1.117.302 3.447.302 3.447s0 2.317-.302 3.435a1.814 1.814 0 0 1-1.293 1.259C12.591 13 8 13 8 13s-4.579 0-5.739-.306A1.814 1.814 0 0 1 .97 11.435C.667 10.33.667 8 .667 8s0-2.318.302-3.435a1.85 1.85 0 0 1 1.292-1.27C3.41 3 8 3 8 3s4.59 0 5.738.306Zm-7.071 2.36 4 2.334-4 2.333V5.667Z"
+       style="fill:#ff0033;fill-opacity:1" />
+  </g>
+</svg>

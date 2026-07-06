@@ -5,7 +5,7 @@ import Layout from '@layouts/BlogPost.astro';
 
 <Layout
 	title="About Me"
-	description="Lorem ipsum dolor sit amet"
+	description="All about Aristocratic Arietta - Webdesigner, Seamstress, and more!"
 	pubDate={new Date('July 05 2026')}
 	heroImage={AboutHeroImage}
 >
@@ -15,9 +15,9 @@ import Layout from '@layouts/BlogPost.astro';
 	</p>
 	<h3>Here's some fast facts about me:</h3>
 	<ul>
-		<li>I am a student at the University of Arizona. Go Wildcats!</li>
+		<li>I am a student at the University of Arizona. <span class="wildcat-text">Bear down, Wildcats!</span></li>
 		<li>My major is fashion studies</li>
-		<li>My minor is in <span class="german-text">German</span></li>
+		<li>My minor is German studies. <span class="german-text">Hallo!</span></li>
 		<li>I am a Libra</li>
 		<li>I am autistic!</li>
 		<li>I identify as female and use she/her pronouns</li>
@@ -31,7 +31,7 @@ import Layout from '@layouts/BlogPost.astro';
 	</ul>
 	<h3>As of July 5<sup>th</sup>, 2026 my special interests are:</h3>
 	<ul>
-		<li>Historical fashion during the period 1840-1860 in England and France</li>
+		<li>Historical fashion during the period 1840-1870 in England and France (A.K.A. the crinoline era)</li>
 		<li>Website developement using the Astro and Alpine.js libraries/tools</li>
 		<li>Setting up my media server so I can watch/listen to my owned content from anywhere in the world</li>
 		<li>The Cold War - especially daily life in East Germany and the RSFSR</li>
@@ -39,55 +39,59 @@ import Layout from '@layouts/BlogPost.astro';
 	</ul>
 	<h3>Some of my favorites:</h3>
 	<table>
-		<th>Favorite...</th>
-		<th>Item</th>
-		<tr>
-			<td>Place</td>
-			<td>The Victoria and Albert Museum, London, UK</td>
-		</tr>
-		<tr>
-			<td>Color</td>
-			<td><span class="purple-text">Purple</span></td>
-		</tr>
-		<tr>
-			<td>Animal</td>
-			<td>Dogs or horses, I can't choose!</td>
-		</tr>
-		<tr>
-			<td>Holiday</td>
-			<td>Halloween! As a seamstress, I love making my own costumes!</td>
-		</tr>
-		<tr>
-			<td>Season</td>
-			<td>Autumn! It's just so cozy and the temperatures are perfect.</td>
-		</tr>
-		<tr>
-			<td>Country</td>
-			<td>The United Kingdom! I would love to live there one day.</td>
-		</tr>
-		<tr>
-			<td>Food</td>
-			<td>Cheese! I couldn't live without it!</td>
-		</tr>
-		<tr>
-			<td>Modern Musical Artist</td>
-			<td>Slayyyter! I have loved since before her mixtape dropped!</td>
-		</tr>
-		<tr>
-			<td>Movie</td>
-			<td>Atomic Blonde (2017) - Charlize Theron is a badass in this one and the soundtrack is amazing! Not to mention I am obsessed with everything Cold War era!</td>
-		</tr>
-		<tr>
-			<td>Classical Musical Artist</td>
-			<td>Pyotr Ilyich Tchaikovsky</td>
-		</tr>
-		<tr>
-			<td>Album</td>
-			<td><i>Electra Heart</i> by Marina - zero skips on this one!</td>
-		</tr>
-		<tr>
-			<td>Song</td>
-			<td><i>Salvatore</i> by Lana Del Rey - 118 listens on Spotify since I started using it 2016!</td>
-		</tr>
+		<tbody>
+			<tr>
+				<th>Favorite...</th>
+				<th>Item</th>
+			</tr>
+			<tr>
+				<td>Place</td>
+				<td>The Victoria and Albert Museum, London, UK. <a href="https://www.vam.ac.uk/" class="vam">Visit the V&A museum's website! ↩</a></td>
+			</tr>
+			<tr>
+				<td>Color</td>
+				<td><span class="purple-text">Purple</span></td>
+			</tr>
+			<tr>
+				<td>Animal</td>
+				<td>Dogs or horses, I can't choose!</td>
+			</tr>
+			<tr>
+				<td>Holiday</td>
+				<td>Halloween! As a seamstress, I love making my own costumes!</td>
+			</tr>
+			<tr>
+				<td>Season</td>
+				<td>Autumn! It's just so cozy and the temperatures are perfect.</td>
+			</tr>
+			<tr>
+				<td>Country</td>
+				<td>The United Kingdom! I would love to live there one day.</td>
+			</tr>
+			<tr>
+				<td>Food</td>
+				<td>Cheese! I couldn't live without it!</td>
+			</tr>
+			<tr>
+				<td>Movie</td>
+				<td>Atomic Blonde (2017) - Charlize Theron is a badass in this one and the soundtrack is amazing! Not to mention I am obsessed with everything Cold War era! <a href="https://www.youtube.com/watch?v=ZW7Fil5Chxw" class="yt-link">Watch the official trailer on YouTube! ↩</a></td>
+			</tr>
+			<tr>
+				<td>Modern Musical Artist</td>
+				<td>Slayyyter! I've been a fan since the mixtape era! <a href="https://www.youtube.com/watch?v=0W-N1DqpmiM" class="yt-link">Listen to DANCE... on YouTube! ↩</a></td>
+			</tr>
+			<tr>
+				<td>Classical Musical Artist</td>
+				<td>Pyotr Ilyich Tchaikovsky! Who else? ;)</td>
+			</tr>
+			<tr>
+				<td>Album</td>
+				<td><i>Electra Heart</i> by Marina - zero skips on this one! <a href="https://www.youtube.com/playlist?list=PL8ujq4NYgxQR2bLEFtMXHSw2-N9gkBfyq" class="yt-link">Listen to Electra Heart on YouTube! ↩</a></td>
+			</tr>
+			<tr>
+				<td>Song</td>
+				<td><i>Salvatore</i> by Lana Del Rey - 118 listens on Spotify since I started using it 2016! <a href="https://www.youtube.com/watch?v=GVQON-muEFc" class="yt-link">Listen to Salvatore on YouTube! ↩</a></td>
+			</tr>
+		</tbody>
 	</table>
 </Layout>

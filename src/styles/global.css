@@ -38,6 +38,10 @@
 		background-position: 100%;
 	}
 }
+@keyframes gradient-text-animation {
+	0% {background-position: center 0%;}
+	100% {background-position: center 100%;}
+}
 /* Reset button styling */
 .theme-toggle {
 	position: fixed;
@@ -114,8 +118,8 @@ body {
 	line-height: 1.7;
 	display: flex;
 	flex-direction: column;
-	align-items: stretch;
-	justify-content: stretch;
+	align-items: center;
+	justify-content: center;
 }
 main {
 	display: flex;
@@ -216,6 +220,47 @@ kbd {
 }
 table {
 	width: 100%;
+	border-collapse: collapse;
+	text-align: left;
+	border-radius: var(--radius-glass);
+	box-shadow: var(--shadow-glass);
+}
+th, td {
+	background: var(--bg-glass);
+	padding: 0.5em;
+}
+th {
+	border-bottom: var(--border-glass);
+}
+tr {
+	border-bottom: var(--border-glass);
+}
+td:nth-child(odd) {
+	border-right: var(--border-glass);
+}
+tr:last-child {
+	border-bottom: none;
+}
+th:first-child {
+	border-top-left-radius: var(--radius-glass);
+	border-bottom: var(--border-glass);
+	border-right: var(--border-glass);
+}
+th:last-child {
+	border-top-right-radius: var(--radius-glass);
+	border-bottom: var(--border-glass);
+	border-left: var(--border-glass);
+}
+tr:last-child td:first-child {
+	border-bottom-left-radius: var(--radius-glass);
+	border-top: var(--border-glass);
+	border-right: var(--border-glass);
+}
+tr:last-child td:last-child {
+	border-bottom-right-radius: var(--radius-glass);
+	border-top: var(--border-glass);
+	border-left: var(--border-glass);
+	
 }
 img {
 	max-width: 100%;
@@ -277,9 +322,19 @@ transform: scale(1.1);
 	box-sizing: border-box;
 	transition: transform 0.2s ease;
 }
+.german-text {
+	background-image: linear-gradient(to bottom, #000, #D00, #FC0, #000, #D00, #FC0, #000);
+	background-size: 100% 200%;
+	color: transparent;
+	-webkit-background-clip: text;
+  	background-clip: text;
+  	-webkit-text-fill-color: transparent;
+	display: inline-block;
+	animation: gradient-text-animation 2s linear infinite;
+	font-weight: 600;
+}
 .german-text::after {
-	background-image: url("/german_flag2.svg");
-	background-position: 0%;
+	background-image: url("svgs/flags/german_flag2.svg");
 	background-repeat: repeat-x;
 	background-size: 1em;
 	width: 1em;
@@ -288,7 +343,51 @@ transform: scale(1.1);
 	content: "";
 	vertical-align: middle;
 	margin-left: 0.25em;
-	}
+}
+.wildcat-text {
+	background-image: linear-gradient(to bottom, red, navy, red, navy, red);
+	background-size: 100% 200%;
+	color: transparent;
+	-webkit-background-clip: text;
+  	background-clip: text;
+  	-webkit-text-fill-color: transparent;
+	display: inline-block;
+	animation: gradient-text-animation 2s linear infinite;
+	font-weight: 600;
+}
+.wildcat-text::after {
+	background-image: url("svgs/logos/Arizona_Wildcats_logo.svg");
+	background-size: 1em;
+	background-repeat: no-repeat;
+	width: 1em;
+	height: 1em;
+	display: inline-block;
+	content: "";
+	vertical-align: middle;
+	margin-left: 0.25em;
+}
+.vam::after {
+	background-image: url("svgs/logos/vam_logo.svg");
+	background-repeat: no-repeat;
+	background-size: 100%;
+	width: 1em;
+	height: 0.6em;
+	display: inline-block;
+	content: "";
+	vertical-align: middle;
+	margin-left: 0.25em;
+}
+.yt-link::after {
+	background-image: url("svgs/logos/youtube.svg");
+	background-repeat: no-repeat;
+	background-size: 100%;
+	width: 1em;
+	height: 1em;
+	display: inline-block;
+	content: "";
+	vertical-align: middle;
+	margin-left: 0.25em;
+}
 @media (min-width: 1000px) {
 	h1,
 	h2,
