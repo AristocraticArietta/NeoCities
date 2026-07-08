@@ -1,0 +1,49 @@
+---
+import FunStuff from "@layouts/FunStuff.astro";
+---
+
+<FunStuff title="Fanlistings">
+    <h4 class="fanlistings-header">TV Shows/Movies</h4>
+    <div class="fanlistings">
+        <a href="https://fanimated.net/mylittlepony/" target="_self">
+            <img src="/fanlistings/mlp50x50_18.gif" alt="">
+        </a>
+    </div>
+    <h4 class="fanlistings-header">Animals</h4>
+    <div class="fanlistings">
+        <a href="https://fan.glast-heim.net/equines//index.php">
+            <img src="/fanlistings/equines50x50.jpg" alt="">
+        </a>
+        <a href="https://laika.wings.nu/">
+            <img src="/fanlistings/laika50x50_2.png" alt="">
+        </a>
+    </div>
+    <h4 class="fanlistings-header">Misc</h4>
+    <div class="fanlistings">
+        <a href="https://fans.thislove.nu/html/">
+            <img src="/fanlistings/html50x50_001.png" alt="">
+        </a>
+        <a href="https://fans.thislove.nu/mozilla">
+            <img src="/fanlistings/firefox50x50_009.png" alt="">
+        </a>
+    </div>
+</FunStuff>
+<style>
+    img {
+        width: 50px;
+        height: 50px;
+    }
+    .fanlistings {
+        display: inline-flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        gap: 0.25em;
+        line-height: 1rem;
+        text-decoration: none;
+        padding: 0.5em 1em;
+    }
+    .fanlistings-header {
+        text-align: center;
+    }
+</style>

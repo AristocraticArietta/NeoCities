@@ -1,0 +1,114 @@
+---
+import BaseHead from '@components/BaseHead.astro';
+import Footer from '@components/Footer.astro';
+import Navigation from '@components/Nav.astro';
+import { SITE_TITLE, SITE_DESCRIPTION } from '@src/consts';
+
+const { title } = Astro.props;
+---
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+    </head>
+    <body>
+        <Navigation />
+        <main>
+            <article class="fun-stuff-wrapper">
+                <div class="sidebar-min">
+                    <h3>About my Fun Stuff</h3>
+                    <hr>
+                    <p>I make buttons, stamps, and blinkies occassionally. Making them brings me joy! I also really like collecting them from old websites, especially the political blinkies. A reminder of another era! <img src="/gifs/emoji/nukoTearsDrowning.gif" alt="" class="emoji"></p>
+                    <p>I hope you enjoy them too, as you may use them freely on your own website, as long as you don't claim them as your own. :) If you're feeling like you want to, wrap them in an <code>&lt;a&gt;</code> tag that links back to me at <a href="https://aristocratic-arietta.neocities.org/" class="self-link">aristocratic-arietta.neocities.org</a>!</p>
+                    <p id="button-link">Here's an example of what I mean (You can click on it to copy it to your clipboard!): </p>
+                    <div 
+                        class="textarea-bg"
+                        x-data="{ flashing: false }"
+                        x-init="if (window.location.hash === '#button-link') flashing = true"
+                        :class="{ 'flash-it': flashing }"
+                    >
+                        <textarea
+                            readonly 
+                            wrap="on"
+                            id="link"
+                            @click="$el.select(); navigator.clipboard.writeText($el.value);"
+                        >&lt;a href="https://aristocratic-arietta.neocities.org/" target="_self" &gt;&lt;img src="https://aristocratic-arietta.neocities.org/buttons/aristocraticarietta.png" alt=""&gt;&lt;/a&gt;</textarea>
+                    </div>
+                    <p>I also want to get into webrings and fanlistings! Check back occassionally for new content!</p>
+                </div>
+                <div class="sidebar-min">
+                    <h3>Index</h3>
+                    <hr>
+                    <div class="link-list">
+                        <a href="/fun-stuff/blinkies">Blinkies!</a>
+                        <a href="/fun-stuff/buttons">Buttons!</a>
+                        <a href="/fun-stuff/stamps">Stamps!</a>
+                        <a href="/fun-stuff/chat">Chat!</a>
+                        <a href="/fun-stuff/fanlistings">Fanlistings!</a>
+                        <a href="/fun-stuff/webrings">Webrings!</a>
+                    </div>
+                </div>
+            </article>
+        </main>
+        <Footer />
+    </body>
+</html>
+<style>
+    textarea {
+        font: 1rem var(--font-sourcecodepro);
+        resize: none;
+        scrollbar-width: none;
+        width: 100%;
+    }
+    .textarea-bg {
+        width: 100%;
+        padding: 1em;
+        border-radius: var(--radius-glass);
+    }
+    .link-list {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .fun-stuff-wrapper {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: var(--gap-regular);
+        width: 100%;
+    }
+    .sidebar-min {
+        flex-basis: 50%;
+    }
+    .link-list a {
+        width: 75%;
+        padding: 0.5em 0em;
+        text-align: center;
+        box-sizing: border-box;
+        border: var(--border-glass);
+        border-radius: var(--radius-glass);
+        background: var(--bg-glass);
+        transition: box-shadow 0.2s ease, transform 0.2s ease;
+        text-decoration: none;
+        color: inherit;
+    }
+    .link-list a:hover {
+        box-shadow: var(--shadow-glass);
+        transform: scale(1.05);
+    }
+    @media (min-width: 1000px) {
+        .textarea-bg {
+            width: 50%;
+        }
+        .fun-stuff-wrapper {
+            flex-direction: row;
+        }
+        a {
+            width: 50%;
+        }
+	}
+</style>

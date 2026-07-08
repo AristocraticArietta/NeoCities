@@ -22,7 +22,7 @@
     url(https://files.catbox.moe/s4ar4a.ttf) format(truetype);
 }
 body, html {
-  background-color: #7C83BC;
+  background-color: #7c83bc;
   font-family: "Cormorant", serif;
   color: var(--text-primary);
 }
