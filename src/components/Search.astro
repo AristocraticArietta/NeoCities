@@ -9,6 +9,7 @@ const searchIndex = allPosts.map(post => ({
     title: post.data.title,
     description: post.data.description || '',
     date: post.data.pubDate ? new Date(post.data.pubDate).toLocaleDateString() : '',
+    tags: post.data.tags || [], // Include tags as an array
     content: (post.body || '').toLowerCase(), // Lowercase for easier matching; handle undefined body
     url: `/blog/${post.id}/`
 }));
@@ -74,15 +75,23 @@ const searchIndex = allPosts.map(post => ({
             <div class="search-results-container">
                 <template x-if="filteredPosts.length > 0">
                     <ul class="search-result-list">
-                    <template x-for="(post, index) in filteredPosts" :key="index">
-                        <li class="search-result-item">
-                        <a :href="post.url" class="search-result-link">
-                            <h3 class="search-result-title" x-text="post.title"></h3>
-                            <p class="search-result-date" x-text="post.date"></p>
-                            <p class="search-result-desc" x-text="post.description"></p>
-                        </a>
-                        </li>
-                    </template>
+                        <template x-for="(post, index) in filteredPosts" :key="index">
+                            <li class="search-result-item">
+                                <a :href="post.url" class="search-result-link">
+                                    <h3 class="search-result-title" x-text="post.title"></h3>
+                                    <p class="search-result-date" x-text="post.date"></p>
+                                    <p class="search-result-desc" x-text="post.description"></p>
+                                    <!-- Display Tags if they exist -->
+                                    <template x-if="post.tags && post.tags.length > 0">
+                                        <div class="search-result-tags">
+                                            <template x-for="tag in post.tags" :key="tag">
+                                                <span class="search-tag" x-text="tag"></span>
+                                            </template>
+                                        </div>
+                                    </template>
+                                </a>
+                            </li>
+                        </template>
                     </ul>
                 </template>
 
@@ -201,7 +210,7 @@ const searchIndex = allPosts.map(post => ({
         position: relative;
         color: var(--text-primary);
         font-weight:bolder;
-        font: 0.6em bold var(--font-cormorant);
+        font: 1em bold var(--font-cormorant);
     }
 
     .search-input {
@@ -241,15 +250,17 @@ const searchIndex = allPosts.map(post => ({
 
     .search-result-list {
         list-style: none;
-        padding: 0;
+        padding: 0.5em;
         margin: 0;
         display: flex;
         flex-direction: column;
+        align-items: center;
         gap: 0.75rem;
     }
 
     .search-result-item {
         margin: 0;
+        width: 95%;
     }
 
     .search-result-link {
@@ -257,11 +268,14 @@ const searchIndex = allPosts.map(post => ({
         padding: 0.75rem;
         text-decoration: none;
         border-radius: var(--radius-glass);
-        transition: background-color 0.2s;
+        background-color: var(--bg-header);
+        transition: transform 0.2s, box-shadow 0.2s;
+        color: inherit;
     }
 
     .search-result-link:hover {
-        background-color: #f3f4f6;
+        transform: scale(105%);
+        box-shadow: 0 0 0.5em rgba(0, 0, 0, 0.7);
     }
 
     .search-result-link:focus {
@@ -273,27 +287,36 @@ const searchIndex = allPosts.map(post => ({
         margin: 0 0 0.25rem 0;
         font-weight: bold;
         font-size: 1.125rem;
-        color: #111827;
     }
 
     .search-result-date {
         margin: 0 0 0.25rem 0;
         font-size: 0.875rem;
-        color: #6b7280;
     }
 
     .search-result-desc {
         margin: 0;
         font-size: 0.875rem;
-        color: #374151;
         display: -webkit-box;
         -webkit-line-clamp: 2;
         -webkit-box-orient: vertical;
         overflow: hidden;
     }
-
+    .search-result-tags {
+        display: flex;
+        flex-wrap: wrap;
+        margin-top: 0.5rem;
+        gap: 0.5rem;
+        color: var(--accent);
+    }
+    .search-tag {
+        display: inline-block;
+        padding: 0.25rem 0.5rem;
+        background-color: var(--accent2);
+        border-radius: var(--radius-glass);
+        font-size: 0.75rem;
+    }
     .search-empty-state {
-        color: #6b7280;
         padding: 1rem 0;
         text-align: center;
     }
@@ -305,9 +328,6 @@ const searchIndex = allPosts.map(post => ({
         .search-trigger-btn svg {
             width: 1em;
             height: 1em;
-        }
-        .search-input-wrapper {
-            font-size: 1.5em;
         }
     }
 
@@ -321,8 +341,11 @@ interface SearchPost {
     date: string;
     content: string;
     url: string;
+    tags: string[];
 }
 
+
+// Alpine.js initialization logic
 document.addEventListener('alpine:init', () => {
     Alpine.data('searchSystem', (initialPosts: SearchPost[]) => ({
         isOpen: false,
@@ -353,7 +376,8 @@ document.addEventListener('alpine:init', () => {
                 post.title.toLowerCase().includes(cleanQuery) ||
                 post.description.toLowerCase().includes(cleanQuery) ||
                 post.date.toLowerCase().includes(cleanQuery) ||
-                post.content.includes(cleanQuery)
+                post.content.includes(cleanQuery) ||
+                post.tags.some(tag => tag.toLowerCase().includes(cleanQuery))
             );
         });
 

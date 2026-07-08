@@ -203,6 +203,7 @@ a:hover {
 }
 p {
 	margin: 0;
+	font: inherit;
 }
 ul {
 	margin: 0;
@@ -292,6 +293,7 @@ blockquote {
 hr {
 	border: none;
 	border-top: var(--border-glass);
+	width: 100%;
 }
 .emoji {
 	display: inline;
@@ -343,7 +345,7 @@ transform: scale(1.1);
 	font-weight: 600;
 }
 .german-text::after {
-	background-image: url("svgs/flags/german_flag2.svg");
+	background-image: url("/svgs/flags/german_flag2.svg");
 	background-repeat: repeat-x;
 	background-size: 1em;
 	width: 1em;
@@ -365,7 +367,7 @@ transform: scale(1.1);
 	font-weight: 600;
 }
 .wildcat-text::after {
-	background-image: url("svgs/logos/Arizona_Wildcats_logo.svg");
+	background-image: url("/svgs/logos/Arizona_Wildcats_logo.svg");
 	background-size: 1em;
 	background-repeat: no-repeat;
 	width: 1em;
@@ -376,7 +378,7 @@ transform: scale(1.1);
 	margin-left: 0.25em;
 }
 .vam::after {
-	background-image: url("svgs/logos/vam_logo.svg");
+	background-image: url("/svgs/logos/vam_logo.svg");
 	background-repeat: no-repeat;
 	background-size: 100%;
 	width: 1em;
@@ -387,7 +389,7 @@ transform: scale(1.1);
 	margin-left: 0.25em;
 }
 .yt-link::after {
-	background-image: url("svgs/logos/youtube.svg");
+	background-image: url("/svgs/logos/youtube.svg");
 	background-repeat: no-repeat;
 	background-size: 100%;
 	width: 1em;
