@@ -1,0 +1,18 @@
+---
+import BaseHead from '@components/BaseHead.astro';
+import Footer from '@components/Footer.astro';
+import ShrinesNav from '@components/ShrinesNav.astro';
+import { SITE_TITLE, SITE_DESCRIPTION } from '@src/consts';
+
+const { title } = Astro.props;
+---
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <BaseHead title=`${title} | ${SITE_TITLE}` description={SITE_DESCRIPTION} />
+    </head>
+    <body>
+        <ShrinesNav title={title}/>
+        <slot />
+    </body>
+</html>

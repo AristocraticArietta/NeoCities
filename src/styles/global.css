@@ -28,7 +28,7 @@
 	--text-primary: #ececec;
 	--toggle-bg: #334155;
 	--toggle-thumb: #0f172a;
-	--toggle-icon: #38bdf8; /* Moon blue */
+	--toggle-icon: #38bdf8;
 }
 @keyframes flashAnimation {
 	0%, 100% {

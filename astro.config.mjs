@@ -67,6 +67,44 @@ export default defineConfig({
                 ],
             },
         },
+        {
+            provider: fontProviders.local(),
+            name: 'Roboto',
+            cssVariable: '--font-roboto',
+            fallbacks: ['sans-serif'],
+            options: {
+                variants: [
+                    {
+                        src: ['./src/assets/fonts/Roboto-Regular.ttf'],
+                        weight: 400,
+                        style: 'normal',
+                        display: 'swap',
+                    },
+                    {
+                        src: ['./src/assets/fonts/Roboto-Italic.ttf'],
+                        weight: 400,
+                        style: 'italic',
+                        display: 'swap',
+                    },
+                ],
+            },
+        },
+        {
+            provider: fontProviders.local(),
+            name: 'Againts',
+            cssVariable: '--font-againts',
+            fallbacks: ['cursive'],
+            options: {
+                variants: [
+                    {
+                        src: ['./src/assets/fonts/Againts-Regular.otf'],
+                        weight: 400,
+                        style: 'normal',
+                        display: 'swap',
+                    },
+                ],
+            },
+        },
     ],
     output: 'static'
 });
