@@ -1,11 +1,13 @@
 ---
+import { Image } from 'astro:assets';
 import Shrines from "@layouts/Shrines.astro";
 import '@styles/shrines/atomicblonde.css'
+import ab_logo from '@assets/shrines/atomic-blonde/logo.webp'
 ---
 <Shrines title="Atomic Blonde | Soundtrack">
     <div class="ab-wrapper">
         <header>
-            <img src="/src/assets/shrines/atomic-blonde/logo.webp" alt="" class="logo">
+            <Image src={ab_logo} alt="Atomic Blonde title logo" class="logo" />
         </header>
         <nav class="ab-nav">
             <a href="/fun-stuff/shrines/atomic-blonde/" class="ab-nav-link">Home</a>

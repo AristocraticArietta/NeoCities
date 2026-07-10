@@ -1,11 +1,27 @@
 ---
+import { Image } from 'astro:assets';
 import Shrines from "@layouts/Shrines.astro";
 import '@styles/shrines/atomicblonde.css'
+import ab_logo from '@assets/shrines/atomic-blonde/logo.webp'
+import atomic046 from '@assets/shrines/atomic-blonde/atomic046.jpg'
+import imdblogo from '@assets/shrines/atomic-blonde/imdb.svg'
+import theron from '@assets/shrines/atomic-blonde/headshots/theron.jpg'
+import mcavoy from '@assets/shrines/atomic-blonde/headshots/mcavoy.jpg'
+import goodman from '@assets/shrines/atomic-blonde/headshots/goodman.jpg'
+import marsan from '@assets/shrines/atomic-blonde/headshots/marsan.jpg'
+import jones from '@assets/shrines/atomic-blonde/headshots/jones.jpg'
+import faulkner from '@assets/shrines/atomic-blonde/headshots/faulkner.jpg'
+import møller from '@assets/shrines/atomic-blonde/headshots/møller.jpg'
+import boutella from '@assets/shrines/atomic-blonde/headshots/boutella.jpg'
+import skarsgård from '@assets/shrines/atomic-blonde/headshots/skarsgård.jpg'
+import hargrave from '@assets/shrines/atomic-blonde/headshots/hargrave.jpg'
+import jóhannesson from '@assets/shrines/atomic-blonde/headshots/jóhannesson.jpg'
+import schweiger from '@assets/shrines/atomic-blonde/headshots/schweiger.jpg'
 ---
 <Shrines title="Atomic Blonde | Home">
     <div class="ab-wrapper">
         <header>
-            <img src="/src/assets/shrines/atomic-blonde/logo.webp" alt="" class="logo">
+            <Image src={ab_logo} alt="Atomic Blonde title logo" class="logo" />
         </header>
         <nav class="ab-nav">
             <a href="/fun-stuff/shrines/atomic-blonde/" class="ab-nav-link">Home</a>
@@ -16,7 +32,7 @@ import '@styles/shrines/atomicblonde.css'
         <main class="ab-main">
             <h3>All About Atomic Blonde</h3>
             <figure>
-                <img src="/src/assets/shrines/atomic-blonde/atomic046.jpg" alt="Charlize Theron in character as Lorraine Broughton holding a gun during the film's one-take, 10-minute long staircase fight scene">
+                <Image src={atomic046} alt="Charlize Theron in character as Lorraine Broughton holding a gun during the film's one-take, 10-minute long staircase fight scene"/>
                 <figcaption>Charlize Theron in character as Lorraine Broughton holding a gun during the film's one-take, 10-minute long staircase fight scene</figcaption>
             </figure>
             <p>The crown jewel of Her Majesty's Secret Intelligence Service, Agent Lorraine Broughton (Charlize Theron) is equal parts spycraft, sensuality and savagery, willing to deploy any of her skills to stay alive on her impossible mission. Sent alone into Berlin to deliver a priceless dossier out of the destabilized city, she partners with embedded station chief David Percival (James McAvoy) to navigate her way through the deadliest game of spies. <a href="https://www.imdb.com/title/tt2406566/">—IMDB</a></p>
@@ -41,74 +57,74 @@ import '@styles/shrines/atomicblonde.css'
                 <tr>
                     <td>Charlize Theron</td>
                     <td>Lorraine Broughton</td>
-                    <td><img src="/src/assets/shrines/atomic-blonde/headshots/theron.jpg" alt="Charlize Theron" class="ab-pfp"></td>
-                    <td><a href="https://www.imdb.com/name/nm0000234/"><img src="/src/assets/shrines/atomic-blonde/imdb.svg" alt="IMDB logo" class="ab-imdb"></a></td>
+                    <td><Image src={theron} alt="Charlize Theron" class="ab-pfp" /></td>
+                    <td><a href="https://www.imdb.com/name/nm0000234/"><Image src={imdblogo} alt="IMDB logo" class="ab-imdb" /></a></td>
                 </tr>
                 <tr>
                     <td>James McAvoy</td>
                     <td>David Percival</td>
-                    <td><img src="/src/assets/shrines/atomic-blonde/headshots/mcavoy.jpg" alt="James McAvoy" class="ab-pfp"></td>
-                    <td><a href="https://www.imdb.com/name/nm0564215/"><img src="/src/assets/shrines/atomic-blonde/imdb.svg" alt="IMDB logo" class="ab-imdb"></a></td>
+                    <td><Image src={mcavoy} alt="James McAvoy" class="ab-pfp" /></td>
+                    <td><a href="https://www.imdb.com/name/nm0564215/"><Image src={imdblogo} alt="IMDB logo" class="ab-imdb" /></a></td>
                 </tr>
                 <tr>
                     <td>John Goodman</td>
                     <td>Emmett Kurzfeld</td>
-                    <td><img src="/src/assets/shrines/atomic-blonde/headshots/goodman.jpg" alt="John Goodman" class="ab-pfp"></td>
-                    <td><a href="https://www.imdb.com/name/nm0000422/"><img src="/src/assets/shrines/atomic-blonde/imdb.svg" alt="IMDB logo" class="ab-imdb"></a></td>
+                    <td><Image src={goodman} alt="John Goodman" class="ab-pfp" /></td>
+                    <td><a href="https://www.imdb.com/name/nm0000422/"><Image src={imdblogo} alt="IMDB logo" class="ab-imdb" /></a></td>
                 </tr>
                 <tr>
                     <td>Eddie Marsan</td>
                     <td>Spyglass</td>
-                    <td><img src="/src/assets/shrines/atomic-blonde/headshots/marsan.jpg" alt="Eddie Marsan" class="ab-pfp"></td>
-                    <td><a href="https://www.imdb.com/name/nm0550371/"><img src="/src/assets/shrines/atomic-blonde/imdb.svg" alt="IMDB logo" class="ab-imdb"></a></td>
+                    <td><Image src={marsan} alt="Eddie Marsan" class="ab-pfp" /></td>
+                    <td><a href="https://www.imdb.com/name/nm0550371/"><Image src={imdblogo} alt="IMDB logo" class="ab-imdb" /></a></td>
                 </tr>
                 <tr>
                     <td>Toby Jones</td>
                     <td>Eric Gray</td>
-                    <td><img src="/src/assets/shrines/atomic-blonde/headshots/jones.jpg" alt="Toby Jones" class="ab-pfp"></td>
-                    <td><a href="https://www.imdb.com/name/nm0429363/"><img src="/src/assets/shrines/atomic-blonde/imdb.svg" alt="IMDB logo" class="ab-imdb"></a></td>
+                    <td><Image src={jones} alt="Toby Jones" class="ab-pfp" /></td>
+                    <td><a href="https://www.imdb.com/name/nm0429363/"><Image src={imdblogo} alt="IMDB logo" class="ab-imdb" /></a></td>
                 </tr>
                 <tr>
                     <td>James Faulkner</td>
                     <td>Chief 'C'</td>
-                    <td><img src="/src/assets/shrines/atomic-blonde/headshots/faulkner.jpg" alt="James Faulkner" class="ab-pfp"></td>
-                    <td><a href="https://www.imdb.com/name/nm0269077/"><img src="/src/assets/shrines/atomic-blonde/imdb.svg" alt="IMDB logo" class="ab-imdb"></a></td>
+                    <td><Image src={faulkner} alt="James Faulkner" class="ab-pfp" /></td>
+                    <td><a href="https://www.imdb.com/name/nm0269077/"><Image src={imdblogo} alt="IMDB logo" class="ab-imdb" /></a></td>
                 </tr>
                 <tr>
                     <td>Roland Møller</td>
                     <td>Aleksander Bremovych</td>
-                    <td><img src="/src/assets/shrines/atomic-blonde/headshots/møller.jpg" alt="Roland Møller" class="ab-pfp"></td>
-                    <td><a href="https://www.imdb.com/name/nm3435612/"><img src="/src/assets/shrines/atomic-blonde/imdb.svg" alt="IMDB logo" class="ab-imdb"></a></td>
+                    <td><Image src={møller} alt="Roland Møller" class="ab-pfp" /></td>
+                    <td><a href="https://www.imdb.com/name/nm3435612/"><Image src={imdblogo} alt="IMDB logo" class="ab-imdb" /></a></td>
                 </tr>
                 <tr>
                     <td>Sofia Boutella</td>
                     <td>Delphine Lasalle</td>
-                    <td><img src="/src/assets/shrines/atomic-blonde/headshots/boutella.jpg" alt="Sofia Boutella" class="ab-pfp"></td>
-                    <td><a href="https://www.imdb.com/name/nm1154749/"><img src="/src/assets/shrines/atomic-blonde/imdb.svg" alt="IMDB logo" class="ab-imdb"></a></td>
+                    <td><Image src={boutella} alt="Sofia Boutella" class="ab-pfp" /></td>
+                    <td><a href="https://www.imdb.com/name/nm1154749/"><Image src={imdblogo} alt="IMDB logo" class="ab-imdb" /></a></td>
                 </tr>
                 <tr>
                     <td>Bill Skarsgård</td>
                     <td>Merkel</td>
-                    <td><img src="/src/assets/shrines/atomic-blonde/headshots/skarsgård.jpg" alt="Bill Skarsgård" class="ab-pfp"></td>
-                    <td><a href="https://www.imdb.com/name/nm0803889/"><img src="/src/assets/shrines/atomic-blonde/imdb.svg" alt="IMDB logo" class="ab-imdb"></a></td>
+                    <td><Image src={skarsgård} alt="Bill Skarsgård" class="ab-pfp" /></td>
+                    <td><a href="https://www.imdb.com/name/nm0803889/"><Image src={imdblogo} alt="IMDB logo" class="ab-imdb" /></a></td>
                 </tr>
                 <tr>
                     <td>Sam Hargrave</td>
                     <td>James Gascoine</td>
-                    <td><img src="/src/assets/shrines/atomic-blonde/headshots/hargrave.jpg" alt="Sam Hargrave" class="ab-pfp"></td>
-                    <td><a href="https://www.imdb.com/name/nm1092087/"><img src="/src/assets/shrines/atomic-blonde/imdb.svg" alt="IMDB logo" class="ab-imdb"></a></td>
+                    <td><Image src={hargrave} alt="Sam Hargrave" class="ab-pfp" /></td>
+                    <td><a href="https://www.imdb.com/name/nm1092087/"><Image src={imdblogo} alt="IMDB logo" class="ab-imdb" /></a></td>
                 </tr>
                 <tr>
                     <td>Jóhannes Haukur Jóhannesson</td>
                     <td>Yuri Bakhtin</td>
-                    <td><img src="/src/assets/shrines/atomic-blonde/headshots/jóhannesson.jpg" alt="Jóhannes Haukur Jóhannesson" class="ab-pfp"></td>
-                    <td><a href="https://www.imdb.com/name/nm1778512/"><img src="/src/assets/shrines/atomic-blonde/imdb.svg" alt="IMDB logo" class="ab-imdb"></a></td>
+                    <td><Image src={jóhannesson} alt="Jóhannes Haukur Jóhannesson" class="ab-pfp" /></td>
+                    <td><a href="https://www.imdb.com/name/nm1778512/"><Image src={imdblogo} alt="IMDB logo" class="ab-imdb" /></a></td>
                 </tr>
                 <tr>
                     <td>Til Schweiger</td>
                     <td>Watchmaker</td>
-                    <td><img src="/src/assets/shrines/atomic-blonde/headshots/schweiger.jpg" alt="Til Schweiger" class="ab-pfp"></td>
-                    <td><a href="https://www.imdb.com/name/nm0001709/"><img src="/src/assets/shrines/atomic-blonde/imdb.svg" alt="IMDB logo" class="ab-imdb"></a></td>
+                    <td><Image src={schweiger} alt="Til Schweiger" class="ab-pfp" /></td>
+                    <td><a href="https://www.imdb.com/name/nm0001709/"><Image src={imdblogo} alt="IMDB logo" class="ab-imdb" /></a></td>
                 </tr>
             </table>
             <table>
