@@ -12,8 +12,8 @@ const abImages = Object.values(abFiles).map(img => img.default.src);
 ---
 <Shrines title="Atomic Blonde | Gallery">
     <div class="ab-wrapper">
-        <header>
-            <Image src={ab_logo} alt="Atomic Blonde title logo" class="logo" />
+        <header class="ab-header">
+            <Image src={ab_logo} alt="Atomic Blonde title logo" class="ab-logo" />
         </header>
         <nav class="ab-nav">
             <a href="/fun-stuff/shrines/atomic-blonde/" class="ab-nav-link">Home</a>
@@ -22,11 +22,11 @@ const abImages = Object.values(abFiles).map(img => img.default.src);
             <a href="/fun-stuff/shrines/atomic-blonde/videos" class="ab-nav-link">Videos</a>
         </nav>
         <main class="ab-main">
-            <h3>Gallery</h3>
+            <h3 class="ab-h3">Gallery</h3>
             <Carousel images={abImages}/>
         </main>
-        <footer>
-            <h3>Made by Aristocratic Arietta</h3>
+        <footer class="ab-footer">
+            <h3 class="ab-h3">Made by Aristocratic Arietta</h3>
         </footer>
     </div>
 </Shrines>
