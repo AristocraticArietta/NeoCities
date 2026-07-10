@@ -1,7 +1,3 @@
----
-import LightDarkSwitch from "./LightDarkSwitch.astro"
----
-<LightDarkSwitch />
 <div class="shrines-nav-wrapper" x-data="{ toggleNav : false }">
     <button @click="toggleNav = !toggleNav" :aria-expanded="toggleNav" class="shrines-nav-button">Navigation</button>
     <nav class="shrines-nav" x-show="toggleNav">
@@ -12,9 +8,9 @@ import LightDarkSwitch from "./LightDarkSwitch.astro"
 </div>
 <style>
     .shrines-nav-wrapper {
-        position: absolute;
+        position:fixed;
         top: 1em;
-        right: 1em;
+        left: 1em;
         z-index: 2;
         display: flex;
         flex-direction: column;

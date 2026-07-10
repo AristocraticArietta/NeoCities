@@ -1,119 +1,217 @@
 ---
 import Shrines from "@layouts/Shrines.astro";
+import '@styles/shrines/atomicblonde.css'
 ---
 <Shrines title="Atomic Blonde | Soundtrack">
-    <div class="ab-wrapper" x-data="{hover1:false, hover2:false, hover3:false, hover4:false}">
+    <div class="ab-wrapper">
         <header>
             <img src="/shrines/atomic-blonde/logo.webp" alt="" class="logo">
         </header>
         <nav>
-            <a href="./" @mouseover="hover1 = true" @mouseleave="hover1 = false" :class="hover1 ? 'neon' : 'white'">Home</a>
-            <a href="./gallery" @mouseover="hover2 = true" @mouseleave="hover2 = false" :class="hover2 ? 'neon' : 'white'">Gallery</a>
-            <a href="./soundtrack" @mouseover="hover3 = true" @mouseleave="hover3 = false" :class="hover3 ? 'neon' : 'white'">Soundtrack</a>
-            <a href="./videos" @mouseover="hover4 = true" @mouseleave="hover4 = false" :class="hover4 ? 'neon' : 'white'">Videos</a>
+            <a href="/fun-stuff/shrines/atomic-blonde/">Home</a>
+            <a href="/fun-stuff/shrines/atomic-blonde/gallery">Gallery</a>
+            <a href="/fun-stuff/shrines/atomic-blonde/soundtrack">Soundtrack</a>
+            <a href="/fun-stuff/shrines/atomic-blonde/videos">Videos</a>
         </nav>
-        <main>
+        <main class="ab-main">
             <h3>Soundtrack</h3>
-            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Vel tenetur repellat molestiae mollitia sed! In, inventore perspiciatis explicabo, odio earum placeat exercitationem deleniti voluptatibus nobis facilis eaque illo est beatae!</p>
+            <div class="soundtrack-wrapper">
+                <iframe src="https://www.youtube-nocookie.com/embed/m0ODoeBc04g?si=szb3DS2OL2YHgF1f" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                <div class="soundtrack-info">
+                    <h4><i>Cat People (Putting Out Fire)</i></h4>
+                    <p>by</p>
+                    <p>David Bowie</p>
+                </div>
+            </div>
+            <hr>
+            <div class="soundtrack-wrapper">
+                <iframe src="https://www.youtube-nocookie.com/embed/LsVQEMWs6qE?si=JsJnKhkmq8YDNZnx" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                <div class="soundtrack-info">
+                    <h4><i>Major Tom (Völlig Losgelöst)</i></h4>
+                    <p>by</p>
+                    <p>Peter Schilling</p>
+                </div>
+            </div>
+            <hr>
+            <div class="soundtrack-wrapper">
+                <iframe src="https://www.youtube-nocookie.com/embed/u1_KbKR_sng?si=ka0k82u_tmKYeEuU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                <div class="soundtrack-info">
+                    <h4><i>Blue Monday</i></h4>
+                    <p>by</p>
+                    <p>HEALTH</p>
+                </div>
+            </div>
+            <hr>
+            <div class="soundtrack-wrapper">
+                <iframe src="https://www.youtube-nocookie.com/embed/JokT2iFfeek?si=NklZF7nW-RwRjhOS" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                <div class="soundtrack-info">
+                    <h4><i>C*cks*cker</i></h4>
+                    <p>by</p>
+                    <p>Tyler Bates</p>
+                </div>
+            </div>
+            <hr>
+            <div class="soundtrack-wrapper">
+                <iframe src="https://www.youtube-nocookie.com/embed/TMSlTQmDLx4?si=ZFZE8T2h8y6LuYl2" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                <div class="soundtrack-info">
+                    <h4><i>99 Luftballons</i></h4>
+                    <p>by</p>
+                    <p>Nena</p>
+                </div>
+            </div>
+            <hr>
+            <div class="soundtrack-wrapper">
+                <iframe src="https://www.youtube-nocookie.com/embed/2WNVNAOQWCE?si=CQR7zG11M0F74y7P" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                <div class="soundtrack-info">
+                    <h4><i>Father Figure</i></h4>
+                    <p>by</p>
+                    <p>George Michael</p>
+                </div>
+            </div>
+            <hr>
+            <div class="soundtrack-wrapper">
+                <iframe src="https://www.youtube-nocookie.com/embed/G3IOBsR7yGM?si=_ksN8V4QrGD8wu1A" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                <div class="soundtrack-info">
+                    <h4><i>Der Kommissar</i></h4>
+                    <p>by</p>
+                    <p>After The Fire</p>
+                </div>
+            </div>
+            <hr>
+            <div class="soundtrack-wrapper">
+                <iframe src="https://www.youtube-nocookie.com/embed/Ruq33iAxL5k?si=mbYQELNZkIdEhbCe" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                <div class="soundtrack-info">
+                    <h4><i>Cities in Dust</i></h4>
+                    <p>by</p>
+                    <p>Siouxsie and the Banshees</p>
+                </div>
+            </div>
+            <hr>
+            <div class="soundtrack-wrapper">
+                <iframe src="https://www.youtube-nocookie.com/embed/AN40EWNZK8A?si=M9vn6CC2NYmtlZ_C" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                <div class="soundtrack-info">
+                    <h4><i>The Politics of Dancing</i></h4>
+                    <p>by</p>
+                    <p>Re-Flex</p>
+                </div>
+            </div>
+            <hr>
+            <div class="soundtrack-wrapper">
+                <iframe src="https://www.youtube-nocookie.com/embed/K6K_BZwUFnk?si=aFttQpCe9Q6kIua4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                <div class="soundtrack-info">
+                    <h4><i>Stigmata</i></h4>
+                    <p>by</p>
+                    <p>Marilyn Manson, Tyler Bates</p>
+                </div>
+            </div>
+            <hr>
+            <div class="soundtrack-wrapper">
+                <iframe src="https://www.youtube-nocookie.com/embed/2UvBoye2H-g?si=cFmBMAyEOc8SIfio" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                <div class="soundtrack-info">
+                    <h4><i>Demostration</i></h4>
+                    <p>by</p>
+                    <p>Tyler Bates</p>
+                </div>
+            </div>
+            <hr>
+            <div class="soundtrack-wrapper">
+                <iframe src="https://www.youtube-nocookie.com/embed/l3ST8AjLAms?si=PQz-RjBxWBTFeaxG" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                <div class="soundtrack-info">
+                    <h4><i>I Ran (So Far Away)</i></h4>
+                    <p>by</p>
+                    <p>A Flock of Seagulls</p>
+                </div>
+            </div>
+            <hr>
+            <div class="soundtrack-wrapper">
+                <iframe src="https://www.youtube-nocookie.com/embed/eS3xeY6PlIk?si=uRrGycXDeiSryx08" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                <div class="soundtrack-info">
+                    <h4><i>99 Luftballons</i></h4>
+                    <p>by</p>
+                    <p>Kaleida</p>
+                </div>
+            </div>
+            <hr>
+            <div class="soundtrack-wrapper">
+                <iframe src="https://www.youtube-nocookie.com/embed/zUKXhRikfPw?si=rjWNmvD65eQ6S-5U" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                <div class="soundtrack-info">
+                    <h4><i>Voices Carry</i></h4>
+                    <p>by</p>
+                    <p>'Till Tuesday</p>
+                </div>
+            </div>
+            <hr>
+            <div class="soundtrack-wrapper">
+                <iframe src="https://www.youtube-nocookie.com/embed/LC2WpBcdM_A?si=DS7qB-mIbopvhUtn" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                <div class="soundtrack-info">
+                    <h4><i>London Calling</i></h4>
+                    <p>by</p>
+                    <p>The Clash</p>
+                </div>
+            </div>
+            <hr>
+            <div class="soundtrack-wrapper">
+                <iframe src="https://www.youtube-nocookie.com/embed/z0Axu1wDvsA?si=SxJVz1qW6TPqbCQC" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                <div class="soundtrack-info">
+                    <h4><i>Finding the UHF Device</i></h4>
+                    <p>by</p>
+                    <p>Tyler Bates</p>
+                </div>
+            </div>
         </main>
         <footer>
             <h3>Made by Aristocratic Arietta</h3>
         </footer>
     </div>
 </Shrines>
+<script>
+    // Target the audio elements
+    const audioPlayers = document.querySelectorAll('audio');
+
+    // Prevent the default right-click menu on the audio players
+    audioPlayers.forEach(player => {
+        player.addEventListener('contextmenu', function(e) {
+            e.preventDefault();
+        });
+    });
+</script>
 <style>
-    .ab-wrapper {
-        padding: 5em;
-        background-color: #0d0f13;
-        color: #FFF;
-        text-align: center;
-        font-family: var(--font-roboto);
+    .ab-main {
+        width: 100%;
+    }
+    .soundtrack-wrapper {
         display: flex;
         flex-direction: column;
-        flex-wrap: wrap;
-        justify-content: center;
-        align-items: center;
         gap: 2em;
-        box-sizing: border-box;
-        width: 100%;
-    }
-    main {
-        flex-direction: column;
-        margin: 0;
-        padding: 1em;
-        border: 0.5em solid #fff;
-        border-radius: var(--radius-glass);
-        filter: drop-shadow(0 0 1em #fff);
-        width: 100%;
-        box-sizing: border-box;
-    }
-    header {
-        border: 0.5em solid #fff;
-        border-radius: 1em;
-        filter: drop-shadow(0 0 1em #fff);
-        width: 100%;
-        box-sizing: border-box;
-    }
-    footer {
-        width: 100%;
-        border: 0.5em solid #fff;
-        border-radius: 1em;
-        filter: drop-shadow(0 0 1em #fff);
-        padding: 1em;
-        box-sizing: border-box;
-    }
-    hr {
-        border-color: #e35ee3;
-        width: 50%;
-    }
-    h3 {
-        font-size: 1.5em;
-        color: #fff;
-        font-family: var(--font-againts);
-        -webkit-text-stroke: 5px #01b4c8;
-        paint-order: stroke fill;
-        filter: drop-shadow(0 0 0.5em #fff);
-        letter-spacing: 0.15em;
-    }
-    p {
-        color: #ffffff;
-        text-align: justify;
-    }
-    
-    nav {
-        width: 100%;
-        display: flex;
-        flex-direction: row;
+        margin: 1em;
         justify-content: space-evenly;
         align-items: center;
-        gap: 2em;
+        height: min-content;
+        width: calc(100% - 2em);
     }
-    nav a {
-        width: 25%;
-        background-color: transparent;
-        border-radius: var(--radius-glass);
-        font: inherit;
-        font-size: 2em;
-        font-family: var(--font-againts);
-        letter-spacing: 0.15em;
-        text-decoration: none;
-        padding: 0.5em;
-        box-sizing: border-box;
+    .soundtrack-info {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: var(--gap-regular);
     }
-    .neon {
-        border: solid 0.2em #01b4c8;
-        filter: drop-shadow(0 0 0.5em #01b4c8);
-        color: #fff;
-        -webkit-text-stroke: 5px #01b4c8;
-        paint-order: stroke fill;
+    iframe {
+        width: auto;
+        aspect-ratio: 1 / 1;
+        min-height: 20px;
+        max-height: 40vh;
     }
-    .white {
-        border: solid 0.2em #fff;
-        filter: drop-shadow(0 0 0.5em #fff);
-        color: #fff;
+    hr {
+        grid-column: span 2;
+        width: 100%;
     }
-    .logo {
-        width: 30%;
-        height: auto;
+    @media (min-width: 1000px) {
+        .ab-main {
+            max-width: 100%;
+        }
+        .soundtrack-wrapper {
+            flex-direction: row;
+        }
     }
 </style>

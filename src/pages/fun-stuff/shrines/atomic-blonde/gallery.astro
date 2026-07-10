@@ -1,20 +1,27 @@
 ---
 import Shrines from "@layouts/Shrines.astro";
+import Carousel from "@components/Carousel.astro";
+import '@styles/shrines/atomicblonde.css'
+
+import type { ImageMetadata } from "astro";
+
+const abFiles = import.meta.glob<{ default: ImageMetadata }>('/src/assets/shrines/atomic-blonde/carousel-images/*.{jpeg,jpg,png,webp}', { eager: true });
+const abImages = Object.values(abFiles).map(img => img.default.src);
 ---
 <Shrines title="Atomic Blonde | Gallery">
-    <div class="ab-wrapper" x-data="{hover1:false, hover2:false, hover3:false, hover4:false}">
+    <div class="ab-wrapper">
         <header>
             <img src="/shrines/atomic-blonde/logo.webp" alt="" class="logo">
         </header>
         <nav>
-            <a href="./" @mouseover="hover1 = true" @mouseleave="hover1 = false" :class="hover1 ? 'neon' : 'white'">Home</a>
-            <a href="./gallery" @mouseover="hover2 = true" @mouseleave="hover2 = false" :class="hover2 ? 'neon' : 'white'">Gallery</a>
-            <a href="./soundtrack" @mouseover="hover3 = true" @mouseleave="hover3 = false" :class="hover3 ? 'neon' : 'white'">Soundtrack</a>
-            <a href="./videos" @mouseover="hover4 = true" @mouseleave="hover4 = false" :class="hover4 ? 'neon' : 'white'">Videos</a>
+            <a href="/fun-stuff/shrines/atomic-blonde/">Home</a>
+            <a href="/fun-stuff/shrines/atomic-blonde/gallery">Gallery</a>
+            <a href="/fun-stuff/shrines/atomic-blonde/soundtrack">Soundtrack</a>
+            <a href="/fun-stuff/shrines/atomic-blonde/videos">Videos</a>
         </nav>
-        <main>
+        <main class="ab-main">
             <h3>Gallery</h3>
-            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Vel tenetur repellat molestiae mollitia sed! In, inventore perspiciatis explicabo, odio earum placeat exercitationem deleniti voluptatibus nobis facilis eaque illo est beatae!</p>
+            <Carousel images={abImages}/>
         </main>
         <footer>
             <h3>Made by Aristocratic Arietta</h3>
@@ -22,98 +29,19 @@ import Shrines from "@layouts/Shrines.astro";
     </div>
 </Shrines>
 <style>
-    .ab-wrapper {
-        padding: 5em;
-        background-color: #0d0f13;
-        color: #FFF;
-        text-align: center;
-        font-family: var(--font-roboto);
-        display: flex;
-        flex-direction: column;
-        flex-wrap: wrap;
-        justify-content: center;
-        align-items: center;
-        gap: 2em;
-        box-sizing: border-box;
+    .photo-container {
+        overflow-x: hidden;
         width: 100%;
-    }
-    main {
-        flex-direction: column;
-        margin: 0;
-        padding: 1em;
-        border: 0.5em solid #fff;
-        border-radius: var(--radius-glass);
-        filter: drop-shadow(0 0 1em #fff);
-        width: 100%;
-        box-sizing: border-box;
-    }
-    header {
-        border: 0.5em solid #fff;
+        border: solid 0.2em var(--ab-white);
         border-radius: 1em;
-        filter: drop-shadow(0 0 1em #fff);
+        filter: drop-shadow(0 0 0.25em var(--ab-white));
+    }
+    .ab-main {
         width: 100%;
-        box-sizing: border-box;
     }
-    footer {
-        width: 100%;
-        border: 0.5em solid #fff;
-        border-radius: 1em;
-        filter: drop-shadow(0 0 1em #fff);
-        padding: 1em;
-        box-sizing: border-box;
-    }
-    hr {
-        border-color: #e35ee3;
-        width: 50%;
-    }
-    h3 {
-        font-size: 1.5em;
-        color: #fff;
-        font-family: var(--font-againts);
-        -webkit-text-stroke: 5px #01b4c8;
-        paint-order: stroke fill;
-        filter: drop-shadow(0 0 0.5em #fff);
-        letter-spacing: 0.15em;
-    }
-    p {
-        color: #ffffff;
-        text-align: justify;
-    }
-    
-    nav {
-        width: 100%;
-        display: flex;
-        flex-direction: row;
-        justify-content: space-evenly;
-        align-items: center;
-        gap: 2em;
-    }
-    nav a {
-        width: 25%;
-        background-color: transparent;
-        border-radius: var(--radius-glass);
-        font: inherit;
-        font-size: 2em;
-        font-family: var(--font-againts);
-        letter-spacing: 0.15em;
-        text-decoration: none;
-        padding: 0.5em;
-        box-sizing: border-box;
-    }
-    .neon {
-        border: solid 0.2em #01b4c8;
-        filter: drop-shadow(0 0 0.5em #01b4c8);
-        color: #fff;
-        -webkit-text-stroke: 5px #01b4c8;
-        paint-order: stroke fill;
-    }
-    .white {
-        border: solid 0.2em #fff;
-        filter: drop-shadow(0 0 0.5em #fff);
-        color: #fff;
-    }
-    .logo {
-        width: 30%;
-        height: auto;
+    @media (min-width: 1000px) {
+        .ab-main {
+            max-width: 100%;
+        }
     }
 </style>

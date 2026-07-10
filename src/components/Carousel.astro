@@ -1,0 +1,46 @@
+---
+import '@styles/shrines/atomicblonde.css'
+// src/components/Carousel.astro
+interface Props {
+  images: string[];
+}
+
+const { images } = Astro.props;
+
+// Fail-safe if an empty gallery or bad path is provided
+if (!images || images.length === 0) {
+  return null; 
+}
+---
+<div 
+  class="carousel-container" 
+  x-data={`{ 
+    slides: ${JSON.stringify(images)}, 
+    currentIndex: 0,
+    next() { this.currentIndex = (this.currentIndex + 1) % this.slides.length },
+    prev() { this.currentIndex = (this.currentIndex - 1 + this.slides.length) % this.slides.length }
+  }`}
+>
+  <div class="carousel-window">
+    <div class="carousel-track" :style="`transform: translateX(-${currentIndex * 100}%)`">
+      <template x-for="(slide, index) in slides" :key="index">
+        <div class="carousel-slide">
+          <img :src="slide" alt="Gallery image" loading="lazy" />
+        </div>
+      </template>
+    </div>
+  </div>
+
+  <button class="nav-btn prev" @click="prev()" aria-label="Previous image">&lt;</button>
+  <button class="nav-btn next" @click="next()" aria-label="Next image">&gt;</button>
+
+  <div class="carousel-dots">
+    <template x-for="(slide, index) in slides" :key="index">
+      <button 
+        class="dot" 
+        :class="currentIndex === index ? 'active' : ''"
+        @click="currentIndex = index"
+      ></button>
+    </template>
+  </div>
+</div>
