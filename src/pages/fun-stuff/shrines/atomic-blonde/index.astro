@@ -5,13 +5,13 @@ import '@styles/shrines/atomicblonde.css'
 <Shrines title="Atomic Blonde | Home">
     <div class="ab-wrapper">
         <header>
-            <img src="/shrines/atomic-blonde/logo.webp" alt="" class="logo">
+            <img src="/src/assets/shrines/atomic-blonde/logo.webp" alt="" class="logo">
         </header>
-        <nav>
-            <a href="/fun-stuff/shrines/atomic-blonde/">Home</a>
-            <a href="/fun-stuff/shrines/atomic-blonde/gallery">Gallery</a>
-            <a href="/fun-stuff/shrines/atomic-blonde/soundtrack">Soundtrack</a>
-            <a href="/fun-stuff/shrines/atomic-blonde/videos">Videos</a>
+        <nav class="ab-nav">
+            <a href="/fun-stuff/shrines/atomic-blonde/" class="ab-nav-link">Home</a>
+            <a href="/fun-stuff/shrines/atomic-blonde/gallery" class="ab-nav-link">Gallery</a>
+            <a href="/fun-stuff/shrines/atomic-blonde/soundtrack" class="ab-nav-link">Soundtrack</a>
+            <a href="/fun-stuff/shrines/atomic-blonde/videos" class="ab-nav-link">Videos</a>
         </nav>
         <main class="ab-main">
             <h3>All About Atomic Blonde</h3>
@@ -21,13 +21,126 @@ import '@styles/shrines/atomicblonde.css'
             </figure>
             <p>The crown jewel of Her Majesty's Secret Intelligence Service, Agent Lorraine Broughton (Charlize Theron) is equal parts spycraft, sensuality and savagery, willing to deploy any of her skills to stay alive on her impossible mission. Sent alone into Berlin to deliver a priceless dossier out of the destabilized city, she partners with embedded station chief David Percival (James McAvoy) to navigate her way through the deadliest game of spies. <a href="https://www.imdb.com/title/tt2406566/">—IMDB</a></p>
         </main>
-        <aside>
+        <aside class="ab-updates">
             <h3>Updates</h3>
             <ul>
+                <li>July 10<sup>th</sup>, 2026: Added cast & crew as well as fixed some CSS</li>
                 <li>July 9<sup>th</sup>, 2026: Added gallery, soundtrack, and videos. Need more pics in gallery.</li>
                 <li>July 8<sup>th</sup>, 2026: Created basic theme for shrine</li>
             </ul>
         </aside>
+        <section class="ab-metadata">
+            <table>
+                <caption><h3>Cast & Crew</h3></caption>
+                <tr>
+                    <th>Actor</th>
+                    <th>Character</th>
+                    <th>Picture</th>
+                    <th>IMDB Page</th>
+                </tr>
+                <tr>
+                    <td>Charlize Theron</td>
+                    <td>Lorraine Broughton</td>
+                    <td><img src="/src/assets/shrines/atomic-blonde/headshots/theron.jpg" alt="Charlize Theron" class="ab-pfp"></td>
+                    <td><a href="https://www.imdb.com/name/nm0000234/"><img src="/src/assets/shrines/atomic-blonde/imdb.svg" alt="IMDB logo" class="ab-imdb"></a></td>
+                </tr>
+                <tr>
+                    <td>James McAvoy</td>
+                    <td>David Percival</td>
+                    <td><img src="/src/assets/shrines/atomic-blonde/headshots/mcavoy.jpg" alt="James McAvoy" class="ab-pfp"></td>
+                    <td><a href="https://www.imdb.com/name/nm0564215/"><img src="/src/assets/shrines/atomic-blonde/imdb.svg" alt="IMDB logo" class="ab-imdb"></a></td>
+                </tr>
+                <tr>
+                    <td>John Goodman</td>
+                    <td>Emmett Kurzfeld</td>
+                    <td><img src="/src/assets/shrines/atomic-blonde/headshots/goodman.jpg" alt="John Goodman" class="ab-pfp"></td>
+                    <td><a href="https://www.imdb.com/name/nm0000422/"><img src="/src/assets/shrines/atomic-blonde/imdb.svg" alt="IMDB logo" class="ab-imdb"></a></td>
+                </tr>
+                <tr>
+                    <td>Eddie Marsan</td>
+                    <td>Spyglass</td>
+                    <td><img src="/src/assets/shrines/atomic-blonde/headshots/marsan.jpg" alt="Eddie Marsan" class="ab-pfp"></td>
+                    <td><a href="https://www.imdb.com/name/nm0550371/"><img src="/src/assets/shrines/atomic-blonde/imdb.svg" alt="IMDB logo" class="ab-imdb"></a></td>
+                </tr>
+                <tr>
+                    <td>Toby Jones</td>
+                    <td>Eric Gray</td>
+                    <td><img src="/src/assets/shrines/atomic-blonde/headshots/jones.jpg" alt="Toby Jones" class="ab-pfp"></td>
+                    <td><a href="https://www.imdb.com/name/nm0429363/"><img src="/src/assets/shrines/atomic-blonde/imdb.svg" alt="IMDB logo" class="ab-imdb"></a></td>
+                </tr>
+                <tr>
+                    <td>James Faulkner</td>
+                    <td>Chief 'C'</td>
+                    <td><img src="/src/assets/shrines/atomic-blonde/headshots/faulkner.jpg" alt="James Faulkner" class="ab-pfp"></td>
+                    <td><a href="https://www.imdb.com/name/nm0269077/"><img src="/src/assets/shrines/atomic-blonde/imdb.svg" alt="IMDB logo" class="ab-imdb"></a></td>
+                </tr>
+                <tr>
+                    <td>Roland Møller</td>
+                    <td>Aleksander Bremovych</td>
+                    <td><img src="/src/assets/shrines/atomic-blonde/headshots/møller.jpg" alt="Roland Møller" class="ab-pfp"></td>
+                    <td><a href="https://www.imdb.com/name/nm3435612/"><img src="/src/assets/shrines/atomic-blonde/imdb.svg" alt="IMDB logo" class="ab-imdb"></a></td>
+                </tr>
+                <tr>
+                    <td>Sofia Boutella</td>
+                    <td>Delphine Lasalle</td>
+                    <td><img src="/src/assets/shrines/atomic-blonde/headshots/boutella.jpg" alt="Sofia Boutella" class="ab-pfp"></td>
+                    <td><a href="https://www.imdb.com/name/nm1154749/"><img src="/src/assets/shrines/atomic-blonde/imdb.svg" alt="IMDB logo" class="ab-imdb"></a></td>
+                </tr>
+                <tr>
+                    <td>Bill Skarsgård</td>
+                    <td>Merkel</td>
+                    <td><img src="/src/assets/shrines/atomic-blonde/headshots/skarsgård.jpg" alt="Bill Skarsgård" class="ab-pfp"></td>
+                    <td><a href="https://www.imdb.com/name/nm0803889/"><img src="/src/assets/shrines/atomic-blonde/imdb.svg" alt="IMDB logo" class="ab-imdb"></a></td>
+                </tr>
+                <tr>
+                    <td>Sam Hargrave</td>
+                    <td>James Gascoine</td>
+                    <td><img src="/src/assets/shrines/atomic-blonde/headshots/hargrave.jpg" alt="Sam Hargrave" class="ab-pfp"></td>
+                    <td><a href="https://www.imdb.com/name/nm1092087/"><img src="/src/assets/shrines/atomic-blonde/imdb.svg" alt="IMDB logo" class="ab-imdb"></a></td>
+                </tr>
+                <tr>
+                    <td>Jóhannes Haukur Jóhannesson</td>
+                    <td>Yuri Bakhtin</td>
+                    <td><img src="/src/assets/shrines/atomic-blonde/headshots/jóhannesson.jpg" alt="Jóhannes Haukur Jóhannesson" class="ab-pfp"></td>
+                    <td><a href="https://www.imdb.com/name/nm1778512/"><img src="/src/assets/shrines/atomic-blonde/imdb.svg" alt="IMDB logo" class="ab-imdb"></a></td>
+                </tr>
+                <tr>
+                    <td>Til Schweiger</td>
+                    <td>Watchmaker</td>
+                    <td><img src="/src/assets/shrines/atomic-blonde/headshots/schweiger.jpg" alt="Til Schweiger" class="ab-pfp"></td>
+                    <td><a href="https://www.imdb.com/name/nm0001709/"><img src="/src/assets/shrines/atomic-blonde/imdb.svg" alt="IMDB logo" class="ab-imdb"></a></td>
+                </tr>
+            </table>
+            <table>
+                <caption><h3>Release Information</h3></caption>
+                <tr>
+                    <td>Release Date (US)</td>
+                    <td>July 28, 2017</td>
+                </tr>
+                <tr>
+                    <td>MPAA Rating</td>
+                    <td>R</td>
+                </tr>
+                <tr>
+                    <td>Director</td>
+                    <td><a href="https://www.imdb.com/name/nm0500610/">David Leitch</a></td>
+                </tr>
+                <tr>
+                    <td>Screenplay</td>
+                    <td>
+                        <ul class="ab-screenwriters">
+                            <li><a href="https://www.imdb.com/name/nm0426500/">Kurt Johnstad</a></li>
+                            <li><a href="https://www.imdb.com/name/nm2985952/">Anthony Johnston</a></li>
+                            <li><a href="https://www.imdb.com/name/nm8697009/">Sam Hart</a></li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Based on</td>
+                    <td><a href="https://antonyjohnston.com/work/coldestcity/"><i>The Coldest City</i> by Antony Johnston</a></td>
+                </tr>
+            </table>
+        </section>
         <footer>
             <h3>Made by Aristocratic Arietta</h3>
         </footer>

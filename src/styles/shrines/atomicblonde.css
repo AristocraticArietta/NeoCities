@@ -26,6 +26,66 @@
 ::selection {
     background-color: var(--ab-pink);
 }
+@keyframes neon-flicker-button {
+    0% {
+        border: 0.25em solid transparent;
+        filter: none;
+        color: transparent;
+        box-shadow: none;
+    }
+    50% {
+        border: var(--ab-border-white-small);
+        filter: var(--ab-filter-white-small);
+        color: var(--ab-white);
+        box-shadow: inset 0 0 0.25em var(--ab-white);
+    }
+    100% {
+        border: 0.25em solid transparent;
+        filter: none;
+        color: transparent;
+        box-shadow: none;
+    }
+}
+@keyframes neon-flicker-small {
+    0% {
+        border: 0.25em solid transparent;
+        filter: none;
+        -webkit-text-stroke: 5px transparent;
+        color: transparent;
+    }
+    50% {
+        border: var(--ab-border-white-small);
+        filter: var(--ab-filter-white-small);
+        -webkit-text-stroke: none;
+        color: var(--ab-white);
+    }
+    100% {
+        border: 0.25em solid transparent;
+        filter: none;
+        -webkit-text-stroke: 5px transparent;
+        color: transparent;
+    }
+}
+@keyframes neon-flicker {
+    0% {
+        border: 0.25em solid transparent;
+        filter: none;
+        -webkit-text-stroke: 5px transparent;
+        color: transparent;
+    }
+    50% {
+        border: var(--ab-border-white-small);
+        filter: var(--ab-filter-white);
+        -webkit-text-stroke: none;
+        color: var(--ab-white);
+    }
+    100% {
+        border: 0.25em solid transparent;
+        filter: none;
+        -webkit-text-stroke: 5px transparent;
+        color: transparent;
+    }
+}
 .ab-wrapper {
     padding: 5em;
     background-color: var(--ab-black);
@@ -52,7 +112,21 @@
     box-sizing: border-box;
     width: 100%;
 }
-aside {
+.ab-updates {
+    margin: 0;
+    width: 100%;
+    padding: 1em;
+    border: var(--ab-border-white);
+    border-radius: var(--radius-glass);
+    filter: var(--ab-filter-white);
+    box-sizing: border-box;
+}
+.ab-metadata {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1em;
     margin: 0;
     width: 100%;
     padding: 1em;
@@ -95,15 +169,61 @@ p {
 ul, li {
     color: var(--ab-white);
 }
-nav {
+caption {
+    padding-bottom: 1em;
+}
+table {
+    box-shadow: none;
+}
+th, td {
+    background-color: transparent;
+    text-align: center;
+}
+th {
+	border-bottom: var(--ab-border-white-small);
+}
+tr {
+	border-bottom: var(--ab-border-white-small);
+}
+td:nth-child(odd), th:nth-child(odd) {
+	border-right: var(--ab-border-white-small);
+}
+td:nth-child(even), th:nth-child(even) {
+	border-right: var(--ab-border-white-small);
+}
+tr:last-child, td:last-child, th:last-child {
+	border-bottom: none;
+    border-right: none;
+}
+th:first-child {
+	border-bottom: var(--ab-border-white-small);
+	border-right: var(--ab-border-white-small);
+}
+th:last-child {
+	border-bottom: var(--ab-border-white-small);
+	border-left: var(--ab-border-white-small);
+}
+tr:last-child td:first-child {
+	border-top: var(--ab-border-white-small);
+	border-right: var(--ab-border-white-small);
+}
+tr:last-child td:last-child {
+	border-top: var(--ab-border-white-small);
+	border-left: var(--ab-border-white-small);
+	
+}
+td p {
+    text-align: center;
+}
+.ab-nav {
     width: 100%;
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
     align-items: center;
-    gap: 1em;
+    gap: 2em;
 }
-nav a {
+.ab-nav-link {
     width: 25%;
     background-color: transparent;
     border-radius: 0.5em;
@@ -118,17 +238,18 @@ nav a {
     color: var(--ab-white);
     paint-order: stroke fill;
 }
-nav a:hover {
+.ab-nav-link:hover {
     border: var(--ab-border-cyan-small);
     filter: var(--ab-filter-cyan-small);
     color: var(--ab-white);
     -webkit-text-stroke: var(--text-stroke-cyan);
+    animation: neon-flicker-small 0.15s ease 1;
 }
 .logo {
     width: 30%;
     height: auto;
 }
-main a {
+a {
     color: var(--ab-pink);
 }
 figure img {
@@ -156,9 +277,9 @@ figcaption {
     background: var(--ab-black); 
     color: var(--ab-white); 
     border: var(--ab-border-white-small);
-    box-shadow: inset 0 0 0.5em var(--ab-white);
+    box-shadow: inset 0 0 0.25em var(--ab-white);
     border-radius: 0.5em;
-    filter: var(--ab-filter-white);
+    filter: var(--ab-filter-white-small);
     font-size: 2em;
     line-height: 0.5em;
     aspect-ratio: 1 / 1;
@@ -170,8 +291,9 @@ figcaption {
 .nav-btn:hover {
     color: var(--ab-cyan);
     border: var(--ab-border-cyan-small);
-    box-shadow: inset 0 0 0.5em var(--ab-cyan);
-    filter: var(--ab-filter-cyan);
+    box-shadow: inset 0 0 0.25em var(--ab-cyan);
+    filter: var(--ab-filter-cyan-small);
+    animation: neon-flicker-button 0.15s ease 1;
 }
 .prev { left: 10px; } .next { right: 10px; }
 .carousel-dots { display: flex; justify-content: center; gap: 0.5rem; margin-top: 1rem; }
@@ -186,7 +308,22 @@ figcaption {
     transition: all 0.2s ease;
 }
 .dot.active { border: var(--ab-border-cyan-small); }
-
+.ab-pfp {
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    object-position: top;
+    width: 100px;
+}
+.ab-imdb {
+    aspect-ratio: 2 / 1;
+    object-fit: contain;
+    object-position: center;
+    width: 100px;
+}
+.ab-screenwriters {
+    list-style: none;
+    padding: 0;
+}
 @media (min-width: 1000px) {
     .ab-wrapper {
         flex-direction: row;
@@ -200,19 +337,24 @@ figcaption {
         max-width: 75%;
         filter: var(--ab-filter-white-large);
     }
-    aside {
+    .ab-updates {
         max-width: 20%;
         filter: var(--ab-filter-white-large);
+    }
+    .ab-metadata {
+        flex-direction: row;
+        align-items: start;
     }
     header {
         filter: var(--ab-filter-white-large);
     }
-    nav a {
+    .ab-nav-link {
         gap: 2em;
         filter: var(--ab-filter-white);
     }
-    nav a:hover {
+    .ab-nav-link:hover {
         filter: var(--ab-filter-cyan);
+        animation: neon-flicker 0.15s ease 1;
     }
     footer {
         filter: var(--ab-filter-white-large);

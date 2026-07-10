@@ -1,6 +1,6 @@
 <div class="shrines-nav-wrapper" x-data="{ toggleNav : false }">
     <button @click="toggleNav = !toggleNav" :aria-expanded="toggleNav" class="shrines-nav-button">Navigation</button>
-    <nav class="shrines-nav" x-show="toggleNav">
+    <nav class="shrines-nav" x-show="toggleNav" x-transition>
         <a href="/" class="shrines-nav-link">Home</a>
         <a href="/fun-stuff/" class="shrines-nav-link">Fun Stuff</a>
         <a href="/fun-stuff/shrines" class="shrines-nav-link">Shrines</a>
@@ -14,7 +14,7 @@
         z-index: 2;
         display: flex;
         flex-direction: column;
-        align-items: end;
+        align-items: start;
         justify-content: center;
         gap: var(--gap-regular);
     }
@@ -23,7 +23,7 @@
         border-radius: var(--radius-glass);
         background-color: var(--bg-glass);
         transition: transform 0.2s ease;
-        font: inherit;
+        font-family: inherit;
         font-weight: 600;
         font-size: 1em;
         padding: 0.5em;
@@ -35,22 +35,25 @@
     .shrines-nav {
         border: var(--border-glass);
         border-radius: var(--radius-glass);
-        background-color: var(--bg-glass);
+        background-color: var(--bg-primary);
         display: flex;
         flex-direction: row;
-        align-items: center;
-        justify-content: end;
+        align-items: stretch;
+        justify-content: space-between;
+        z-index: 2;
     }
     .shrines-nav-link {
         transition: transform 0.2s ease;
-        font: inherit;
+        font-family: inherit;
         font-weight: 600;
         font-size: 1em;
         text-decoration: none;
 		position: relative;
         overflow: hidden;
-        color: inherit;
+        color: var(--text-primary);
         padding: 0.5em;
+        border: none;
+        z-index: 3;
     }
     .shrines-nav-link:before {
 		content: "";

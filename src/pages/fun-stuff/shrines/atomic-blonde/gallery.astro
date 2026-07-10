@@ -11,13 +11,13 @@ const abImages = Object.values(abFiles).map(img => img.default.src);
 <Shrines title="Atomic Blonde | Gallery">
     <div class="ab-wrapper">
         <header>
-            <img src="/shrines/atomic-blonde/logo.webp" alt="" class="logo">
+            <img src="/src/assets/shrines/atomic-blonde/logo.webp" alt="" class="logo">
         </header>
-        <nav>
-            <a href="/fun-stuff/shrines/atomic-blonde/">Home</a>
-            <a href="/fun-stuff/shrines/atomic-blonde/gallery">Gallery</a>
-            <a href="/fun-stuff/shrines/atomic-blonde/soundtrack">Soundtrack</a>
-            <a href="/fun-stuff/shrines/atomic-blonde/videos">Videos</a>
+        <nav class="ab-nav">
+            <a href="/fun-stuff/shrines/atomic-blonde/" class="ab-nav-link">Home</a>
+            <a href="/fun-stuff/shrines/atomic-blonde/gallery" class="ab-nav-link">Gallery</a>
+            <a href="/fun-stuff/shrines/atomic-blonde/soundtrack" class="ab-nav-link">Soundtrack</a>
+            <a href="/fun-stuff/shrines/atomic-blonde/videos" class="ab-nav-link">Videos</a>
         </nav>
         <main class="ab-main">
             <h3>Gallery</h3>
@@ -29,13 +29,6 @@ const abImages = Object.values(abFiles).map(img => img.default.src);
     </div>
 </Shrines>
 <style>
-    .photo-container {
-        overflow-x: hidden;
-        width: 100%;
-        border: solid 0.2em var(--ab-white);
-        border-radius: 1em;
-        filter: drop-shadow(0 0 0.25em var(--ab-white));
-    }
     .ab-main {
         width: 100%;
     }
