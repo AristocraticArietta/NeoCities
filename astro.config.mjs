@@ -105,6 +105,38 @@ export default defineConfig({
                 ],
             },
         },
+        {
+            provider: fontProviders.local(),
+            name: 'Monsieur La Doulaise',
+            cssVariable: '--font-monsieurladoulaise',
+            fallbacks: ['cursive'],
+            options: {
+                variants: [
+                    {
+                        src: ['./src/assets/fonts/MonsieurLaDoulaise-Regular.ttf'],
+                        weight: 400,
+                        style: 'normal',
+                        display: 'swap',
+                    },
+                ],
+            },
+        },
+        {
+            provider: fontProviders.local(),
+            name: 'Petit Formal Script',
+            cssVariable: '--font-petitformalscript',
+            fallbacks: ['cursive'],
+            options: {
+                variants: [
+                    {
+                        src: ['./src/assets/fonts/PetitFormalScript-Regular.ttf'],
+                        weight: 400,
+                        style: 'normal',
+                        display: 'swap',
+                    },
+                ],
+            },
+        },
     ],
     output: 'static'
 });

@@ -7,7 +7,7 @@ import ab_logo from '@assets/shrines/atomic-blonde/logo.webp'
 
 import type { ImageMetadata } from "astro";
 
-const abFiles = import.meta.glob<{ default: ImageMetadata }>('/src/assets/shrines/atomic-blonde/carousel-images/*.{jpeg,jpg,png,webp}', { eager: true });
+const abFiles = import.meta.glob<{ default: ImageMetadata }>('/public/shrines/atomic-blonde/carousel-images/*.{jpeg,jpg,png,webp}', { eager: true });
 const abImages = Object.values(abFiles).map(img => img.default.src);
 ---
 <Shrines title="Atomic Blonde | Gallery">
