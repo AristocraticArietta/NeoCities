@@ -1,0 +1,36 @@
+---
+import "@styles/shrines/atomicblonde.css"
+---
+<nav class="ab-nav" x-data=`{ path: window.location.pathname, navOpen: false }`>
+    <button class="ab-nav-button" @click="navOpen = ! navOpen" aria-label="Toggle navigation">
+        <span class="ab-nav-hamburger ab-span1" :class=`{ 'ab-mobile-active': navOpen }`></span>
+        <span class="ab-nav-hamburger ab-span2" :class=`{ 'ab-mobile-active': navOpen }`></span>
+        <span class="ab-nav-hamburger ab-span3" :class=`{ 'ab-mobile-active': navOpen }`></span>
+    </button>
+    <div class="ab-nav-link-container" :class=`{ 'ab-mobile-active': navOpen }`>
+        <a 
+            href="/fun-stuff/shrines/atomic-blonde" 
+            class="ab-nav-link"
+            :class="{ 'ab-nav-link-selected': path === '/fun-stuff/shrines/atomic-blonde/' || path === '/fun-stuff/shrines/atomic-blonde'}"
+            @click="navOpen = false"
+        >Home</a>
+        <a 
+            href="/fun-stuff/shrines/atomic-blonde/gallery" 
+            class="ab-nav-link"
+            :class="{ 'ab-nav-link-selected': path === '/fun-stuff/shrines/atomic-blonde/gallery/' || path === '/fun-stuff/shrines/atomic-blonde/gallery'}"
+            @click="navOpen = false"
+        >Gallery</a>
+        <a 
+            href="/fun-stuff/shrines/atomic-blonde/soundtrack" 
+            class="ab-nav-link"
+            :class="{ 'ab-nav-link-selected': path === '/fun-stuff/shrines/atomic-blonde/soundtrack/' || path === '/fun-stuff/shrines/atomic-blonde/soundtrack'}"
+            @click="navOpen = false"
+        >Soundtrack</a>
+        <a 
+            href="/fun-stuff/shrines/atomic-blonde/videos" 
+            class="ab-nav-link"
+            :class="{ 'ab-nav-link-selected': path === '/fun-stuff/shrines/atomic-blonde/videos/' || path === '/fun-stuff/shrines/atomic-blonde/videos'}"
+            @click="navOpen = false"
+        >Videos</a>
+    </div>
+</nav>

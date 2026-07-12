@@ -1,9 +1,11 @@
 ---
 import { Image } from 'astro:assets';
+import Header from '@components/shrines/ab/ab-header.astro'
+import Nav from '@components/shrines/ab/ab-nav.astro'
+import Footer from '@components/shrines/ab/ab-footer.astro'
 import Shrines from "@layouts/Shrines.astro";
 import Carousel from "@components/Carousel.astro";
 import '@styles/shrines/atomicblonde.css'
-import ab_logo from '@assets/shrines/atomic-blonde/logo.webp'
 
 import type { ImageMetadata } from "astro";
 
@@ -12,22 +14,13 @@ const abImages = Object.values(abFiles).map(img => img.default.src);
 ---
 <Shrines title="Atomic Blonde | Gallery">
     <div class="ab-wrapper">
-        <header class="ab-header">
-            <Image src={ab_logo} alt="Atomic Blonde title logo" class="ab-logo" />
-        </header>
-        <nav class="ab-nav">
-            <a href="/fun-stuff/shrines/atomic-blonde/" class="ab-nav-link">Home</a>
-            <a href="/fun-stuff/shrines/atomic-blonde/gallery" class="ab-nav-link">Gallery</a>
-            <a href="/fun-stuff/shrines/atomic-blonde/soundtrack" class="ab-nav-link">Soundtrack</a>
-            <a href="/fun-stuff/shrines/atomic-blonde/videos" class="ab-nav-link">Videos</a>
-        </nav>
+        <Header />
+        <Nav />
         <main class="ab-main">
             <h3 class="ab-h3">Gallery</h3>
             <Carousel images={abImages}/>
         </main>
-        <footer class="ab-footer">
-            <h3 class="ab-h3">Made by Aristocratic Arietta</h3>
-        </footer>
+        <Footer />
     </div>
 </Shrines>
 <style>

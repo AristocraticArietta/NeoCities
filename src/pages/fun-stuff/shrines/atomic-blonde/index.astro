@@ -1,8 +1,10 @@
 ---
 import { Image } from 'astro:assets';
+import Header from '@components/shrines/ab/ab-header.astro'
+import Nav from '@components/shrines/ab/ab-nav.astro'
+import Footer from '@components/shrines/ab/ab-footer.astro'
 import Shrines from "@layouts/Shrines.astro";
 import '@styles/shrines/atomicblonde.css'
-import ab_logo from '@assets/shrines/atomic-blonde/logo.webp'
 import atomic046 from '@assets/shrines/atomic-blonde/atomic046.jpg'
 import imdblogo from '@assets/shrines/atomic-blonde/imdb.svg'
 import theron from '@assets/shrines/atomic-blonde/headshots/theron.jpg'
@@ -20,15 +22,8 @@ import schweiger from '@assets/shrines/atomic-blonde/headshots/schweiger.jpg'
 ---
 <Shrines title="Atomic Blonde | Home">
     <div class="ab-wrapper">
-        <header class="ab-header">
-            <Image src={ab_logo} alt="Atomic Blonde title logo" class="ab-logo" />
-        </header>
-        <nav class="ab-nav">
-            <a href="/fun-stuff/shrines/atomic-blonde/" class="ab-nav-link">Home</a>
-            <a href="/fun-stuff/shrines/atomic-blonde/gallery" class="ab-nav-link">Gallery</a>
-            <a href="/fun-stuff/shrines/atomic-blonde/soundtrack" class="ab-nav-link">Soundtrack</a>
-            <a href="/fun-stuff/shrines/atomic-blonde/videos" class="ab-nav-link">Videos</a>
-        </nav>
+        <Header />
+        <Nav />
         <main class="ab-main">
             <h3 class="ab-h3">All About Atomic Blonde</h3>
             <figure class="ab-figure">
@@ -40,6 +35,7 @@ import schweiger from '@assets/shrines/atomic-blonde/headshots/schweiger.jpg'
         <aside class="ab-updates">
             <h3 class="ab-h3">Updates</h3>
             <ul class="ab-ul">
+                <li class="ab-li">July 12<sup>th</sup>, 2026: Made site mobile-friendly and overhauled the navigation.</li>
                 <li class="ab-li">July 10<sup>th</sup>, 2026: Added cast & crew as well as fixed some CSS</li>
                 <li class="ab-li">July 9<sup>th</sup>, 2026: Added gallery, soundtrack, and videos. Need more pics in gallery.</li>
                 <li class="ab-li">July 8<sup>th</sup>, 2026: Created basic theme for shrine</li>
@@ -47,7 +43,7 @@ import schweiger from '@assets/shrines/atomic-blonde/headshots/schweiger.jpg'
         </aside>
         <section class="ab-metadata">
             <table class="ab-table">
-                <caption class="ab-caption"><h3 class="ab-h3">Cast & Crew</h3></caption>
+                <caption class="ab-caption"><h3 class="ab-h3">Cast</h3></caption>
                 <tr class="ab-tr">
                     <th class="ab-th">Actor</th>
                     <th class="ab-th">Character</th>
@@ -157,8 +153,6 @@ import schweiger from '@assets/shrines/atomic-blonde/headshots/schweiger.jpg'
                 </tr>
             </table>
         </section>
-        <footer class="ab-footer">
-            <h3 class="ab-h3">Made by Aristocratic Arietta</h3>
-        </footer>
+        <Footer />
     </div>
 </Shrines>

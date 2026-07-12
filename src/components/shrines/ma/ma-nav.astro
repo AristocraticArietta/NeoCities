@@ -1,0 +1,36 @@
+---
+import "@styles/shrines/marie-antoinette.css";
+---
+<nav class="ma-nav" x-data=`{ path: window.location.pathname, navOpen: false }`>
+    <button class="ma-nav-button" @click="navOpen = ! navOpen" aria-label="Toggle navigation">
+        <span class="ma-nav-hamburger ma-span1" :class=`{ 'ma-mobile-active': navOpen }`></span>
+        <span class="ma-nav-hamburger ma-span2" :class=`{ 'ma-mobile-active': navOpen }`></span>
+        <span class="ma-nav-hamburger ma-span3" :class=`{ 'ma-mobile-active': navOpen }`></span>
+    </button>
+    <div class="ma-nav-link-container" :class=`{ 'ma-mobile-active': navOpen }`>
+        <a 
+            href="/fun-stuff/shrines/marie-antoinette" 
+            class="ma-nav-link"
+            :class="{ 'ma-nav-link-selected': path === '/fun-stuff/shrines/marie-antoinette/' || path === '/fun-stuff/shrines/marie-antoinette'}"
+            @click="navOpen = false"
+        >Home</a>
+        <a
+            href="/fun-stuff/shrines/marie-antoinette/her-life" 
+            class="ma-nav-link"
+            :class="{ 'ma-nav-link-selected': path === '/fun-stuff/shrines/marie-antoinette/her-life/' || path === '/fun-stuff/shrines/marie-antoinette/her-life'}"
+            @click="navOpen = false"
+        >Her Life</a>
+        <a 
+            href="/fun-stuff/shrines/marie-antoinette/portraits" 
+            class="ma-nav-link"
+            :class="{ 'ma-nav-link-selected': path === '/fun-stuff/shrines/marie-antoinette/portraits/' || path === '/fun-stuff/shrines/marie-antoinette/portraits'}"
+            @click="navOpen = false"
+        >Portraits</a>
+        <a 
+            href="/fun-stuff/shrines/marie-antoinette/fashion" 
+            class="ma-nav-link"
+            :class="{ 'ma-nav-link-selected': path === '/fun-stuff/shrines/marie-antoinette/fashion/' || path === '/fun-stuff/shrines/marie-antoinette/fashion'}"
+            @click="navOpen = false"
+        >Fashion</a>
+    </div>
+</nav>

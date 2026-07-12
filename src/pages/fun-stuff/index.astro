@@ -3,13 +3,11 @@ import BaseHead from '@components/BaseHead.astro';
 import Footer from '@components/Footer.astro';
 import Navigation from '@components/Nav.astro';
 import { SITE_TITLE, SITE_DESCRIPTION } from '@src/consts';
-
-const { title } = Astro.props;
 ---
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+        <BaseHead title=`Fun Stuff | ${SITE_TITLE}` description={SITE_DESCRIPTION} />
     </head>
     <body>
         <Navigation />
@@ -34,7 +32,7 @@ const { title } = Astro.props;
                             @click="$el.select(); navigator.clipboard.writeText($el.value);"
                         >&lt;a href="https://aristocratic-arietta.neocities.org/" target="_self" &gt;&lt;img src="https://aristocratic-arietta.neocities.org/buttons/aristocraticarietta.png" alt=""&gt;&lt;/a&gt;</textarea>
                     </div>
-                    <p>I also want to get into webrings and fanlistings! Check back occassionally for new content!</p>
+                    <p>I have started to make some cool shrines to my favorite things! Check back occassionally for new content!</p>
                 </div>
                 <div class="sidebar-min">
                     <h3>Index</h3>
