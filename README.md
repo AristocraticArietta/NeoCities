@@ -1,63 +1,27 @@
-# Astro Starter Kit: Blog
+# Aristocratic Arietta's NeoCities Web Site
 
-```sh
-npm create astro@latest -- --template blog
-```
-
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+https://aristocratic-arietta.neocities.org/
 
 Features:
 
-- ✅ Minimal styling (make it your own!)
-- ✅ 100/100 Lighthouse performance
-- ✅ SEO-friendly with canonical URLs and Open Graph data
-- ✅ Sitemap support
-- ✅ RSS Feed support
-- ✅ Markdown & MDX support
+- Blog using Astro Content Collections
+- Search function to find posts
+- RSS Feed
+- Lots of fun, indie web stuff
+- Shrines for different interests
+- Guestbook page
+- And more!
 
-## 🚀 Project Structure
+---
 
-Inside of your Astro project, you'll see the following folders and files:
+I'm looking forward to learning a lot while making this site. I'd like to get better at web development, design, and making fun, interactive web experiences. Maybe I'll even make some friends along the way! 
 
-```text
-├── public/
-├── src/
-│   ├── assets/
-│   ├── components/
-│   ├── content/
-│   ├── layouts/
-│   └── pages/
-├── astro.config.mjs
-├── README.md
-├── package.json
-└── tsconfig.json
-```
+I have made a NeoCities website before, but it didn't feel very "me". I want this website to be a place where I can share my thoughts, ideas, and creativity with the world. I'm excited to learn more about web development and design. Right now, the website isn't very Y2K looking, but I kind of like the sleek modern look. Maybe I'll change my mind later.
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+I'm mostly interested in learning how to use the Alpine.js framework to create interactive web experiences. I have a bit of experience using Astro from my previous website, which has served me well when making this website. It's been a fun learning experience overall!
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
+I made this code public on my GitHub to share with other indie web developers who may be interested in using it as inspiration or a reference for their own websites. I highly reccommend using Astro for building a modular website like this one. If you have any questions about this website or my coding process, [drop me an email!](mailto:aristocraticarietta@proton.me)
 
-The `src/content/` directory contains "collections" of related Markdown and MDX documents. Use `getCollection()` to retrieve posts from `src/content/blog/`, and type-check your frontmatter using an optional schema. See [Astro's Content Collections docs](https://docs.astro.build/en/guides/content-collections/) to learn more.
+Thanks for stopping by, and I hope you enjoy the website!
 
-Any static assets, like images, can be placed in the `public/` directory.
-
-## 🧞 Commands
-
-All commands are run from the root of the project, from a terminal:
-
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
-
-## 👀 Want to learn more?
-
-Check out [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
-
-## Credit
-
-This theme is based off of the lovely [Bear Blog](https://github.com/HermanMartinus/bearblog/).
+- Aristocratic Arietta
