@@ -5,6 +5,18 @@ import Nav from "@components/shrines/ma/ma-nav.astro"
 import Footer from "@components/shrines/ma/ma-footer.astro"
 import Shrines from "@layouts/Shrines.astro";
 import "@styles/shrines/marie-antoinette.css";
+import MA_Lebrun from "@assets/shrines/marie-antoinette/500px-MA-Lebrun.jpeg"
+import MA_with_rose from "@assets/shrines/marie-antoinette/500px-Louise_Elisabeth_Vigée-Lebrun_-_Marie-Antoinette_dit_«_à_la_Rose_»_-_Google_Art_Project.jpeg"
+import MA_habit from "@assets/shrines/marie-antoinette/500px-Marie_Antoinette_in_a_red_hunting_habit-1772.jpeg"
+import MA_children from "@assets/shrines/marie-antoinette/500px-Louise_Elisabeth_Vigée-Lebrun_-_Marie-Antoinette_de_Lorraine-Habsbourg,_reine_de_France_et_ses_enfants_-_Google_Art_Project.jpeg"
+import MA_headshot from "@assets/shrines/marie-antoinette/500px-Marie-Antoinette,_1775_-_Musée_Antoine_Lécuyer.jpeg"
+import MA_grand_habit from "@assets/shrines/marie-antoinette/500px-Marie-Antoinette;_koningin_der_Fransen.jpeg"
+import MA_adult from "@assets/shrines/marie-antoinette/500px-Marie_Antoinette_Adult.jpeg"
+import MA_adult2 from "@assets/shrines/marie-antoinette/500px-Marie-Antoinette_par_Elisabeth_Vigée-Lebrun_-_1783.jpeg"
+import MA_adult3 from "@assets/shrines/marie-antoinette/500px-Élisabeth_Vigée_Le_Brun_-_Marie-Antoinette_au_livre_-_1785.jpeg"
+import MA_adult4 from "@assets/shrines/marie-antoinette/500px-Adolf_Ulrik_Wertmüller_-_Queen_Marie_Antoinette_of_France_and_two_of_her_Children_Walking_in_The_Park_of_Trianon_-_Google_Art_Project.jpeg"
+import MA_adult5 from "@assets/shrines/marie-antoinette/500px-Marie_Antoinette_Adult9.jpeg"
+import MA_adult6 from "@assets/shrines/marie-antoinette/500px-MarieAntoinette1788.jpeg"
 ---
 
 <Shrines title="Marie Antoinette | Portraits">
@@ -14,10 +26,56 @@ import "@styles/shrines/marie-antoinette.css";
         <main class="ma-main">
             <h3 class="ma-h3">Portraits of Marie Antoinette</h3>
             <hr class="ma-hr">
-            <p class="ma-p">Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur exercitationem nihil sed? Aliquam iure porro tempore unde amet molestiae praesentium nemo sint nobis deleniti reiciendis deserunt, nisi omnis voluptate autem?</p>
-            <p class="ma-p">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Necessitatibus saepe iusto quaerat facere nihil, magni in ducimus doloremque optio harum dignissimos eaque placeat fuga culpa modi voluptatibus ut odit nostrum.</p>
-            <p class="ma-p">Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus, reprehenderit molestias, pariatur debitis earum, maiores alias harum soluta sapiente fugiat veritatis recusandae id aliquid sint repellat facilis molestiae quisquam dolore!</p>
-            <p class="ma-p">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quia sequi necessitatibus, dolorum voluptatibus labore officia odit commodi optio natus ducimus placeat maxime debitis similique iste veritatis delectus, voluptatum perspiciatis rerum?</p>
+            <div class="ma-paintings">
+                <figure class="ma-figure">
+                    <Image src={MA_with_rose} alt="Portrait of Marie Antoinette standing in a blue robe a la francasie, holding a bouquet of roses in her left hand. Her hair is teased around her face and falls in soft curls around her shoulders. She is wearing a pearl choker necklace and matching bracelets and her expression is serene as she looks at the viewer. She is wearing a scarf atop her head with feathers. The background is dark, but a forest scene can be seen. Her dress is trimmed with lace around the neckline, sleeves, and outer skirt, with a white and blue striped ribbon bow sits in the center of her neckline. " class="ma-image"/>
+                    <figcaption class="ma-figcaption">Marie Antoinette with Rose, by Élisabeth Vigée Le Brun, 1783</figcaption>
+                </figure>
+                <figure class="ma-figure">
+                    <Image  src={MA_Lebrun} alt="Portrait of Marie Antoinette standing in a white chemise cotton dress. She has a yellow ribbon belt that is tied in the back. She has puffy marie sleeves and a gathered trim around the neckline and sleeves. She is leaning on a table, holding a bouquet of roses in her left hand, clearly working on a flower arrangement. She is looking at the viewer, wearing a large straw hat trimmed with a blue ribbon and blue feathers, and her hair is grey from being powdered and falls in loose curls around her face." class="ma-image"/>
+                    <figcaption class="ma-figcaption">Marie Antoinette in a Chemise Dress, by Élisabeth Vigée Le Brun, 1783</figcaption>
+                </figure>
+                <figure class="ma-figure">
+                    <Image src={MA_habit} alt="The image is a portrait of Marie Antoinette from 1772, depicting her in a striking red hunting habit. She is seated at a slight angle, with her body turned to the right but her face directed towards the viewer. Marie Antoinette has neatly styled, light-colored hair, adorned with a black tricorn hat that features a decorative element on the sides. Her outfit is detailed with gold embroidery and includes a white lace cravat at the neck. The background consists of a muted landscape with soft blues and greens, suggesting a natural setting. The overall tone of the painting is soft and delicate, highlighting both her regal bearing and informal attire." class="ma-image"/>
+                    <figcaption class="ma-figcaption">Marie Antoinette in a red hunting habit, by Joseph Kranzinger, 1772</figcaption>
+                </figure>
+                <figure class="ma-figure">
+                    <Image src={MA_children} alt="The painting features a portrait of Marie Antoinette seated prominently, surrounded by her three children: Marie-Thérèse on the left, holding her mother's arm, Louis-Charles on her lap, and Louis-Joseph standing beside her. Marie Antoinette is dressed in an elaborate red gown adorned with intricate details and a white underdress. She wears a large feathered headdress, and her expression conveys regal dignity. The children are dressed in light-colored clothing with their hairstyles complementing the fashion of the time. The background features lavish drapery and an empty cradle, hinting at the recent loss of Marie-Sophie-Béatrice, adding a somber element to the otherwise family-focused composition. The room is elegantly decorated, with classical architectural features visible in the background." class="ma-image"/>
+                    <figcaption class="ma-figcaption">Marie Antoinette with her children, by Élisabeth Vigée Le Brun, 1787</figcaption>
+                </figure>
+                <figure class="ma-figure">
+                    <Image src={MA_headshot} alt="The portrait depicts Marie Antoinette, dating from around 1775. She is shown with a calm and serene expression, highlighting her youthful appearance. Her long, light-colored hair is elaborately styled, adorned with feathers and a decorative brooch. The soft pastel colors of her gown complement her blue jewelry, which matches her bright blue eyes. The background features a muted gradient of colors that accentuates her figure, drawing attention to her elegant attire and facial features. The overall composition conveys a sense of grace and refinement." class="ma-image"/>
+                    <figcaption class="ma-figcaption">Portrait of Marie Antoinette, by Unknown, after 1775</figcaption>
+                </figure>
+                <figure class="ma-figure">
+                    <Image src={MA_grand_habit} alt="The painting is a full-length portrait of Marie Antoinette in a grand blue silk robe de cour with layers of lace trim adorning the skirt and bodice. She is wearing an blue cape with gold fleur-de-lis print and ermine trim. She stands in a formal pose, right hand resting on a globe. The dress features a wide, full skirt with a structured silhouette. Marie Antoinette has powdered hair, styled high and adorned with a blue hat, jewels, and feathers. The background is an interior scene, with heavy red drapery and a marble statue on a pedestal visible. The lighting emphasizes the luxurious textures of her gown, emphasizing her royal status and the grandeur of the French court." class="ma-image"/>
+                    <figcaption class="ma-figcaption">Portrait of Marie Antoinette, by Jean-Baptiste André Gautier-Dagoty, 1775</figcaption>
+                </figure>
+                <figure class="ma-figure">
+                    <Image src={MA_adult} alt="The image portrays a portrait of Marie Antoinette, who is depicted in full court dress from 1778. She stands elegantly at an angle, with her body slightly to the left, allowing for a view of her elaborate gown. The gown is a rich cream color adorned with intricate gold detailing, featuring voluminous layers and drapery that create a luxurious effect. Her left hand delicately holds a pink rose, adding a touch of softness to the composition. Marie Antoinette's hairstyle is elaborate, featuring large, styled curls and a decorative feather ornament. The background includes classical architectural elements, such as a column and draped fabrics in muted tones that complement her attire. To the right, there is a table covered with a red cloth, which enhances the visual richness of the scene. On the table are items that suggest royalty, including a crown and a bouquet of flowers. The overall atmosphere conveys a sense of opulence and refinement, characteristic of the French court during her reign." class="ma-image"/>
+                    <figcaption class="ma-figcaption">Marie Antoinette in court dress, by Élisabeth Louise Vigée Le Brun, 1778</figcaption>
+                </figure>
+                <figure class="ma-figure">
+                    <Image src={MA_adult2} alt="The image depicts a portrait of Marie Antoinette from 1783. She stands elegantly in a lavishly decorated interior. Marie Antoinette is dressed in an elaborate gown of white and silver fabric, adorned with bows and delicate embroidery. Her hair is styled high and powdered, complementing her regal appearance. Behind her, a luxurious red drapery flows, contrasted by green fabric to her left. The background features classical architecture with columns that add depth and grandeur to the scene. A bouquet of flowers rests on a table in front of her, enhancing the elegance of the composition. The color palette combines soft pastels and rich hues, emphasizing her prominence in the image." class="ma-image"/>
+                    <figcaption class="ma-figcaption">Marie Antoinette in Court Dress, by Élisabeth Louise Vigée Le Brun, 1783</figcaption>
+                </figure>
+                <figure class="ma-figure">
+                    <Image src={MA_adult3} alt="The image is an 18th-century portrait of Marie Antoinette, created in 1785. It features her in profile, showcasing her elegant attire and hairstyle. She wears a rich red gown with intricate lace detail and a wide, ornamental collar. Her light-colored, elaborately styled hair is adorned with a white veil and decorative elements. Marie Antoinette's expression is serene, with a slight smile, as she holds a book in her left hand while gracefully resting her right arm on a green cushion. The background is a muted, dark tone that emphasizes her figure and attire." class="ma-image"/>
+                    <figcaption class="ma-figcaption">Portrait of Marie-Antoinette, Queen of France in crimson dress holding a book, by Élisabeth Louise Vigée Le Brun, 1785</figcaption>
+                </figure>
+                <figure class="ma-figure">
+                    <Image src={MA_adult4} alt="The image is a 1785 portrait of Marie Antoinette, the Queen of France, accompanied by her two children, Louis XVII and Marie-Thérèse-Charlotte. In the center, Marie Antoinette is portrayed wearing an elaborate gown, characterized by its intricate lace detailing and flowing silhouette. The gown is primarily a light cream color, adorned with soft pastel embellishments and trimmed with gold. Her hair is styled high, decorated with feathers, and she wears a decorative headpiece. Louis XVII, standing to her right, is dressed in a light blue outfit with frills and a small, floppy hat. He holds a small black hat in his right hand. To Marie Antoinette's left, Marie-Thérèse-Charlotte is depicted in a light blue dress with floral details, holding a bouquet of flowers. The background features a verdant landscape with trees, and a classical structure can be seen in the distance, contributing to the serene, pastoral ambiance of the scene." class="ma-image"/>
+                    <figcaption class="ma-figcaption">Queen Marie Antoinette of France and two of her Children Walking in The Park of Trianon, by Adolf Ulrik Wertmüller, 1785</figcaption>
+                </figure>
+                <figure class="ma-figure">
+                    <Image src={MA_adult5} alt="The portrait features Marie Antoinette, depicted in a regal stance. She is dressed in a striking red gown adorned with a delicate lacy fichu around her neckline. The gown's sleeves are full and softly draped, adding volume to her silhouette. Around her neck rests a large pearl necklace that draws attention to her collarbone. Marie Antoinette's hair is styled elegantly, with a prominent red hat embellished with feathers and a small veil cascading down. The background is a muted, warm color, focusing the viewer's attention on her graceful expression and attire." class="ma-image"/>
+                    <figcaption class="ma-figcaption">Marie Antoinette, by Élisabeth Louise Vigée Le Brun, 1786</figcaption>
+                </figure>
+                <figure class="ma-figure">
+                    <Image src={MA_adult6} alt="The image is a portrait of Marie Antoinette from 1788, seated gracefully in an ornate chair. She is dressed in an elegant teal gown with intricate lace detailing and a matching lace fichu at her neckline. Atop her head rests a hat adorned with feathers, adding height and sophistication to her appearance. The background features lavish drapery in rich green, suggesting a luxurious environment. To her right, a decorative table is set with a floral arrangement and a crown, emphasizing her royal status. The floor is covered with a patterned carpet, adding to the opulent setting. Marie Antoinette's complexion is fair, and she gazes serenely at the viewer, conveying an air of grace and nobility." class="ma-image"/>
+                    <figcaption class="ma-figcaption">Marie-Antoinette seated, in blue coat and white dress, holding a book in her hand, by Élisabeth Louise Vigée Le Brun, 1788</figcaption>
+                </figure>
+            </div>
         </main>
         <Footer />
     </div>

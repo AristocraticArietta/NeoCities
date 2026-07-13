@@ -1,0 +1,160 @@
+---
+// 1. Define the target V&A Object IDs
+import {objectIds} from '@src/data/ma-vam-object-ids.js';
+
+// 2. Fetch the data at build time
+const collectionData = await Promise.all(
+  objectIds.map(async (id) => {
+    try {
+      const response = await fetch(`https://api.vam.ac.uk/v2/museumobject/${id}`);
+      
+      if (!response.ok) {
+        console.error(`Failed to fetch ${id}: ${response.status}`);
+        return null;
+      }
+
+      const { record, meta } = await response.json();
+
+      const imageBaseUrl = meta?.images?._iiif_image;
+      const imageUrl = imageBaseUrl 
+        ? `${imageBaseUrl}/full/!800,800/0/default.jpg` 
+        : 'https://placehold.co/800x800?text=No+Image';
+
+      const title = record?.titles?.[0]?.title 
+        || record?.objectType 
+        || 'Unknown Object';
+
+      const yearMade = record?.productionDates?.[0]?.date?.text 
+        || 'Date Unknown';
+
+      const objectLink = meta?._links?.collection_page?.href
+      || 'Broken Link';
+      
+
+      return { id, title, yearMade, imageUrl, objectLink };
+      
+    } catch (error) {
+      console.error(`Error fetching object ${id}:`, error);
+      return null;
+    }
+  })
+);
+
+// 3. Clean up the array in case any API calls failed
+const cards = collectionData.filter(item => item !== null);
+---
+<!-- Flexbox Container -->
+<div class="ma-gallery-container">
+    {cards.map((card) => (
+    <a 
+        href={card.objectLink}
+        class="ma-card"
+        x-data="{ hovered: false }"
+        @mouseenter="hovered = true"
+        @mouseleave="hovered = false"
+        :class="hovered ? 'ma-is-hovered' : ''"
+    >
+        <div class="ma-card-image-wrapper">
+        <img 
+            src={card.imageUrl} 
+            alt={card.title} 
+            class="ma-card-image"
+            loading="lazy" 
+        />
+        </div>
+        <div class="ma-card-content">
+        <h2 class="ma-card-title">{card.title}</h2>
+        <p class="ma-card-year">{card.yearMade}</p>
+        </div>
+    </a>
+    ))}
+</div>
+<style>
+  /* Flexbox Container */
+  .ma-gallery-container {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 2em;
+  }
+
+  /* Card Styling */
+  .ma-card {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    background-color: var(--ma-beige);
+    color: var(--ma-darkpink);
+    border: var(--ma-border-white-medium);
+    overflow: hidden;
+    transition: all 0.3s ease;
+    box-sizing: border-box;
+    text-decoration: none;
+  }
+
+  /* Alpine.js Dynamic Hover Class */
+  .ma-card.ma-is-hovered {
+    transform: translateY(-0.5rem);
+    border: var(--ma-border-pink-medium);
+  }
+
+  /* Card Image */
+  .ma-card-image-wrapper {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    overflow: hidden;
+    flex-shrink: 0;
+  }
+
+  .ma-card-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+  }
+
+  /* Target the image when the parent card gets the Alpine hover class */
+  .ma-card.ma-is-hovered .ma-card-image {
+    transform: scale(1.1);
+  }
+
+  /* Card Content */
+  .ma-card-content {
+    height: 100%;
+    width: auto;
+    padding: 1em;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+  }
+
+  .ma-card-title {
+    font-size: 1.25em;
+    font-weight: 700;
+    text-transform: capitalize;
+  }
+
+  .ma-card-year {
+    color: var(--ma-darkgreen);
+    font-size: 0.875rem;
+    font-weight: 600;
+    letter-spacing: 0.025em;
+  }
+  @media (min-width: 1000px) {
+    .ma-gallery-container {
+        flex-direction: row;
+        align-items: stretch;
+    }
+    .ma-card {
+        border: var(--ma-border-white-large);
+        width: calc(25% - 1.5em);
+        overflow: visible;
+    }
+    .ma-card.ma-is-hovered {
+        border: var(--ma-border-pink-large);
+    }
+  }
+</style>

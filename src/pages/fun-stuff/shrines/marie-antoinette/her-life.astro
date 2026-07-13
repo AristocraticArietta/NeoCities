@@ -5,6 +5,8 @@ import Nav from "@components/shrines/ma/ma-nav.astro"
 import Footer from "@components/shrines/ma/ma-footer.astro"
 import Shrines from "@layouts/Shrines.astro";
 import "@styles/shrines/marie-antoinette.css";
+import MA_Lebrun from "@assets/shrines/marie-antoinette/500px-MA-Lebrun.jpeg"
+import MA_with_rose from "@assets/shrines/marie-antoinette/500px-Louise_Elisabeth_Vigée-Lebrun_-_Marie-Antoinette_dit_«_à_la_Rose_»_-_Google_Art_Project.jpeg"
 ---
 
 <Shrines title="Marie Antoinette | Her Life">
@@ -12,12 +14,37 @@ import "@styles/shrines/marie-antoinette.css";
         <Header />
         <Nav />
         <main class="ma-main">
+            <div class="ma-paintings">
+                <figure class="ma-figure">
+                    <Image src={MA_with_rose} alt="Portrait of Marie Antoinette standing in a blue robe a la francasie, holding a bouquet of roses in her left hand. Her hair is teased around her face and falls in soft curls around her shoulders. She is wearing a pearl choker necklace and matching bracelets and her expression is serene as she looks at the viewer. She is wearing a scarf atop her head with feathers. The background is dark, but a forest scene can be seen. Her dress is trimmed with lace around the neckline, sleeves, and outer skirt, with a white and blue striped ribbon bow sits in the center of her neckline. " class="ma-image"/>
+                    <figcaption class="ma-figcaption">Marie Antoinette with Rose, by Élisabeth Vigée Le Brun, 1783</figcaption>
+                </figure>
+                <figure class="ma-figure">
+                    <Image  src={MA_Lebrun} alt="Portrait of Marie Antoinette standing in a white chemise cotton dress. She has a yellow ribbon belt that is tied in the back. She has puffy marie sleeves and a gathered trim around the neckline and sleeves. She is leaning on a table, holding a bouquet of roses in her left hand, clearly working on a flower arrangement. She is looking at the viewer, wearing a large straw hat trimmed with a blue ribbon and blue feathers, and her hair is grey from being powdered and falls in loose curls around her face." class="ma-image"/>
+                    <figcaption class="ma-figcaption">Marie Antoinette in a Chemise Dress, by Élisabeth Vigée Le Brun, 1783</figcaption>
+                </figure>
+            </div>
             <h3 class="ma-h3">Marie Antoinette's Life</h3>
             <hr class="ma-hr">
-            <p class="ma-p">Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur exercitationem nihil sed? Aliquam iure porro tempore unde amet molestiae praesentium nemo sint nobis deleniti reiciendis deserunt, nisi omnis voluptate autem?</p>
-            <p class="ma-p">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Necessitatibus saepe iusto quaerat facere nihil, magni in ducimus doloremque optio harum dignissimos eaque placeat fuga culpa modi voluptatibus ut odit nostrum.</p>
-            <p class="ma-p">Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus, reprehenderit molestias, pariatur debitis earum, maiores alias harum soluta sapiente fugiat veritatis recusandae id aliquid sint repellat facilis molestiae quisquam dolore!</p>
-            <p class="ma-p">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quia sequi necessitatibus, dolorum voluptatibus labore officia odit commodi optio natus ducimus placeat maxime debitis similique iste veritatis delectus, voluptatum perspiciatis rerum?</p>
+            <p class="ma-p">Here are some great books/articles about her life that do her much more justice than I ever could. Everything is free to read unless otherwise noted.</p>
+            <ul class="ma-ul">
+                <li class="ma-li"><a href="https://en.wikipedia.org/wiki/Marie_Antoinette" class="ma-a">Marie Antoinette - Wikipedia</a></li>
+                <ul class="ma-ul"><li class="ma-li">A great starting point for learning about her life.</li></ul>
+                <li class="ma-li"><a href="https://simple.wikipedia.org/wiki/Marie_Antoinette" class="ma-a">Marie Antoinette - Simple English Wikipedia</a></li>
+                <ul class="ma-ul"><li class="ma-li">A great starting point for learning about her life in a more easily digestible way than the regular Wikipedia page.</li></ul>
+                <li class="ma-li"><a href="https://www.britannica.com/biography/Marie-Antoinette-queen-of-France" class="ma-a">Marie Antoinette - Britannica</a></li>
+                <ul class="ma-ul"><li class="ma-li">A short biography about her, includes links to further reading.</li></ul>
+                <li class="ma-li"><a href="https://www.history.com/articles/marie-antoinette-style-fashion-design-influence" class="ma-a">How Marie Antoinette Shaped Centuries of Fashion and Design - History.com</a></li>
+                <ul class="ma-ul"><li class="ma-li">An introduction to Marie Antoinette's style legacy.</li></ul>
+                <li class="ma-li"><a href="https://www.vam.ac.uk/exhibitions/marie-antoinette" class="ma-a">Marie Antoinette Style - V&A Exhibition</a></li>
+                <ul class="ma-ul"><li class="ma-li">Includes pictures and links to objects featured in the exhibit, many of which were owned by Marie Antoinette herself.</li></ul>
+                <li class="ma-li"><a href="https://fashionhistory.fitnyc.edu/1783-vigee-le-brun-antoinette-chemise/" class="ma-a"><i>Marie Antoinette in a Chemise Dress</i> by Élisabeth Louise Vigée Le Brun - FIT</a></li>
+                <ul class="ma-ul"><li class="ma-li">An in-depth look at Marie Antoinette's rebellious fashion choices through one of her most famous portraits.</li></ul>
+                <li class="ma-li"><a href="https://us.macmillan.com/books/9780312427344/queenoffashion/" class="ma-a"><i>Queen of Fashion: What Marie Antoinette Wore to the Revolution</i> by Caroline Weber </a></li>
+                <ul class="ma-ul"><li class="ma-li">A great book on how Marie Antoinette's fashion became her trademark and her downfall. Must purchase to read.</li></ul>
+                <li class="ma-li"><a href="https://archive.org/details/cu31924024290623/" class="ma-a"><i>Rose Bertin, the creator of fashion at the court of Marie-Antoinette</i> by Émile Langlade</a></li>
+                <ul class="ma-ul"><li class="ma-li">A 1913 book all about Marie Antoinette's favorite designer and the revolutionary designs she introduced to the world.</li></ul>
+            </ul>
         </main>
         <Footer />
     </div>
