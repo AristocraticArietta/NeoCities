@@ -50,6 +50,11 @@
     width: 100%;
     overflow: visible;
     box-sizing: border-box;
+    border-image-source: url(/shrines/marie-antoinette/border.png);
+    border-image-slice: 25%;
+    border-image-repeat: round;
+    border-image-width: 2em;
+    border-image-outset: 0;
 }
 .ma-header {
     width: 100%;
@@ -203,7 +208,8 @@
     font-family: var(--font-petitformalscript);
 }
 .ma-hr {
-    width: calc(100% - 1em);
+    width: 100%;
+    margin: 0;
     border-top: var(--ma-border-pink-medium);
     border-bottom: var(--ma-border-darkpink-medium);
 }
