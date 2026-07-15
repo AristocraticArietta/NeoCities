@@ -1,21 +1,50 @@
+---
+// src/components/RecentTracks.astro
+// Using PUBLIC_ prefix tells Astro it's safe to expose these to the browser.
+// If you'd rather not use env files at all now, you can replace these 
+// with raw strings like: const API_KEY = "your_key_here";
+const API_KEY = import.meta.env.PUBLIC_LASTFM_API_KEY; 
+const USERNAME = import.meta.env.PUBLIC_LASTFM_USERNAME;
+---
+
 <div 
   class="music-widget" 
-  x-data="{ 
+  x-data={`{
     tracks: [], 
     loading: true, 
     error: null,
+    apiKey: "${API_KEY}",
+    username: "${USERNAME}",
     async fetchTracks() {
       try {
-        const response = await fetch('/api/recent-tracks.json');
-        if (!response.ok) throw new Error('Could not fetch tracks');
-        this.tracks = await response.json();
+        const url = 'https://ws.audioscrobbler.com/2.0/?method=user.getrecenttracks&user=' + this.username + '&api_key=' + this.apiKey + '&limit=5&format=json';
+        const response = await fetch(url);
+        if (!response.ok) throw new Error('Last.fm API connection failed');
+        
+        const data = await response.json();
+        const rawTracks = data.recenttracks?.track || [];
+        const trackArray = Array.isArray(rawTracks) ? rawTracks.slice(0, 5) : [rawTracks];
+
+        // Format the tracks right here on the client side
+        this.tracks = trackArray.map(track => {
+          const image = track.image?.[track.image.length - 1]?.['#text'] || '';
+          return {
+            title: track.name,
+            artist: track.artist?.['#text'] || '',
+            album: track.album?.['#text'] || '',
+            image: image || 'https://via.placeholder.com/150',
+            isNowPlaying: track['@attr']?.nowplaying === 'true',
+            url: track.url
+          };
+        });
       } catch (err) {
+        console.error(err);
         this.error = 'Failed to load recently played tracks.';
       } finally {
         this.loading = false;
       }
     }
-  }" 
+  }`} 
   x-init="fetchTracks()"
 >
   <h3 class="widget-title">Last.FM</h3>
