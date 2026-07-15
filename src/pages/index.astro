@@ -1,6 +1,7 @@
 ---
 import BaseHead from '@components/BaseHead.astro';
 import Footer from '@components/Footer.astro';
+import LastFM from '@components/LastFM.astro';
 import MyTime from '@components/MyTime.astro';
 import Navigation from '@components/Nav.astro';
 import RecentPosts from '@components/RecentPosts.astro';
@@ -22,21 +23,15 @@ const recentPosts = allPosts
 		<Navigation />
 		<main>
 			<section class="other" aria-label="Other Fun Stuff">
-				<section class="sidebar">
+				<div class="sidebar">
 					<h3>Neocities Profile</h3>
 					<span class="sr-only">Go to Arietta's NeoCities profile</span>
 					<a href="https://neocities.org/site/aristocratic-arietta" class="my-button">
 						<img src="/buttons/aristocraticarietta.png" alt="">
 					</a>
-				</section>
+				</div>
 				<RecentPosts/>
 				<MyTime/>
-				<div class="sidebar">
-					<h3>Last.FM</h3>
-				</div>
-				<div class="sidebar">
-					<a href="https://aristocraticarietta.atabook.org/">Sign my guestbook!</a>
-				</div>
 			</section>
 			<article class="home-page">
 				<h1>Welcome to my page!</h1>
@@ -53,6 +48,12 @@ const recentPosts = allPosts
 					This website is a place for me to share my cool stuff and be inspired by other's creations! I plan to update this website often, whether it's with new blog posts or new pages. So check back often to see what's new! 
 				</p>
 			</article>
+			<section class="other2">
+				<LastFM />
+				<div class="sidebar">
+					<a href="https://aristocraticarietta.atabook.org/" class="guestbook">Sign my guestbook!</a>
+				</div>
+			</section>
 		</main>
 		<Footer />
 	</body>
@@ -68,6 +69,16 @@ const recentPosts = allPosts
 		order: 2;
 		width: 100%;
 	}
+	.other2 {
+		order: 3;
+		width: 100%;
+	}
+	.guestbook {
+		padding: 1em;
+		font-size: 2em;
+		line-height: 1;
+		font-weight: 700;
+	}
 @media (min-width: 1000px) {
 	.home-page {
 		max-width: max-content;
@@ -76,6 +87,10 @@ const recentPosts = allPosts
 	.other {
 		max-width: 20%;
 		order: 1;
+	}
+	.other2 {
+		max-width: 20%;
+		order: 3;
 	}
 }
 </style>

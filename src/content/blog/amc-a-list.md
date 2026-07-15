@@ -1,0 +1,43 @@
+---
+title: "AMC's A-List: Best thing ever?"
+description: "The best movies in town for the best price"
+pubDate: "2026-07-14T20:30:00-07:00"
+heroImage: "@assets/blog-images/amc-a-list/amc-a-list.webp"
+tags: ["movies", "amc", "a-list", "screen-unseen"]
+---
+![Nicole Kidman standing outside an AMC theatre](@assets/blog-images/amc-a-list/amc-a-list.gif)
+> We come to this place for magic.
+> We come to AMC theatres to laugh, to cry, to care.
+> Because we need that, all of us.
+> That indescribable feeling we get when the lights begin to dim.
+> And we go somewhere we've never been before.
+> Not just entertained, but somehow reborn.
+> Together.
+> Dazzling images on a huge silver screen.
+> Sound that I can feel.
+> <span style="font-style: italic; font-weight: 800; font-family: sans-serif;">Somehow, heartbreak feels good in a place like this.</span>
+> Our heroes feel like the best part of us.
+> And stories feel perfect and powerful.
+> Because here, they are.
+> AMC Theatres.
+> We make movies better.
+<br/>
+-- <cite style="font-style: normal; font-size: 1.25em;">Nicole Kidman, AMC Theatres commercial[^1]</cite>
+
+[^1]: https://www.youtube.com/watch?v=KiEeIxZJ9x0
+
+I love going to the movies! I have always found that some of the most magical experiences happen in a theatre. Whether it be a romance, sci-fi, drama, or comedy, I love it all. (Well, except for horror movies. I just can't get into them lol!) I grew up going to the movies with my family, where we primarily saw animated or superhero movies. I have fond memories of seeing the new Star Wars movies on opening night with them, all dressed up in costumes. We had to wait in line for hours in order to get a good seat, as this was before assigned seating!
+
+As I got older, I started going to the movies more by myself. It's a great way to decompress after a long week of work or school. I love that I can just sit back, relax, and immerse myself in a different world for a few hours. It's also a great way to support the film industry, which I think is important. I love seeing the big blockbusters on the big screen, but I also love discovering smaller independent films that I might not have otherwise seen. One of the best things I ever did for myself was buy the AMC A-List subscription.
+
+## What is AMC A-List?
+
+Being an A-Lister is amazing. For $27 USD a month, I can see up to 4 movies a week for no additional charge, which means I get 16 "free" tickets a month. The best thing is that I can see movies in any format I want, whether it be IMAX, Dolby Cinema, or AMC Prime. They also waive fees on concessions and tickets, so I just pay exactly what's on the price tag + tax. A-Listers also get free upgrades on drinks and popcorn, so a large popcorn is the same price as a regular popcorn. This pays for itself after 2 movies, as currently tickets are around $15 USD a pop. It is perhaps the greatest deal in the history of cinema. It allows me to see movies that I otherwise wouldn't have seen, as the tickets are "free" and all I have to pay for is gas for my car! I sometimes buy snacks and popcorn, but most of the time I just buy a drink. Thus, it is a great way to always have something to go and do for a very reasonable price.
+
+## My Experience
+
+I have been an A-Lister since November 2025, and I think I've seen something like 60 movies so far, and that's a conservative estimate! I have seen some absolutely incredible movies that I would never have seen otherwise, and other movies where even a free ticket was too expensive for the quality of movie it was. I think that's just part of the fun of it, though! My favorite movies so far have been the Screen Unseen events, wherein a new movie is premiered a few weeks before it is officially released - with the caveat that the movie is a mystery until it starts! The only thing you know beforehand is the MPAA rating and a rough estimate of the runtime. There are also *Scream* Unseen events, where the mystery movie is a horror movie, so I avoid those. They never play horror movies during a regular Screen Unseen, so I don't have to worry about that.
+
+## Final Thoughts
+
+If you are a huge movie fan, like I am, you should totally look into AMC's A-List program if there is one in your area! It's truly a great deal. I have not been disappointed once with my experience. I have been going to the movies more than I ever have before, and I regret nothing.

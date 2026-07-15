@@ -1,0 +1,218 @@
+<div 
+  class="music-widget" 
+  x-data="{ 
+    tracks: [], 
+    loading: true, 
+    error: null,
+    async fetchTracks() {
+      try {
+        const response = await fetch('/api/recent-tracks.json');
+        if (!response.ok) throw new Error('Could not fetch tracks');
+        this.tracks = await response.json();
+      } catch (err) {
+        this.error = 'Failed to load recently played tracks.';
+      } finally {
+        this.loading = false;
+      }
+    }
+  }" 
+  x-init="fetchTracks()"
+>
+  <h3 class="widget-title">Last.FM</h3>
+
+  <!-- Loading State -->
+  <template x-if="loading">
+    <div class="loader">Tuning in...</div>
+  </template>
+
+  <!-- Error State -->
+  <template x-if="error">
+    <div class="error-message" x-text="error"></div>
+  </template>
+
+  <!-- Tracks List -->
+  <template x-if="!loading && !error">
+    <ul class="track-list">
+      <template x-for="track in tracks" :key="track.title + track.artist">
+        <li>
+          <!-- Entire card is now a link pointing to the track's Last.fm page -->
+          <a 
+            :href="track.url" 
+            target="_blank" 
+            rel="noopener noreferrer" 
+            class="track-item" 
+            :class="{ 'now-playing-active': track.isNowPlaying }"
+          >
+            <!-- Album Art -->
+            <div class="album-art-container">
+              <img :src="track.image" :alt="track.album" class="album-art" />
+              <template x-if="track.isNowPlaying">
+                <span class="now-playing-badge">LIVE</span>
+              </template>
+            </div>
+
+            <!-- Track Info -->
+            <div class="track-info">
+              <span class="track-title" x-text="track.title"></span>
+              <span class="track-artist" x-text="track.artist"></span>
+              <span class="track-album" x-text="track.album"></span>
+            </div>
+
+          </a>
+        </li>
+      </template>
+    </ul>
+  </template>
+</div>
+
+<style>
+  .music-widget {
+    background: var(--bg-glass);
+    color: var(--text-primary);
+    border-radius: var(--radius-glass);
+    border: var(--border-glass);
+    width: calc(100% - 2em);
+    font-family: inherit;
+    padding: 1em;
+  }
+
+  .widget-title {
+    font-size: 1em;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 1em;
+  }
+
+  .loader, .error-message {
+    text-align: center;
+    padding: 2em 0;
+  }
+
+  .track-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+  }
+
+  /* Reset default link styles and make the <a> behave like a block-level card */
+  .track-item {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: stretch;
+    gap: 1em;
+    border-radius: var(--radius-glass);
+    text-decoration: none;
+    color: inherit; /* Keeps original text colors */
+    transition: background-color 0.2s ease, transform 0.2s ease;
+  }
+
+  .track-item:hover {
+    background-color: var(--bg-glass);
+    transform: translateY(-2px); /* Subtly lift card on hover */
+  }
+
+  .track-item:active {
+    transform: translateY(0);
+  }
+
+  .now-playing-active {
+    background: rgba(2, 255, 90, 0.05);
+    border: var(--border-glass);
+  }
+  
+  .now-playing-active:hover {
+    background: rgba(0, 255, 89, 0.1);
+  }
+
+  .album-art-container {
+    position: relative;
+    width: 15%;
+    height: 15%;
+    flex-shrink: 0;
+  }
+
+  .album-art {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: var(--radius-glass);
+  }
+
+  .now-playing-badge {
+    position: absolute;
+    bottom: -4px;
+    right: -4px;
+    background: #00b740;
+    color: #fff;
+    font: inherit;
+    font-size: 0.8em;
+    padding: 0.1em 0.25em;
+    border-radius: 0.25em;
+    border: var(--border-glass);
+  }
+
+  .track-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: flex-start;
+    flex-grow: 1;
+    min-width: 0;
+  }
+
+  .track-title {
+    font-size: 0.85em;
+    font-weight: 600;
+    width: 100%;
+    text-align: left;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  /* Subtly underline the title when the whole card is hovered */
+  .track-item:hover .track-title {
+    text-decoration: underline;
+  }
+
+  .track-artist {
+    font-size: 0.85rem;
+    width: 100%;
+    text-align: left;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .track-album {
+    font-size: 0.75rem;
+    width: 100%;
+    text-align: left;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  @media (min-width: 1000px) {
+    .music-widget {
+        padding: 0.5em;
+        width: calc(100% - 1em);
+    }
+    .widget-title {
+        margin-bottom: 0.5em;
+    }
+    .track-list {
+        gap: 0.5em;
+    }
+    .track-item {
+        gap: 0.5em;
+    }
+    .album-art-container {
+        width: 35%;
+        height: 35%;
+    }
+  }
+</style>

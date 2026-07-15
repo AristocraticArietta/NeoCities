@@ -1,0 +1,132 @@
+---
+import FunStuff from "@layouts/FunStuff.astro";
+---
+
+<FunStuff title="Games">
+    <h3 class="games-header">Daily Crossword</h3>
+    <p class="games-description">If you solve the crossword, <a href="/fun-stuff/chat">let me know in the chat</a> and I will add you to the leaderboard!</p>
+    <div class="games-wrapper">
+        <script type="text/javascript">boatload_puzzles_format = 'Landscape';</script>
+        <p>Loading <a href="https://www.boatloadpuzzles.com/playcrossword">crossword puzzle</a>. One moment please.</p>
+        <script type="text/javascript" src="//www.boatloadpuzzles.com/Crossword.js"></script>
+        <div class="games-leaderboard">
+            <table>
+                <tr>
+                    <th>Place</th>
+                    <th>Name</th>
+                    <th>Solved Date</th>
+                    <th>Score</th>
+                </tr>
+                <tr>
+                    <td>#1</td>
+                    <td>Arietta</td>
+                    <td>July 14<sup>th</sup>, 2026</td>
+                    <td>2591</td>
+                </tr>
+                <tr>
+                    <td>#2</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>#3</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>#4</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>#5</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    <h3 class="games-header">Puzzle</h3>
+    <p class="games-description">Can you solve it? <a href="/fun-stuff/chat">Let me know in chat</a> and I'll add you to the leaderboard!</p>
+    <div class="games-wrapper">
+        <iframe class="jigsaw-puzzle" allowfullscreen="true" src="https://www.jigsawexplorer.com/online-jigsaw-puzzle-player.html?frm=1&url=aHR0cHM6Ly9hcmlzdG9jcmF0aWMtYXJpZXR0YS5uZW9jaXRpZXMub3JnL2dhbWVzL2Nhc3RsZS5qcGc~&cred=Qm9kaWFtIENhc3RsZSAtIFNlcHRlbWJlciAyMDExIC0gwqkgdHBzNTg~&credu=aHR0cHM6Ly93d3cuZmxpY2tyLmNvbS9waG90b3MvdHBzNTgv&nop=300&color=white" title="Jigsaw Puzzle">Jigsaw Puzzle</iframe>
+        <div class="games-leaderboard">
+            <table>
+                <tr>
+                    <th>Place</th>
+                    <th>Name</th>
+                    <th>Solved Date</th>
+                    <th>Time</th>
+                </tr>
+                <tr>
+                    <td>#1</td>
+                    <td>Arietta</td>
+                    <td>July 14<sup>th</sup>, 2026</td>
+                    <td>57:02</td>
+                </tr>
+                <tr>
+                    <td>#2</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>#3</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>#4</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>#5</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</FunStuff>
+<style>
+    .games-wrapper {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        gap: 1em;
+    }
+    .games-leaderboard {
+        width: fit-content;
+    }
+    .games-header {
+        text-align: center;
+    }
+    .games-description {
+        text-align: center;
+    }
+    .jigsaw-puzzle {
+        width: 100%;
+        aspect-ratio: 7/5;
+    }
+    @media (min-width: 1000px) {
+        .games-wrapper {
+            flex-direction: row;
+            justify-content: space-evenly;
+            align-items: stretch;
+        }
+        .jigsaw-puzzle {
+            width: 50vw;
+            aspect-ratio: 4/3;
+        }
+    }
+</style>

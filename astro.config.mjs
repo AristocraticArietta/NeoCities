@@ -2,7 +2,7 @@
 import alpinejs from '@astrojs/alpinejs';
 import mdx from '@astrojs/mdx';
 import sitemap from '@astrojs/sitemap';
-import { defineConfig, fontProviders } from 'astro/config';
+import { defineConfig, envField, fontProviders } from 'astro/config';
 
 // https://astro.build/config
 export default defineConfig({
@@ -12,6 +12,12 @@ export default defineConfig({
         entrypoint: '/src/alpine'
     })
     ],
+    env: {
+        schema: {
+            LASTFM_API_KEY: envField.string({ context: 'server', access: 'secret' }),
+            LASTFM_USERNAME: envField.string({ context: 'server', access: 'secret' }),
+        }
+    },
     fonts: [
         {
             provider: fontProviders.local(),
