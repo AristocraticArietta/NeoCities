@@ -222,6 +222,9 @@ p {
 	margin: 0;
 	font: inherit;
 }
+article img {
+	place-self: center;
+}
 ul {
 	margin: 0;
 }
@@ -424,47 +427,7 @@ transform: scale(1.1);
 	vertical-align: middle;
 	margin-left: 0.25em;
 }
-.identity-badges-wrapper {
-	display: flex;
-	flex-direction: column;
-	justify-content: start;
-	align-items: center;
-	gap: 1em;
-	width: 100%;
-}
-.identity-badges-flexbox {
-	display: flex;
-	flex-direction: row;
-	justify-content: space-between;
-	align-items: start;
-	width: 100%;
-	gap: 1em;
-}
-.identity-badges {
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	width: 100%;
-}
-.identity-badges-button {
-	border: var(--border-glass);
-	border-radius: var(--radius-glass);
-	background-color: var(--bg-glass);
-	box-shadow: var(--shadow-glass);
-	padding: 2em 4em;
-	font: inherit;
-	transition: transform 0.2s ease;
-}
-.identity-badges-button:hover {
-	transform: translateY(-0.5em);
-}
-.identity-badges-header {
-	padding-bottom: 1em;
-}
-.identity-badges img {
-	width: 100%;
-	image-rendering: pixelated;
-}
+
 @media (min-width: 1000px) {
 	h1,
 	h2,

@@ -1,6 +1,8 @@
 ---
 import AboutHeroImage from '@assets/blog-images/about/revised-about-hero-image.webp';
 import Layout from '@layouts/BlogPost.astro';
+import NikonF4Image from '@assets/nikon f4.png'
+import { Image } from 'astro:assets';
 ---
 
 <Layout
@@ -10,7 +12,7 @@ import Layout from '@layouts/BlogPost.astro';
 	updatedDate={new Date('2026-07-15T22:50:00-07:00')}
 	heroImage={AboutHeroImage}
 >
-	<h3>Hi!</h3>
+	<h2>Hi!</h2>
 	<p>
 		I'm Aristocratic Arietta, the webmaster of this very website! You can call me Arietta or Aria, just not Aristocratic because that's a mouthful! I am a college student who never got to experience the Y2K web, but I'm here to revist those times by making a website on Neocities!
 	</p>
@@ -21,7 +23,11 @@ import Layout from '@layouts/BlogPost.astro';
 		Outside of crafts, I love music! My music collection is quite large, as I collect vinyl records. I mostly collect new stuff, but I have some classics as well. I would share my Discogs account, but it is so incomplete it scares me. I am always listening to music when I am working or relaxing. When I am not near my record player, I am listening to music on Spotify. I am very specific in my tastes, but I am always looking for reccomendations.
 	</p>
 	<p>
-		In other hobbies, I also love photography. Film photography, to be specific. I love the mystery of not knowing how the pictures will turn out! I shoot a healthy balance of black and white and color, all 35mm. I also have a small camera collection, but my go-to is my Nikon F4. It is a workhorse and I am obsessed with it. I want to get more lenses for it, though, as I only have two! I am far from the best photographer, but it really makes me happy to see improvement over time.
+		In other hobbies, I also love photography. Film photography, to be specific. I love the mystery of not knowing how the pictures will turn out! I shoot a healthy balance of black and white and color, all 35mm. I also have a small camera collection, but my go-to is my Nikon F4. It is a workhorse and I am obsessed with it. I want to get more lenses for it, though, as I only have two! I am far from the best photographer, but it really makes me happy to see improvement over time. Here's a picture of my behemoth F4 complete with flash, battery pack, and big 'ol lens:
+	</p>
+	<Image src={NikonF4Image} alt="My Nikon F4 camera with 70-210mm f/1.4 lens" class="camera-image"/>
+	<p>
+		I will be sharing a lot of the photos I take on here, so keep your eyes peeled for new photo dump posts! I just have to develop the like 6 rolls of film I have sitting in my fridge... I don't develop my own photos anymore, but I do scan them. That saves me money, as my local shop charges roughly $10/roll for just developing it. Occasionally, I make darkroom prints, but I haven't been very successful. I need to hear some tips and tricks from experienced darkroom artists, so if you think you have a few words of wisdom, let me know, and I will be forever indebted to you. ;)
 	</p>
 	<p>
 		I am always looking for new friends, so if you made it this far go ahead and <a href="/fun-stuff/chat">say "Hi!" in my chat</a>, <a href="https://aristocraticarietta.atabook.org/">sign my guestbook,</a> or <a href="mailto:aristocraticarietta@proton.me">send me an email!</a> (I love receiving emails, by the way!) Any of those options would be much appreciated! No need to get fancy or write paragraphs, just reach out and say "Hi!" I always follow back (provided you have a NeoCities site ;). Toodles!
@@ -89,3 +95,49 @@ import Layout from '@layouts/BlogPost.astro';
 		</div>
 	</div>
 </Layout>
+<style>
+	.camera-image {
+		width: 50%;
+	}
+	.identity-badges-wrapper {
+		display: flex;
+		flex-direction: column;
+		justify-content: start;
+		align-items: center;
+		gap: 1em;
+		width: 100%;
+	}
+	.identity-badges-flexbox {
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+		align-items: start;
+		width: 100%;
+		gap: 1em;
+	}
+	.identity-badges {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		width: 100%;
+	}
+	.identity-badges-button {
+		border: var(--border-glass);
+		border-radius: var(--radius-glass);
+		background-color: var(--bg-glass);
+		box-shadow: var(--shadow-glass);
+		padding: 2em 4em;
+		font: inherit;
+		transition: transform 0.2s ease;
+	}
+	.identity-badges-button:hover {
+		transform: translateY(-0.5em);
+	}
+	.identity-badges-header {
+		padding-bottom: 1em;
+	}
+	.identity-badges img {
+		width: 100%;
+		image-rendering: pixelated;
+	}
+</style>

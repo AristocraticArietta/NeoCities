@@ -5,6 +5,16 @@ import FunStuff from "@layouts/FunStuff.astro";
 <FunStuff title="Webrings">
     <div class="webrings">
         <script src="https://nuthead.neocities.org/ring/ring.js" is:inline></script>
+        <link rel="stylesheet" href="https://harakiri.moe/css/webring-widgets.css">
+        <div class="cm-webring-box">
+            <span class="cm-webring-links">
+                <a href="https://harakiri.moe/classicalring">the classical music webring</a>
+                <br/>
+                <a href="https://harakiri.moe/classicalring?action=previous">prev</a>
+                <a href="https://harakiri.moe/classicalring?action=random">random</a>
+                <a href="https://harakiri.moe/classicalring?action=next">next</a>
+            </span>
+        </div>
     </div>
 </FunStuff>
 <style>
@@ -17,5 +27,8 @@ import FunStuff from "@layouts/FunStuff.astro";
         line-height: 1rem;
         text-decoration: none;
         padding: 0.5em 1em;
+    }
+    .cm-webring-links a {
+        padding: 0 0.25em;
     }
 </style>
