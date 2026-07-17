@@ -1,8 +1,8 @@
 ---
-title: 'Third post'
+title: 'Fourth post'
 description: 'Lorem ipsum dolor sit amet'
 pubDate: 'Jul 22 2022'
-heroImage: '../../assets/blog-placeholder-2.jpg'
+heroImage: '../../assets/blog-placeholder-about.jpg'
 heroImageAlt: 'Green glitter'
 tags: ['lorem', 'ipsum', 'test']
 ---

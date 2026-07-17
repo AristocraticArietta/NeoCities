@@ -9,7 +9,7 @@ import { SITE_TITLE } from '@src/consts';
 
 type Props = CollectionEntry<'blog'>['data'];
 
-const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
+const { title, description, pubDate, updatedDate, heroImage, tags } = Astro.props;
 ---
 
 <html lang="en">
@@ -22,7 +22,7 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
 		<main>
 			<article>
 				<div class="hero-image">
-					{heroImage && <Image width={960} height={480} quality="max" src={heroImage} alt="" />}
+					{heroImage && <Image quality="max" src={heroImage} alt="" />}
 				</div>
 				<div class="title">
 					<div class="date">
@@ -36,6 +36,16 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
 						}
 					</div>
 					<h1>{title}</h1>
+					<h3 class="tag-title">Tags</h3>
+					{tags && tags.length > 0 && (
+						<div class="tag-wrapper">
+							{tags.map((tag, index) => (
+								<>
+									<a href={`/blog/tag/${tag}`} class="tag" title="Click here to search for more posts with this tag">{tag}</a>
+								</>
+							))}
+						</div>
+					)}
 					<hr />
 				</div>
 				<slot />
@@ -53,7 +63,7 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
 		width: 100%;
 	}
 	.hero-image img {
-		box-shadow: var(--box-shadow);
+		box-shadow: var(--shadow-glass);
 		border-radius: var(--radius-glass);
 	}
 	.title {
@@ -76,10 +86,49 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
 	.last-updated-on {
 		font-style: italic;
 	}
-	
+	.tag-wrapper {
+		text-align: center;
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		justify-content: space-evenly;
+		border: var(--border-glass);
+		border-radius: var(--radius-glass);
+		box-shadow: var(--shadow-glass);
+		background-color: var(--bg-glass);
+		gap: 0.25em;
+		padding: 0.25em;
+		margin: auto;
+		margin-bottom: 1em;
+		width: fit-content;
+	}
+	.tag {
+		padding: 0.25em;
+		border-radius: var(--radius-glass);
+		border: var(--border-glass);
+		box-shadow: var(--shadow-glass);
+		background-color: var(--accent2);
+		color: var(--accent);
+		text-decoration: none;
+		transition: transform 0.3s ease;
+	}
+	.tag:hover {
+		transform: scale(1.1);
+	}
+	.tag-title {
+		margin-bottom: 0.25em;
+		padding-top: 0.5em;
+	}
 	@media (min-width: 1000px) {
 		main {
 			width: 75%;
+		}
+		.hero-image {
+			aspect-ratio: 2 / 1;
+		}
+		.tag {
+			margin: 0.5em;
+			padding: 0.5em;
 		}
 	}
 </style>
