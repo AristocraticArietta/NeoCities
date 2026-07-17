@@ -1,0 +1,146 @@
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap');
+
+
+:root {
+    --red: #ffcaca;
+    --orange: #ffedc1;
+    --yellow: #feffb8;
+    --green: #c4ffcb;
+    --blue: #add8ff;
+    --purple: #ccafe9;
+
+    --darkgreen: #3E885B;
+    --darkblue: #7fb4f5;
+
+
+    --background: #454545;
+
+
+    --rainbowright: linear-gradient(to right, var(--red) 0%, var(--orange) 20%, var(--yellow) 40%, var(--green) 60%, var(--blue) 80%,  var(--purple) 100%);
+}
+
+.bucket-html {
+    background-color: var(--background);
+    border-width: 0.25em;
+    border-style: solid;
+    animation: rainbow-border 3s linear infinite forwards running;
+    font-family: Merriweather, Georgia, serif;
+    color: var(--purple);
+    width: max-content;
+}
+
+.bucket-html, .bucket-body {
+    height: 100%;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+
+.bucket-body {
+    display: flex;
+    flex-direction: row;
+    padding: 0.5em;
+    white-space: nowrap;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.bucket-a {
+    font-size: 0.85em;
+    margin: 0 0.5em;
+    display: inline-block;
+    color: inherit;
+    position: relative;
+    text-decoration: none;
+    transition: linear 0.2s;
+    color: var(--purple);
+}
+
+.bucket-a:before {
+    background: var(--rainbowright);
+    content: '';
+    height: 2px;
+    position: absolute;
+    bottom: -1.5px;
+    width: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    transition: width 0.2s ease-in-out;
+}
+
+.bucket-a:hover{
+    color: var(--white);
+}
+
+.bucket-a:hover:before{
+    width: 0;
+}
+
+#left { text-align: left; }
+#mid { 
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5em;
+}
+#right { text-align: right; }
+
+#left, #right {
+    flex-grow: 1;
+    flex-basis: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+#header .name{
+    font-size: 0.85em;
+    animation-delay: var(--n);
+    animation: wave 1.5s linear var(--n) infinite forwards running, rainbow 3s linear var(--n) infinite forwards running;
+    position: relative;
+}
+#left, #right, #random {
+    font-size: 0.6em;
+}
+@media screen and (prefers-reduced-motion: reduce) {
+    #header .name {
+        animation: none;
+    }
+}
+@media (min-width: 1000px) {
+    #header .name{
+        font-size: 1.25em;
+    }
+    #left, #right, #random {
+        font-size: 0.85em;
+    }
+}
+
+@keyframes wave{
+    0% {top: 0px;}
+    25% {top: -1px;}
+    50% {top: 0px;}
+    75% {top: 1px;}
+    100% {top: 0px;}
+}
+
+@keyframes rainbow {
+    0% {color: var(--red);}
+    17% {color: var(--orange);}
+    33% {color: var(--yellow);}
+    50% {color: var(--green);}
+    67% {color: var(--blue);}
+    83% {color: var(--purple);}
+    100% {color: var(--red);}
+}
+@keyframes rainbow-border {
+    0% {border-color: var(--red);}
+    17% {border-color: var(--orange);}
+    33% {border-color: var(--yellow);}
+    50% {border-color: var(--green);}
+    67% {border-color: var(--blue);}
+    83% {border-color: var(--purple);}
+    100% {border-color: var(--red);}
+}
