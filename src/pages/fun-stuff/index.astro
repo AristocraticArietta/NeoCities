@@ -38,15 +38,15 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '@src/consts';
                     <h3>Index</h3>
                     <hr>
                     <div class="link-list">
-                        <a href="/fun-stuff/blinkies">Blinkies!</a>
-                        <a href="/fun-stuff/buttons">Buttons!</a>
-                        <a href="/fun-stuff/chat">Chat!</a>
-                        <a href="/fun-stuff/fanlistings">Fanlistings!</a>
-                        <a href="/fun-stuff/games">Games!</a>
-                        <a href="/fun-stuff/pixel-cliques">Pixel Cliques!</a>
-                        <a href="/fun-stuff/shrines">Shrines!</a>
-                        <a href="/fun-stuff/stamps">Stamps!</a>
-                        <a href="/fun-stuff/webrings">Webrings!</a>
+                        <a href="/fun-stuff/blinkies" class="link-out">Blinkies</a>
+                        <a href="/fun-stuff/buttons" class="link-out">Buttons</a>
+                        <a href="/fun-stuff/chat" class="link-out">Chat</a>
+                        <a href="/fun-stuff/fanlistings" class="link-out">Fanlistings</a>
+                        <a href="/fun-stuff/games" class="link-out">Games</a>
+                        <a href="/fun-stuff/pixel-cliques" class="link-out">Pixel Cliques</a>
+                        <a href="/fun-stuff/shrines" class="link-out">Shrines</a>
+                        <a href="/fun-stuff/stamps" class="link-out">Stamps</a>
+                        <a href="/fun-stuff/webrings" class="link-out">Webrings</a>
                     </div>
                 </div>
             </article>
@@ -73,6 +73,7 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '@src/consts';
         flex-direction: column;
         justify-content: space-between;
         align-items: center;
+        gap: var(--gap-regular);
     }
     .fun-stuff-wrapper {
         display: flex;
@@ -85,8 +86,8 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '@src/consts';
     .sidebar-min {
         flex-basis: 50%;
     }
-    .link-list a {
-        width: 75%;
+    .link-out {
+        width: 100%;
         padding: 0.5em 0em;
         text-align: center;
         box-sizing: border-box;
@@ -97,19 +98,31 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '@src/consts';
         text-decoration: none;
         color: inherit;
     }
-    .link-list a:hover {
-        box-shadow: var(--shadow-glass);
+    .link-out:hover {
+        box-shadow: 0 0 1.5em rgba(0, 0, 0, 0.3);
         transform: scale(1.05);
     }
     @media (min-width: 1000px) {
         .textarea-bg {
             width: 50%;
         }
+        .link-list {
+            flex-direction: row;
+            flex-wrap: wrap;
+            align-content: center;
+            justify-content: space-between;
+        }
+        .link-out {
+            width: calc(33% - 1em);
+            height: calc(33% - 1em);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            line-height: 1em;
+        }
         .fun-stuff-wrapper {
             flex-direction: row;
-        }
-        a {
-            width: 50%;
         }
 	}
 </style>
