@@ -95,18 +95,18 @@ const posts = (await getCollection('blog')).sort(
 	</head>
 	<body>
 		<Navigation />
-		<main>
-			<ul>
+		<main id="main">
+			<ul aria-label="List of blog posts">
 				{
 					posts.map((post) => (
-						<li class="sidebar-blog">
-							<a href={`/blog/${post.id}/`}>
+						<li class="sidebar-blog" aria-label="Read blog post:">
+							<a href={`/blog/${post.id}/`} aria-labelledby={post.id}>
 								{post.data.heroImage && (
-									<Image width={720} height={360} src={post.data.heroImage} alt="" />
+									<Image width={720} height={360} src={post.data.heroImage} alt={post.data.heroImageAlt ?? ""} />
 								)}
-								<h4 class="title">{post.data.title}</h4>
-								<p class="date">
-									<FormattedDate date={post.data.pubDate} />
+								<h4 class="title" id={post.id}>{post.data.title}</h4>
+								<p class="date" aria-label="Published on:">
+									<FormattedDate date={post.data.pubDate}/>
 								</p>
 							</a>
 						</li>

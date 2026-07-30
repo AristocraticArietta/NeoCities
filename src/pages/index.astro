@@ -15,41 +15,31 @@ const recentPosts = allPosts
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang="en-US">
 	<head>
 		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
 	</head>
 	<body>
 		<Navigation />
-		<main>
-			<section class="other" aria-label="Other Fun Stuff">
-				<div class="sidebar">
-					<h3>Neocities Profile</h3>
-					<span class="sr-only">Go to Arietta's NeoCities profile</span>
-					<a href="https://neocities.org/site/aristocratic-arietta" class="my-button">
-						<img src="/buttons/aristocraticarietta.gif" alt="Aristocratic Arietta">
-					</a>
-				</div>
-				<RecentPosts/>
-				<MyTime/>
-			</section>
+		<main id="main">
 			<article class="home-page">
 				<h1>Welcome to my page!</h1>
 				<p>
 					I'm Aristocratic Arietta, or Arietta for short, and this is my little corner of the internet. This website contains a bit of everything, from ramblings to art to code to other misc stuff that doesn't quite fit anywhere else. I'm trying to move away from traditional social media and challenging myself to develop a healthier relationship to the internet. By creating a website, I am making myself learn useful skills like HTML, CSS, and Javascript. I'm also hoping that this website will be a way to express my creativity and share my interests with the world.
 				</p>
-				<h3>
+				<h2>
 					What's this site about?
-				</h3>
+				</h2>
 				<p>
 					This is my personal blog with lots of somewhat informative rants about music, historical and modern fashion, and film with more to come. I really enjoy collecting and learning about fashion from all different time periods and will probably post about that a lot. I also will post pictures, music + film reviews, rants, and other fun things that I find interesting. Stay tuned for more!
 				</p>
 				<p>
 					This website is a place for me to share my cool stuff and be inspired by other's creations! I plan to update this website often, whether it's with new blog posts or new pages. So check back often to see what's new! 
 				</p>
-				<h3>What's new?</h3>
+				<h2>What's new?</h2>
 				<p>
 					<ul>
+						<li><a href="/blog/sewing-beginnings">New Post!</a> (19 July 2026)</li>
 						<li><a href="/blog/1995-mugler">New Post!</a> (19 July 2026)</li>
 						<li>Added search by tag functionality to blog posts (17 July 2026)</li>
 						<li><a href="/blog/photo-dump-1">New Post!</a> (16 July 2026)</li>
@@ -57,14 +47,24 @@ const recentPosts = allPosts
 						<li>Added Last.FM widget to home page, <a href="/fun-stuff/games">new games page</a>, and <a href="/blog/amc-a-list">new post!</a> (14 July 2026)</li>
 					</ul>
 				</p>
-				<h3>
+				<h2>
 					Say hello!
-				</h3>
+				</h2>
 				<p>
-					I'm hoping to share all of my interests here, and maybe make a few friends along the way. I am very social and I would love to hear from people who visit this website! <a href="mailto:aristocraticarietta@proton.me">I love receiving E-Mail</a> and <a href="https://aristocraticarietta.atabook.org/">messages in my guestbook</a>, so please don't hesitate to reach out, even if just to say hello! You can also contact me on Matrix: <u>@aristocratic-arietta:mozilla.org</u>!
+					I'm hoping to share all of my interests here, and maybe make a few friends along the way. I am very social and I would love to hear from people who visit this website! <a href="mailto:aristocraticarietta@proton.me">I love receiving E-Mail</a> and <a href="https://aristocraticarietta.atabook.org/">messages in my guestbook</a>, so please don't hesitate to reach out, even if just to say hello! You can also contact me on Matrix: <b>@aristocratic-arietta:mozilla.org</b>!
 				</p>
 			</article>
-			<section class="other2">
+			<section class="other" aria-label="Sidebar 1">
+				<div class="sidebar">
+					<h3>Neocities Profile</h3>
+					<a href="https://neocities.org/site/aristocratic-arietta" class="my-button" aria-label="Go to Arietta's NeoCities profile">
+						<img src="/buttons/aristocraticarietta.gif" alt="" aria-hidden="true">
+					</a>
+				</div>
+				<RecentPosts/>
+				<MyTime/>
+			</section>
+			<section class="other2" aria-label="Sidebar 2">
 				<LastFM />
 				<div class="sidebar">
 					<a href="https://aristocraticarietta.atabook.org/" class="guestbook"><h3>Sign my guestbook!</h3></a>

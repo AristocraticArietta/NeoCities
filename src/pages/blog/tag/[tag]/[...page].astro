@@ -48,19 +48,19 @@ const { tag } = Astro.params;
 </head>
 <body>
     <Navigation />
-    <main class="tag-container">
+    <main class="tag-container" id="main">
         <h1>Posts tagged with: <span class="tag-highlight">{tag}</span></h1>
         
         {/* Render only 5 posts for the current page */}
-        <ul class="post-list">
+        <ul class="post-list" aria-label="List of blog posts">
             {page.data.map((post) => (
-                <li class="post-item">
-                    <a href={`/blog/${post.id}/`} class="post-card">
+                <li class="post-item" aria-label="Read blog post:">
+                    <a href={`/blog/${post.id}/`} class="post-card" aria-labelledby="post-title">
                         <div class="post-info">
-                            <h2>{post.data.title}</h2>
+                            <h2 id="post-title">{post.data.title}</h2>
                             <p>{post.data.description}</p>
                             <p>Published {post.data.pubDate && <FormattedDate date={post.data.pubDate} />}</p>
-                            <p>{post.data.updatedDate && <i>Updated <FormattedDate date={post.data.updatedDate}/></i>}</p>
+                            {post.data.updatedDate && <p><i>Updated <FormattedDate date={post.data.updatedDate}/></i></p>}
                         </div>
                         {post.data.heroImage && post.data.heroImageAlt && <Image class="post-image" src={post.data.heroImage} alt={post.data.heroImageAlt} />}
                     </a>
@@ -71,9 +71,9 @@ const { tag } = Astro.params;
         {/* Pagination Navigation Controls */}
         <nav class="pagination">
             {page.url.prev ? (
-                <a href={page.url.prev} class="nav-btn">← Newer Posts</a>
+                <a href={page.url.prev} class="nav-btn" aria-label="View newer pages of search results">← Newer Posts</a>
             ) : (
-                <span class="nav-btn disabled">← Newer Posts</span>
+                <span class="nav-btn disabled" aria-label="No newer pages of search results">← Newer Posts</span>
             )}
             
             <span class="page-count">
@@ -81,9 +81,9 @@ const { tag } = Astro.params;
             </span>
 
             {page.url.next ? (
-                <a href={page.url.next} class="nav-btn">Older Posts →</a>
+                <a href={page.url.next} class="nav-btn" aria-label="View older pages of search results">Older Posts →</a>
             ) : (
-                <span class="nav-btn disabled">Older Posts →</span>
+                <span class="nav-btn disabled" aria-label="No older pages of search results">Older Posts →</span>
             )}
         </nav>
     </main>

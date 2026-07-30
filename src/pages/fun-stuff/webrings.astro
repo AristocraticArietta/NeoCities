@@ -5,34 +5,30 @@ import WebmasterWebring from "@components/webrings/Webmaster.astro";
 ---
 
 <FunStuff title="Webrings">
-    <h4>Not every webring listed has accepted me yet, so not every link works!</h4>
     <div class="webrings">
-        <div id="nuthead-ring">
+        <div id="null-ring" aria-label="null ring">
             <script src="https://nuthead.neocities.org/ring/ring.js" is:inline></script>
         </div>
         <link rel="stylesheet" href="https://harakiri.moe/css/webring-widgets.css">
-        <div class="cm-webring-box" id="classical-ring">
+        <div class="cm-webring-box" id="classical-ring" aria-labelledby="classical-ring-title" >
             <span class="cm-webring-links">
-                <a href="https://harakiri.moe/classicalring">the classical music webring</a>
+                <a href="https://harakiri.moe/classicalring" id="classical-ring-title">the classical music webring</a>
                 <br/>
                 <a href="https://harakiri.moe/classicalring?action=previous">prev</a>
                 <a href="https://harakiri.moe/classicalring?action=random">random</a>
                 <a href="https://harakiri.moe/classicalring?action=next">next</a>
             </span>
         </div>
-        <div id="bonki-ring">
-            <script type="text/javascript" src="https://bonkiscoolsite.neocities.org/bonkiring/bonkiring-widget.js" is:inline></script>
-        </div>
         <BucketWebring />
-        <div id="webmaster-ring">
+        <div id="webmaster-ring" aria-label="Webmaster webring" >
             <WebmasterWebring />
         </div>
-        <div id="palestinering">
+        <div id="palestinering" aria-label="websites for a free Palestine webring">
             <a href="https://catboo.leprd.space/webring/redirect.php?prv&s=ara" title="previous">
                 <img src="https://websitesforpalestine.neocities.org/widget/left.png" alt="previous">
             </a>
-            <a href="https://websitesforpalestine.neocities.org/" target="_blank">
-                <img src="https://websitesforpalestine.neocities.org/widget/center.png" alt="websites for a free palestine">
+            <a href="https://websitesforpalestine.neocities.org/">
+                <img src="https://websitesforpalestine.neocities.org/widget/center.png" alt="webring homepage">
             </a>
             <a href="https://catboo.leprd.space/webring/redirect.php?nxt&s=ara" title="next">
                 <img src="https://websitesforpalestine.neocities.org/widget/right.png" alt="next">

@@ -7,16 +7,16 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '@src/consts';
 const { title } = Astro.props;
 ---
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-US">
     <head>
         <BaseHead title=`${title} | ${SITE_TITLE}` description={SITE_DESCRIPTION} />
     </head>
     <body>
         <Navigation />
-        <main>
+        <main id="main">
             <article class="sidebar-min">
-                <h3>{title}</h3>
-                <hr>
+                <h3 role="heading" aria-level="1">{title}</h3>
+                <hr aria-hidden="true">
                 <slot />
             </article>
         </main>

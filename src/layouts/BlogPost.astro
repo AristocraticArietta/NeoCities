@@ -9,23 +9,23 @@ import { SITE_TITLE } from '@src/consts';
 
 type Props = CollectionEntry<'blog'>['data'];
 
-const { title, description, pubDate, updatedDate, heroImage, tags } = Astro.props;
+const { title, description, pubDate, updatedDate, heroImage, heroImageAlt, tags } = Astro.props;
 ---
 
-<html lang="en">
+<html lang="en-US">
 	<head>
 		<BaseHead title=`${title} | ${SITE_TITLE}` description={description} />
 	</head>
 
 	<body>
 		<Navigation />
-		<main>
-			<article>
+		<main id="main">
+			<article aria-labelledby="bp-title">
 				<div class="hero-image">
-					{heroImage && <Image quality="max" src={heroImage} alt="" />}
+					{heroImage && <Image quality="max" src={heroImage} alt={heroImageAlt ?? ""} />}
 				</div>
 				<div class="title">
-					<div class="date">
+					<div class="date" aria-label="Publish Date">
 						<FormattedDate date={pubDate} />
 						{
 							updatedDate && (
@@ -35,17 +35,17 @@ const { title, description, pubDate, updatedDate, heroImage, tags } = Astro.prop
 							)
 						}
 					</div>
-					<h1>{title}</h1>
+					<h1 id="bp-title">{title}</h1>
 					{tags && tags.length > 0 && (
-						<div class="tag-wrapper">
-							{tags.map((tag, index) => (
+						<div class="tag-wrapper" aria-label="Click a tag to search for more posts with that tag">
+							{tags.map((tag) => (
 								<>
-									<a href={`/blog/tag/${tag}`} class="tag" title="Click here to search for more posts with this tag">{tag}</a>
+									<a href={`/blog/tag/${tag}`} class="tag">{tag}</a>
 								</>
 							))}
 						</div>
 					)}
-					<hr />
+					<hr aria-hidden="true"/>
 				</div>
 				<slot />
 			</article>

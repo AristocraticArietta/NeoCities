@@ -5,18 +5,18 @@ import Navigation from '@components/Nav.astro';
 import { SITE_TITLE, SITE_DESCRIPTION } from '@src/consts';
 ---
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-US">
     <head>
         <BaseHead title=`Fun Stuff | ${SITE_TITLE}` description={SITE_DESCRIPTION} />
     </head>
     <body>
         <Navigation />
-        <main>
+        <main id="main">
             <article class="fun-stuff-wrapper">
                 <div class="sidebar-min">
-                    <h3>About my Fun Stuff</h3>
-                    <hr>
-                    <p>I make buttons, stamps, and blinkies occassionally. Making them brings me joy! I also really like collecting them from old websites, especially the political blinkies. A reminder of another era! <img src="/gifs/emoji/nukoTearsDrowning.gif" alt="" class="emoji"></p>
+                    <h3 role="heading" aria-level="1">About my Fun Stuff</h3>
+                    <hr aria-hidden="true">
+                    <p>I make buttons, stamps, and blinkies occasionally. Making them brings me joy! I also really like collecting them from old websites, especially the political blinkies. A reminder of another era! <img src="/gifs/emoji/nukoTearsDrowning.gif" alt="" class="emoji"></p>
                     <p>I hope you enjoy them too, as you may use them freely on your own website, as long as you don't claim them as your own. :) If you're feeling like you want to, wrap them in an <code>&lt;a&gt;</code> tag that links back to me at <a href="https://aristocratic-arietta.neocities.org/" class="self-link">aristocratic-arietta.neocities.org</a>!</p>
                     <p id="button-link">Here's an example of what I mean (You can click on it to copy it to your clipboard!): </p>
                     <div 
@@ -30,13 +30,14 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '@src/consts';
                             wrap="on"
                             id="link"
                             @click="$el.select(); navigator.clipboard.writeText($el.value);"
-                        >&lt;a href="https://aristocratic-arietta.neocities.org/" target="_self" &gt;&lt;img src="https://aristocratic-arietta.neocities.org/buttons/aristocraticarietta.gif" alt=""&gt;&lt;/a&gt;</textarea>
+                        >&lt;a href="https://aristocratic-arietta.neocities.org/" target="_self" &gt;&lt;img src="https://aristocratic-arietta.neocities.org/buttons/aristocraticarietta.gif" alt="Aristocratic Arietta's button"&gt;&lt;/a&gt;</textarea>
+                        <label for="link" class="sr-only">Click on the textbox to copy my button code to your clipboard</label>
                     </div>
-                    <p>I have started to make some cool shrines to my favorite things! Check back occassionally for new content!</p>
+                    <p>I have started to make some cool shrines to my favorite things! Check back occasionally for new content!</p>
                 </div>
                 <div class="sidebar-min">
-                    <h3>Index</h3>
-                    <hr>
+                    <h3 role="heading" aria-level="1">Index</h3>
+                    <hr aria-hidden="true">
                     <div class="link-list">
                         <a href="/fun-stuff/blinkies" class="link-out">Blinkies</a>
                         <a href="/fun-stuff/buttons" class="link-out">Buttons</a>

@@ -8,7 +8,8 @@ const USERNAME = import.meta.env.PUBLIC_LASTFM_USERNAME;
 ---
 
 <div 
-  class="music-widget" 
+  class="music-widget"
+  aria-label="Recently Played Songs"
   x-data={`{
     tracks: [], 
     loading: true, 
@@ -37,9 +38,13 @@ const USERNAME = import.meta.env.PUBLIC_LASTFM_USERNAME;
             url: track.url
           };
         });
+
+        // Update status for screen readers once loaded
+        this.statusMessage = \`Loaded \${this.tracks.length} recently played tracks.\`;
       } catch (err) {
         console.error(err);
         this.error = 'Failed to load recently played tracks.';
+        this.statusMessage = 'Error loading recently played tracks.';
       } finally {
         this.loading = false;
       }
@@ -47,21 +52,30 @@ const USERNAME = import.meta.env.PUBLIC_LASTFM_USERNAME;
   }`} 
   x-init="fetchTracks()"
 >
-  <h3 class="widget-title">Last.FM</h3>
+  <h3 class="widget-title" id="widget-title">Last.FM</h3>
+
+  <!-- Visually hidden status container for Screen Readers -->
+  <!-- aria-live="polite" announces state changes smoothly without interrupting the user -->
+  <div 
+    class="sr-only" 
+    role="status" 
+    aria-live="polite" 
+    x-text="statusMessage"
+  ></div>
 
   <!-- Loading State -->
   <template x-if="loading">
-    <div class="loader">Tuning in...</div>
+    <div class="loader" aria-hidden="true">Tuning in...</div>
   </template>
 
   <!-- Error State -->
   <template x-if="error">
-    <div class="error-message" x-text="error"></div>
+    <div class="error-message" role="alert" x-text="error"></div>
   </template>
 
   <!-- Tracks List -->
   <template x-if="!loading && !error">
-    <ul class="track-list">
+    <ul class="track-list" aria-labelledby="widget-title">
       <template x-for="track in tracks" :key="track.title + track.artist">
         <li>
           <!-- Entire card is now a link pointing to the track's Last.fm page -->
@@ -71,18 +85,24 @@ const USERNAME = import.meta.env.PUBLIC_LASTFM_USERNAME;
             rel="noopener noreferrer" 
             class="track-item" 
             :class="{ 'now-playing-active': track.isNowPlaying }"
+            :aria-label="\`\${track.isNowPlaying ? 'Currently playing: ' : ''}\${track.title}, by \${track.artist}, from the album \${track.album}. Opens on Last.fm in a new tab.\`"
           >
             <!-- Album Art -->
-            <div class="album-art-container">
-              <img :src="track.image" :alt="track.album" class="album-art" />
+            <div class="album-art-container"  aria-hidden="true">
+              <img :src="track.image" alt="" class="album-art" />
               <template x-if="track.isNowPlaying">
                 <span class="now-playing-badge">LIVE</span>
               </template>
             </div>
 
             <!-- Track Info -->
-            <div class="track-info">
-              <span class="track-title" x-text="track.title"></span>
+            <div class="track-info" aria-hidden="true">
+              <span class="track-title">
+                <template x-if="track.isNowPlaying">
+                  <span class="sr-only">(Currently Playing) </span>
+                </template>
+                <span x-text="track.title"></span>
+              </span>
               <span class="track-artist" x-text="track.artist"></span>
               <span class="track-album" x-text="track.album"></span>
             </div>

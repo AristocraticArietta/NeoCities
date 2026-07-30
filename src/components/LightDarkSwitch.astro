@@ -2,16 +2,15 @@
   type="button"
   id="theme-toggle"
   role="switch"
-  aria-label="Toggle color theme"
   aria-checked="false"
   class="theme-toggle"
 >
-  <span class="toggle-track">
-    <svg class="icon moon" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+  <span class="toggle-track" aria-hidden="true">
+    <svg class="icon moon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
       <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
     </svg>
 
-    <svg class="icon sun" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+    <svg class="icon sun" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
       <circle cx="12" cy="12" r="5"></circle>
       <line x1="12" y1="1" x2="12" y2="3"></line>
       <line x1="12" y1="21" x2="12" y2="23"></line>
@@ -24,7 +23,9 @@
     </svg>
 
     <span class="toggle-thumb"></span>
+    
   </span>
+  <label for="theme-toggle" class="sr-only">Toggle website theme between dark and light mode</label>
 </button>
 
 <script>

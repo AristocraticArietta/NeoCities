@@ -11,16 +11,17 @@ import { Image } from 'astro:assets';
 	pubDate={new Date('2026-07-05T18:00:00-07:00')}
 	updatedDate={new Date('2026-07-15T22:50:00-07:00')}
 	heroImage={AboutHeroImage}
+	heroImageAlt="The text 'All About Arietta' is flanked by a portrait of Queen Victoria in her wedding dress and a photograph of Arietta recreating the same portrait in a replica dress."
 >
 	<h2>Hi!</h2>
 	<p>
-		I'm Aristocratic Arietta, the webmaster of this very website! You can call me Arietta or Aria, just not Aristocratic because that's a mouthful! I am a college student who never got to experience the Y2K web, but I'm here to revist those times by making a website on Neocities!
+		I'm Aristocratic Arietta, the webmaster of this very website! You can call me Arietta or Aria, just not Aristocratic because that's a mouthful! I am a college student who never got to experience the Y2K web, but I'm here to revisit those times by making a website on Neocities!
 	</p>
 	<p>
-		I have a lot of very different interests that I hope to share here. I am primarily a seamstress with a speciailty in Victorian dress, but I also dabble in 18<sup>th</sup> and 20<sup>th</sup> century dress as well. I have been sewing my entire life, and I hope to make it my career one day. I would love to work in costuming for film, theatre, and television. I do a lot of different crafts, my favorite being tatting (lace making). I hope to share some cool projects with you all!
+		I have a lot of very different interests that I hope to share here. I am primarily a seamstress with a specialty in Victorian dress, but I also dabble in 18<sup>th</sup> and 20<sup>th</sup> century dress as well. I have been sewing my entire life, and I hope to make it my career one day. I would love to work in costuming for film, theatre, and television. I do a lot of different crafts, my favorite being tatting (lace making). I hope to share some cool projects with you all!
 	</p>
 	<p>
-		Outside of crafts, I love music! My music collection is quite large, as I collect vinyl records. I mostly collect new stuff, but I have some classics as well. I would share my Discogs account, but it is so incomplete it scares me. I am always listening to music when I am working or relaxing. When I am not near my record player, I am listening to music on Spotify. I am very specific in my tastes, but I am always looking for reccomendations.
+		Outside of crafts, I love music! My music collection is quite large, as I collect vinyl records. I mostly collect new stuff, but I have some classics as well. I would share my Discogs account, but it is so incomplete it scares me. I am always listening to music when I am working or relaxing. When I am not near my record player, I am listening to music on Spotify. I am very specific in my tastes, but I am always looking for recommendations.
 	</p>
 	<p>
 		In other hobbies, I also love photography. Film photography, to be specific. I love the mystery of not knowing how the pictures will turn out! I shoot a healthy balance of black and white and color, all 35mm. I also have a small camera collection, but my go-to is my Nikon F4. It is a workhorse and I am obsessed with it. I want to get more lenses for it, though, as I only have two! I am far from the best photographer, but it really makes me happy to see improvement over time. Here's a picture of my behemoth F4 complete with flash, battery pack, and big 'ol lens:
@@ -32,11 +33,11 @@ import { Image } from 'astro:assets';
 	<p>
 		I am always looking for new friends, so if you made it this far go ahead and <a href="/fun-stuff/chat">say "Hi!" in my chat</a>, <a href="https://aristocraticarietta.atabook.org/">sign my guestbook,</a> or <a href="mailto:aristocraticarietta@proton.me">send me an email!</a> (I love receiving emails, by the way!) Any of those options would be much appreciated! No need to get fancy or write paragraphs, just reach out and say "Hi!" I always follow back (provided you have a NeoCities site ;). Toodles!
 	</p>
-	<div class="identity-badges-wrapper" x-data="{ badgeDropdown: false }">
-		<button class="identity-badges-button" @click=" badgeDropdown = !badgeDropdown">Toggle Identity Badges</button>
-		<div class="identity-badges-flexbox" x-show="badgeDropdown" x-transition>
-			<div class="identity-badges">
-				<h4 class="identity-badges-header">Basic Info</h4>
+	<div class="identity-badges-wrapper" x-data="{ badgeDropdown: false }" :aria-expanded="badgeDropdown">
+		<button class="identity-badges-button" @click=" badgeDropdown = !badgeDropdown" :aria-expanded="badgeDropdown" aria-controls="identity-badges-list" id="ib-button">Toggle Identity Badges</button>
+		<div class="identity-badges-flexbox" x-show="badgeDropdown" id="identity-badges-list" aria-labelledby="ib-button" x-transition>
+			<div class="identity-badges" aria-labelledby="ib-basic">
+				<h4 class="identity-badges-header" id="ib-basic">Basic Info</h4>
 				<img src="https://i.imgur.com/XxxGZDG.png" alt="Female">
 				<img src="https://i.imgur.com/z8s5c34.png" alt="She/Her">
 				<img src="https://i.imgur.com/IUpHlGo.png" alt="Arizona Time">
@@ -49,8 +50,8 @@ import { Image } from 'astro:assets';
 				<img src="https://i.imgur.com/qjxrAwx.png" alt="Twenties">
 				<img src="https://i.imgur.com/NlmYDAS.png" alt="American">
 			</div>
-			<div class="identity-badges">
-				<h4 class="identity-badges-header">Personality</h4>
+			<div class="identity-badges" aria-labelledby="ib-personality">
+				<h4 class="identity-badges-header" id="ib-personality">Personality</h4>
 				<img src="https://i.imgur.com/OPFWPxg.png" alt="Libra">
 				<img src="https://i.imgur.com/NqlNCxa.png" alt="Leo Rising">
 				<img src="https://i.imgur.com/rYNpQKR.png" alt="Scorpio Moon">
@@ -58,8 +59,8 @@ import { Image } from 'astro:assets';
 				<img src="https://i.imgur.com/rI18gRz.png" alt="INFP Personality Type">
 				<img src="https://i.imgur.com/OOsyaxq.png" alt="Empress">
 			</div>
-			<div class="identity-badges">
-				<h4 class="identity-badges-header">Hobbies</h4>
+			<div class="identity-badges" aria-labelledby="ib-hobbies">
+				<h4 class="identity-badges-header" id="ib-hobbies">Hobbies</h4>
 				<img src="/badges/misc/Fashionista.png" alt="Fashionista">
 				<img src="https://i.imgur.com/gVI5OAO.png" alt="Crafts">
 				<img src="https://i.imgur.com/JPbBP0q.png" alt="Language Learner">
@@ -68,8 +69,8 @@ import { Image } from 'astro:assets';
 				<img src="https://i.imgur.com/UuKod4C.png" alt="Crafter">
 				<img src="https://i.imgur.com/D59sJi1.png" alt="Coder">
 			</div>
-			<div class="identity-badges" >
-				<h4 class="identity-badges-header">Technology</h4>
+			<div class="identity-badges" aria-labelledby="ib-tech">
+				<h4 class="identity-badges-header" id="ib-tech">Technology</h4>
 				<img src="https://i.postimg.cc/vHSVWxtc/Git.png" alt="Git">
 				<img src="https://i.postimg.cc/yYrZF3yD/GNU_Linux.png" alt="GNU/Linux">
 				<img src="https://i.postimg.cc/4x7hw4WX/HTML5.png" alt="HTML5">
@@ -77,8 +78,8 @@ import { Image } from 'astro:assets';
 				<img src="https://i.postimg.cc/Hkc73W6p/Java_Script.png" alt="JavaScript">
 				<img src="https://i.postimg.cc/28XZ4L7y/Firefox.png" alt="Firefox">
 			</div>
-			<div class="identity-badges">
-				<h4 class="identity-badges-header">Fave Artists</h4>
+			<div class="identity-badges" aria-labelledby="ib-fave-artists">
+				<h4 class="identity-badges-header" id="ib-fave-artists">Fave Artists</h4>
 				<img src="/badges/artists/Bebe_Rexha.png" alt="Bebe Rexha Fan">
 				<img src="/badges/artists/Charli_XCX.png" alt="Charli XCX Fan">
 				<img src="/badges/artists/Demi_Lovato.png" alt="Demi Lovato Fan">

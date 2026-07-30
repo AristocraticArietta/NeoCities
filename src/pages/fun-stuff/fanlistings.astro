@@ -6,11 +6,11 @@ import FunStuff from "@layouts/FunStuff.astro";
     <div class="alpine-wrapper" x-data="{ bordersToggle: false }">
         <div class="key">
             <button @click="bordersToggle = !bordersToggle">Toggle Status Borders</button>
-            <h5 x-show="bordersToggle">Green=accepted, yellow=pending, red=unknown</h5>
+            <p x-show="bordersToggle">Green=accepted, yellow=pending, red=unknown</p>
         </div>
         <div class="fanlistings-wrapper">
             <div class="fanlistings-category">
-                <h4 class="fanlistings-header">My Favorites</h4>
+                <h4 class="fanlistings-header" role="heading" aria-level="2">My Favorites</h4>
                 <div class="fanlistings">
                     <a href="https://www.into-a-dream.com.ar/rh/" :class="{ 'green': bordersToggle }">
                         <img src="/fanlistings/ritahayworth100x50.png" alt="Rita Hayworth Fan" class="hundredxfifty">
@@ -18,7 +18,7 @@ import FunStuff from "@layouts/FunStuff.astro";
                 </div>
             </div>
             <div class="fanlistings-category">
-                <h4 class="fanlistings-header">TV Shows/Movies</h4>
+                <h4 class="fanlistings-header" role="heading" aria-level="2">TV Shows/Movies</h4>
                 <div class="fanlistings">
                     <a href="https://fanimated.net/mylittlepony/" :class="{ 'green': bordersToggle }">
                         <img src="/fanlistings/mlp50x50_18.gif" alt="My Little Pony Fan">
@@ -44,16 +44,16 @@ import FunStuff from "@layouts/FunStuff.astro";
                     <a href="https://barbie.enchanted-rose.org/charmschool/" :class="{ 'green': bordersToggle }">
                         <img src="/fanlistings/charmschool5050_002.gif" alt="Barbie: Princess Charm School (2011) Fan">
                     </a>
-                    <a href="https://fanacular.net/cinderella/" :class="{ 'yellow': bordersToggle }">
+                    <a href="https://fanacular.net/cinderella/" :class="{ 'green': bordersToggle }">
                         <img src="/fanlistings/cinderella_50_4.png" alt="Cinderella (1950) Fan">
                     </a>
-                    <a href="https://10-31.net/jenn/cinderella2015" :class="{ 'yellow': bordersToggle }">
+                    <a href="https://10-31.net/jenn/cinderella2015" :class="{ 'green': bordersToggle }">
                         <img src="/fanlistings/cinderella20155050_02.png" alt="Cinderella (2015) Fan">
                     </a>
                     <a href="https://thewildrose.org/enchanted/" :class="{ 'green': bordersToggle }">
                         <img src="/fanlistings/enchanted5050_28.png" alt="Enchanted (2007) Fan">
                     </a>
-                    <a href="https://10-31.net/chelsea/princesses/" :class="{ 'yellow': bordersToggle }">
+                    <a href="https://10-31.net/chelsea/princesses/" :class="{ 'green': bordersToggle }">
                         <img src="/fanlistings/princesses50x50_42.gif" alt="Disney Princesses Fan">
                     </a>
                     <a href="http://fan.koukeisha.net/jr-fanlisting/" :class="{ 'yellow': bordersToggle }">
@@ -62,7 +62,7 @@ import FunStuff from "@layouts/FunStuff.astro";
                     <a href="https://inkcaps.neocities.org/gf/" :class="{ 'green': bordersToggle }">
                         <img src="/fanlistings/gravityfalls50x50.png" alt="Gravity Falls Fan">
                     </a>
-                    <a href="https://unicorn.wings.nu/" :class="{ 'yellow': bordersToggle }">
+                    <a href="https://unicorn.wings.nu/" :class="{ 'green': bordersToggle }">
                         <img src="/fanlistings/lastunicorn50x50.png" alt="The Last Unicorn (1982) Fan">
                     </a>
                     <a href="https://moomins.fanfreak.net/" :class="{ 'green': bordersToggle }">
@@ -71,18 +71,18 @@ import FunStuff from "@layouts/FunStuff.astro";
                 </div>
             </div>
             <div class="fanlistings-category">
-                <h4 class="fanlistings-header">Animals</h4>
+                <h4 class="fanlistings-header" role="heading" aria-level="2">Animals</h4>
                 <div class="fanlistings">
                     <a href="https://fan.glast-heim.net/equines//index.php" :class="{ 'green': bordersToggle }">
                         <img src="/fanlistings/equines50x50.jpg" alt="Equines Fan">
                     </a>
-                    <a href="https://laika.wings.nu/" :class="{ 'yellow': bordersToggle }">
+                    <a href="https://laika.wings.nu/" :class="{ 'green': bordersToggle }">
                         <img src="/fanlistings/laika50x50_2.png" alt="Laika the Dog Fan">
                     </a>
                 </div>
             </div>
             <div class="fanlistings-category">
-                <h4 class="fanlistings-header">People</h4>
+                <h4 class="fanlistings-header" role="heading" aria-level="2">People</h4>
                 <div class="fanlistings">
                     <a href="https://memories.buruma.net/julie" :class="{ 'green': bordersToggle }">
                         <img src="/fanlistings/julie50x50.gif" alt="Julie Andrews Fan">
@@ -120,13 +120,13 @@ import FunStuff from "@layouts/FunStuff.astro";
                     <a href="https://movies.i-heart-you.net/ralphfiennes/" :class="{ 'green': bordersToggle }">
                         <img src="/fanlistings/ralphfiennes50x50.gif" alt="Ralph Fiennes Fan">
                     </a>
-                    <a href="https://gina.fanacular.net/domhnall/" :class="{ 'yellow': bordersToggle }">
+                    <a href="https://gina.fanacular.net/domhnall/" :class="{ 'green': bordersToggle }">
                         <img src="/fanlistings/domhnallgleeson50x50.png" alt="Domhnall Gleeson Fan">
                     </a>
                 </div>
             </div>
             <div class="fanlistings-category">
-                <h4 class="fanlistings-header">Music</h4>
+                <h4 class="fanlistings-header" role="heading" aria-level="2">Music</h4>
                 <div class="fanlistings">
                     <a href="https://fan.yerfej.org/artpop/" :class="{ 'green': bordersToggle }">
                         <img src="/fanlistings/artpop50x50.png" alt="Artpop (Lady Gaga) Fan">
@@ -143,15 +143,15 @@ import FunStuff from "@layouts/FunStuff.astro";
                 </div>
             </div>
             <div class="fanlistings-category">
-                <h4 class="fanlistings-header">Art</h4>
+                <h4 class="fanlistings-header" role="heading" aria-level="2">Art</h4>
                 <div class="fanlistings">
                     <a href="https://fan.enamour.nu/web/" :class="{ 'green': bordersToggle }">
                         <img src="/fanlistings/webdesign50x50.png" alt="Web Design Fan">
                     </a>
-                    <a href="https://bloodkisses.com/bw/" :class="{ 'yellow': bordersToggle }">
+                    <a href="https://bloodkisses.com/bw/" :class="{ 'green': bordersToggle }">
                         <img src="/fanlistings/b&w50x50.png" alt="Black and White Photography Fan">
                     </a>
-                    <a href="https://10-31.net/chelsea/ballet/" :class="{ 'yellow': bordersToggle }">
+                    <a href="https://10-31.net/chelsea/ballet/" :class="{ 'green': bordersToggle }">
                         <img src="/fanlistings/ballet50x50.jpg" alt="Ballet Fan">
                     </a>
                     <a href="http://www.theatricality.co.uk/" :class="{ 'yellow': bordersToggle }">
@@ -160,15 +160,15 @@ import FunStuff from "@layouts/FunStuff.astro";
                 </div>
             </div>
             <div class="fanlistings-category">
-                <h4 class="fanlistings-header">Fashion</h4>
+                <h4 class="fanlistings-header" role="heading" aria-level="2">Fashion</h4>
                 <div class="fanlistings">
                     <a href="https://mikh.net/corsets/" :class="{ 'green': bordersToggle }">
                         <img src="/fanlistings/corsets50x50.png" alt="Corsets Fan">
                     </a>
-                    <a href="https://totallygirl.net/red/" :class="{ 'yellow': bordersToggle }">
+                    <a href="https://totallygirl.net/red/" :class="{ 'green': bordersToggle }">
                         <img src="/fanlistings/redlipstick50x50.png" alt="Red Lipstick Fan">
                     </a>
-                    <a href="https://bloodkisses.com/shoes/" :class="{ 'yellow': bordersToggle }">
+                    <a href="https://bloodkisses.com/shoes/" :class="{ 'green': bordersToggle }">
                         <img src="/fanlistings/shoes50x50.png" alt="Shoes Fan">
                     </a>
                     <a href="http://fan.godsandheroes.net/louboutin/" :class="{ 'green': bordersToggle }">
@@ -177,7 +177,7 @@ import FunStuff from "@layouts/FunStuff.astro";
                 </div>
             </div>
             <div class="fanlistings-category">
-                <h4 class="fanlistings-header">Misc</h4>
+                <h4 class="fanlistings-header" role="heading" aria-level="2">Misc</h4>
                 <div class="fanlistings">
                     <a href="https://fans.thislove.nu/html/" :class="{ 'green': bordersToggle }">
                         <img src="/fanlistings/html50x50_001.png" alt="HTML Fan">

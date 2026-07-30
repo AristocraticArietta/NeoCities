@@ -143,6 +143,22 @@ export default defineConfig({
                 ],
             },
         },
+        {
+            provider: fontProviders.local(),
+            name: 'Atkinson Hyperlegible Next',
+            cssVariable: '--font-atkinsonhyperlegiblenext',
+            fallbacks: ['serif'],
+            options: {
+                variants: [
+                    {
+                        src: ['./src/assets/fonts/AtkinsonHyperlegibleNext.ttf'],
+                        weight: 400,
+                        style: 'normal',
+                        display: 'swap',
+                    },
+                ],
+            },
+        },
     ],
     output: 'static'
 });

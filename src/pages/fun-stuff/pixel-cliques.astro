@@ -3,7 +3,7 @@ import FunStuff from "@layouts/FunStuff.astro";
 ---
 <FunStuff title="Pixel Cliques">
     <div class="pixel-cliques-header">
-        <h4>CDwORLD</h4>
+        <h4 role="heading" aria-level="2">CDwORLD</h4>
         <a href="https://humanfinny.neocities.org/clubs/cd_world/cdworld_home">Clique page</a>
         <br>
         <i>Side note: I have applied to join but have not been accepted yet.</i>
@@ -41,7 +41,7 @@ import FunStuff from "@layouts/FunStuff.astro";
         </a>
     </div>
     <div class="pixel-cliques-headeer">
-        <h4>CDs I've made</h4>
+        <h4 role="heading" aria-level="3">CDs I've made</h4>
     </div>
     <div class="pixel-cliques">
         
@@ -73,7 +73,7 @@ import FunStuff from "@layouts/FunStuff.astro";
         
     </div>
     <div class="pixel-cliques-header">
-        <h4>Made by a Girl</h4>
+        <h4 role="heading" aria-level="2">Made by a Girl</h4>
         <a href="https://grrrl.valentinely.cc/">Clique page</a>
     </div>
     <div class="pixel-cliques">
@@ -85,6 +85,9 @@ import FunStuff from "@layouts/FunStuff.astro";
         width: 90px;
         height: 80px;
         image-rendering: pixelated;
+    }
+    .cd:hover {
+        cursor: help;
     }
     .madebyagrrl {
         width: 72px;

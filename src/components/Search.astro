@@ -68,7 +68,7 @@ const searchIndex = allPosts.map(post => ({
                 </button>
             </div>
 
-            <div aria-live="polite" class="sr-only">
+            <div role="status" aria-live="polite" aria-atomic="true" class="sr-only">
                 <span x-text="announcementText"></span>
             </div>
 
