@@ -1,5 +1,4 @@
 ---
-import { Image } from 'astro:assets';
 import Header from '@components/shrines/ab/ab-header.astro'
 import Nav from '@components/shrines/ab/ab-nav.astro'
 import Footer from '@components/shrines/ab/ab-footer.astro' 
@@ -10,12 +9,12 @@ import '@styles/shrines/atomicblonde.css'
     <div class="ab-wrapper">
         <Header />
         <Nav />
-        <main class="ab-main">
-            <h3 class="ab-h3">Soundtrack</h3>
+        <main class="ab-main" id="main">
+            <h3 class="ab-h3" role="heading" aria-level="1">Soundtrack</h3>
             <div class="ab-soundtrack-wrapper">
                 <iframe class="ab-soundtrack-iframe" src="https://www.youtube-nocookie.com/embed/m0ODoeBc04g?si=szb3DS2OL2YHgF1f" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
                 <div class="ab-soundtrack-info">
-                    <h4 class="ab-h4"><i>Cat People (Putting Out Fire)</i></h4>
+                    <h4 class="ab-h4" role="heading" aria-level="2"><i>Cat People (Putting Out Fire)</i></h4>
                     <p class="ab-p">by</p>
                     <p class="ab-p">David Bowie</p>
                 </div>
@@ -24,7 +23,7 @@ import '@styles/shrines/atomicblonde.css'
             <div class="ab-soundtrack-wrapper">
                 <iframe class="ab-soundtrack-iframe" src="https://www.youtube-nocookie.com/embed/LsVQEMWs6qE?si=JsJnKhkmq8YDNZnx" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
                 <div class="ab-soundtrack-info">
-                    <h4 class="ab-h4"><i>Major Tom (Völlig Losgelöst)</i></h4>
+                    <h4 class="ab-h4" role="heading" aria-level="2"><i>Major Tom (Völlig Losgelöst)</i></h4>
                     <p class="ab-p">by</p>
                     <p class="ab-p">Peter Schilling</p>
                 </div>
@@ -33,7 +32,7 @@ import '@styles/shrines/atomicblonde.css'
             <div class="ab-soundtrack-wrapper">
                 <iframe class="ab-soundtrack-iframe" src="https://www.youtube-nocookie.com/embed/u1_KbKR_sng?si=ka0k82u_tmKYeEuU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
                 <div class="ab-soundtrack-info">
-                    <h4 class="ab-h4"><i>Blue Monday</i></h4>
+                    <h4 class="ab-h4" role="heading" aria-level="2"><i>Blue Monday</i></h4>
                     <p class="ab-p">by</p>
                     <p class="ab-p">HEALTH</p>
                 </div>
@@ -42,7 +41,7 @@ import '@styles/shrines/atomicblonde.css'
             <div class="ab-soundtrack-wrapper">
                 <iframe class="ab-soundtrack-iframe" src="https://www.youtube-nocookie.com/embed/JokT2iFfeek?si=NklZF7nW-RwRjhOS" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
                 <div class="ab-soundtrack-info">
-                    <h4 class="ab-h4"><i>C*cks*cker</i></h4>
+                    <h4 class="ab-h4" role="heading" aria-level="2"><i>C*cks*cker</i></h4>
                     <p class="ab-p">by</p>
                     <p class="ab-p">Tyler Bates</p>
                 </div>
@@ -51,7 +50,7 @@ import '@styles/shrines/atomicblonde.css'
             <div class="ab-soundtrack-wrapper">
                 <iframe class="ab-soundtrack-iframe" src="https://www.youtube-nocookie.com/embed/TMSlTQmDLx4?si=ZFZE8T2h8y6LuYl2" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
                 <div class="ab-soundtrack-info">
-                    <h4 class="ab-h4"><i>99 Luftballons</i></h4>
+                    <h4 class="ab-h4" role="heading" aria-level="2"><i>99 Luftballons</i></h4>
                     <p class="ab-p">by</p>
                     <p class="ab-p">Nena</p>
                 </div>
@@ -60,7 +59,7 @@ import '@styles/shrines/atomicblonde.css'
             <div class="ab-soundtrack-wrapper">
                 <iframe class="ab-soundtrack-iframe" src="https://www.youtube-nocookie.com/embed/2WNVNAOQWCE?si=CQR7zG11M0F74y7P" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
                 <div class="ab-soundtrack-info">
-                    <h4 class="ab-h4"><i>Father Figure</i></h4>
+                    <h4 class="ab-h4" role="heading" aria-level="2"><i>Father Figure</i></h4>
                     <p class="ab-p">by</p>
                     <p class="ab-p">George Michael</p>
                 </div>
@@ -69,7 +68,7 @@ import '@styles/shrines/atomicblonde.css'
             <div class="ab-soundtrack-wrapper">
                 <iframe class="ab-soundtrack-iframe" src="https://www.youtube-nocookie.com/embed/G3IOBsR7yGM?si=_ksN8V4QrGD8wu1A" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
                 <div class="ab-soundtrack-info">
-                    <h4 class="ab-h4"><i>Der Kommissar</i></h4>
+                    <h4 class="ab-h4" role="heading" aria-level="2"><i>Der Kommissar</i></h4>
                     <p class="ab-p">by</p>
                     <p class="ab-p">After The Fire</p>
                 </div>
@@ -78,7 +77,7 @@ import '@styles/shrines/atomicblonde.css'
             <div class="ab-soundtrack-wrapper">
                 <iframe class="ab-soundtrack-iframe" src="https://www.youtube-nocookie.com/embed/Ruq33iAxL5k?si=mbYQELNZkIdEhbCe" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
                 <div class="ab-soundtrack-info">
-                    <h4 class="ab-h4"><i>Cities in Dust</i></h4>
+                    <h4 class="ab-h4" role="heading" aria-level="2"><i>Cities in Dust</i></h4>
                     <p class="ab-p">by</p>
                     <p class="ab-p">Siouxsie and the Banshees</p>
                 </div>
@@ -87,7 +86,7 @@ import '@styles/shrines/atomicblonde.css'
             <div class="ab-soundtrack-wrapper">
                 <iframe class="ab-soundtrack-iframe" src="https://www.youtube-nocookie.com/embed/AN40EWNZK8A?si=M9vn6CC2NYmtlZ_C" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
                 <div class="ab-soundtrack-info">
-                    <h4 class="ab-h4"><i>The Politics of Dancing</i></h4>
+                    <h4 class="ab-h4" role="heading" aria-level="2"><i>The Politics of Dancing</i></h4>
                     <p class="ab-p">by</p>
                     <p class="ab-p">Re-Flex</p>
                 </div>
@@ -96,7 +95,7 @@ import '@styles/shrines/atomicblonde.css'
             <div class="ab-soundtrack-wrapper">
                 <iframe class="ab-soundtrack-iframe" src="https://www.youtube-nocookie.com/embed/K6K_BZwUFnk?si=aFttQpCe9Q6kIua4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
                 <div class="ab-soundtrack-info">
-                    <h4 class="ab-h4"><i>Stigmata</i></h4>
+                    <h4 class="ab-h4" role="heading" aria-level="2"><i>Stigmata</i></h4>
                     <p class="ab-p">by</p>
                     <p class="ab-p">Marilyn Manson, Tyler Bates</p>
                 </div>
@@ -105,7 +104,7 @@ import '@styles/shrines/atomicblonde.css'
             <div class="ab-soundtrack-wrapper">
                 <iframe class="ab-soundtrack-iframe" src="https://www.youtube-nocookie.com/embed/2UvBoye2H-g?si=cFmBMAyEOc8SIfio" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
                 <div class="ab-soundtrack-info">
-                    <h4 class="ab-h4"><i>Demonstration</i></h4>
+                    <h4 class="ab-h4" role="heading" aria-level="2"><i>Demonstration</i></h4>
                     <p class="ab-p">by</p>
                     <p class="ab-p">Tyler Bates</p>
                 </div>
@@ -114,7 +113,7 @@ import '@styles/shrines/atomicblonde.css'
             <div class="ab-soundtrack-wrapper">
                 <iframe class="ab-soundtrack-iframe" src="https://www.youtube-nocookie.com/embed/l3ST8AjLAms?si=PQz-RjBxWBTFeaxG" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
                 <div class="ab-soundtrack-info">
-                    <h4 class="ab-h4"><i>I Ran (So Far Away)</i></h4>
+                    <h4 class="ab-h4" role="heading" aria-level="2"><i>I Ran (So Far Away)</i></h4>
                     <p class="ab-p">by</p>
                     <p class="ab-p">A Flock of Seagulls</p>
                 </div>
@@ -123,7 +122,7 @@ import '@styles/shrines/atomicblonde.css'
             <div class="ab-soundtrack-wrapper">
                 <iframe class="ab-soundtrack-iframe" src="https://www.youtube-nocookie.com/embed/eS3xeY6PlIk?si=uRrGycXDeiSryx08" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
                 <div class="ab-soundtrack-info">
-                    <h4 class="ab-h4"><i>99 Luftballons</i></h4>
+                    <h4 class="ab-h4" role="heading" aria-level="2"><i>99 Luftballons</i></h4>
                     <p class="ab-p">by</p>
                     <p class="ab-p">Kaleida</p>
                 </div>
@@ -132,7 +131,7 @@ import '@styles/shrines/atomicblonde.css'
             <div class="ab-soundtrack-wrapper">
                 <iframe class="ab-soundtrack-iframe" src="https://www.youtube-nocookie.com/embed/zUKXhRikfPw?si=rjWNmvD65eQ6S-5U" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
                 <div class="ab-soundtrack-info">
-                    <h4 class="ab-h4"><i>Voices Carry</i></h4>
+                    <h4 class="ab-h4" role="heading" aria-level="2"><i>Voices Carry</i></h4>
                     <p class="ab-p">by</p>
                     <p class="ab-p">'Till Tuesday</p>
                 </div>
@@ -141,7 +140,7 @@ import '@styles/shrines/atomicblonde.css'
             <div class="ab-soundtrack-wrapper">
                 <iframe class="ab-soundtrack-iframe" src="https://www.youtube-nocookie.com/embed/LC2WpBcdM_A?si=DS7qB-mIbopvhUtn" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
                 <div class="ab-soundtrack-info">
-                    <h4 class="ab-h4"><i>London Calling</i></h4>
+                    <h4 class="ab-h4" role="heading" aria-level="2"><i>London Calling</i></h4>
                     <p class="ab-p">by</p>
                     <p class="ab-p">The Clash</p>
                 </div>
@@ -150,7 +149,7 @@ import '@styles/shrines/atomicblonde.css'
             <div class="ab-soundtrack-wrapper">
                 <iframe class="ab-soundtrack-iframe" src="https://www.youtube-nocookie.com/embed/z0Axu1wDvsA?si=SxJVz1qW6TPqbCQC" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
                 <div class="ab-soundtrack-info">
-                    <h4 class="ab-h4"><i>Finding the UHF Device</i></h4>
+                    <h4 class="ab-h4" role="heading" aria-level="2"><i>Finding the UHF Device</i></h4>
                     <p class="ab-p">by</p>
                     <p class="ab-p">Tyler Bates</p>
                 </div>

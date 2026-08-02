@@ -1,5 +1,4 @@
 ---
-import { Image } from 'astro:assets';
 import Header from '@components/shrines/ab/ab-header.astro'
 import Nav from '@components/shrines/ab/ab-nav.astro'
 import Footer from '@components/shrines/ab/ab-footer.astro'
@@ -16,8 +15,8 @@ const abImages = Object.values(abFiles).map(img => img.default.src);
     <div class="ab-wrapper">
         <Header />
         <Nav />
-        <main class="ab-main">
-            <h3 class="ab-h3">Gallery</h3>
+        <main class="ab-main" id="main">
+            <h3 class="ab-h3" role="heading" aria-level="1">Gallery</h3>
             <Carousel images={abImages}/>
         </main>
         <Footer />

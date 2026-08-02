@@ -24,16 +24,16 @@ import schweiger from '@assets/shrines/atomic-blonde/headshots/schweiger.jpg'
     <div class="ab-wrapper">
         <Header />
         <Nav />
-        <main class="ab-main">
-            <h3 class="ab-h3">All About Atomic Blonde</h3>
+        <main class="ab-main" id="main">
+            <h3 class="ab-h3" role="heading" aria-level="1">All About Atomic Blonde</h3>
             <figure class="ab-figure">
-                <Image src={atomic046} class="ab-image" alt="Charlize Theron in character as Lorraine Broughton holding a gun during the film's one-take, 10-minute long staircase fight scene"/>
+                <Image src={atomic046} class="ab-image" alt=""/>
                 <figcaption class="ab-figcaption">Charlize Theron in character as Lorraine Broughton holding a gun during the film's one-take, 10-minute long staircase fight scene</figcaption>
             </figure>
             <p class="ab-p">The crown jewel of Her Majesty's Secret Intelligence Service, Agent Lorraine Broughton (Charlize Theron) is equal parts spycraft, sensuality and savagery, willing to deploy any of her skills to stay alive on her impossible mission. Sent alone into Berlin to deliver a priceless dossier out of the destabilized city, she partners with embedded station chief David Percival (James McAvoy) to navigate her way through the deadliest game of spies. <a href="https://www.imdb.com/title/tt2406566/" class="ab-link">—IMDB</a></p>
         </main>
         <aside class="ab-updates">
-            <h3 class="ab-h3">Updates</h3>
+            <h3 class="ab-h3" role="heading" aria-level="2">Updates</h3>
             <ul class="ab-ul">
                 <li class="ab-li">July 12<sup>th</sup>, 2026: Made site mobile-friendly and overhauled the navigation.</li>
                 <li class="ab-li">July 10<sup>th</sup>, 2026: Added cast & crew as well as fixed some CSS</li>
@@ -45,111 +45,111 @@ import schweiger from '@assets/shrines/atomic-blonde/headshots/schweiger.jpg'
             <table class="ab-table">
                 <caption class="ab-caption"><h3 class="ab-h3">Cast</h3></caption>
                 <tr class="ab-tr">
-                    <th class="ab-th">Actor</th>
-                    <th class="ab-th">Character</th>
-                    <th class="ab-th">Picture</th>
-                    <th class="ab-th">IMDB Page</th>
+                    <th class="ab-th" role="columnheader" >Actor</th>
+                    <th class="ab-th" role="columnheader">Character</th>
+                    <th class="ab-th" role="columnheader">Picture</th>
+                    <th class="ab-th" role="columnheader">IMDB Page</th>
                 </tr>
                 <tr class="ab-tr">
-                    <td class="ab-td">Charlize Theron</td>
+                    <td class="ab-td" role="rowheader">Charlize Theron</td>
                     <td class="ab-td">Lorraine Broughton</td>
                     <td class="ab-td"><Image src={theron} alt="Charlize Theron" class="ab-pfp" /></td>
-                    <td class="ab-td"><a href="https://www.imdb.com/name/nm0000234/"><Image src={imdblogo} alt="IMDB logo" class="ab-imdb" /></a></td>
+                    <td class="ab-td"><a href="https://www.imdb.com/name/nm0000234/" aria-label="Charlize Theron on IMDB"><Image src={imdblogo} alt="IMDB logo" class="ab-imdb" /></a></td>
                 </tr>
                 <tr class="ab-tr">
-                    <td class="ab-td">James McAvoy</td>
+                    <td class="ab-td" role="rowheader">James McAvoy</td>
                     <td class="ab-td">David Percival</td>
                     <td class="ab-td"><Image src={mcavoy} alt="James McAvoy" class="ab-pfp" /></td>
-                    <td class="ab-td"><a href="https://www.imdb.com/name/nm0564215/"><Image src={imdblogo} alt="IMDB logo" class="ab-imdb" /></a></td>
+                    <td class="ab-td"><a href="https://www.imdb.com/name/nm0564215/" aria-label="James McAvoy on IMDB"><Image src={imdblogo} alt="IMDB logo" class="ab-imdb" /></a></td>
                 </tr>
                 <tr class="ab-tr">
-                    <td class="ab-td">John Goodman</td>
+                    <td class="ab-td" role="rowheader">John Goodman</td>
                     <td class="ab-td">Emmett Kurzfeld</td>
                     <td class="ab-td"><Image src={goodman} alt="John Goodman" class="ab-pfp" /></td>
-                    <td class="ab-td"><a href="https://www.imdb.com/name/nm0000422/"><Image src={imdblogo} alt="IMDB logo" class="ab-imdb" /></a></td>
+                    <td class="ab-td"><a href="https://www.imdb.com/name/nm0000422/" aria-label="John Goodman on IMDB"><Image src={imdblogo} alt="IMDB logo" class="ab-imdb" /></a></td>
                 </tr>
                 <tr class="ab-tr">
-                    <td class="ab-td">Eddie Marsan</td>
+                    <td class="ab-td" role="rowheader">Eddie Marsan</td>
                     <td class="ab-td">Spyglass</td>
                     <td class="ab-td"><Image src={marsan} alt="Eddie Marsan" class="ab-pfp" /></td>
-                    <td class="ab-td"><a href="https://www.imdb.com/name/nm0550371/"><Image src={imdblogo} alt="IMDB logo" class="ab-imdb" /></a></td>
+                    <td class="ab-td"><a href="https://www.imdb.com/name/nm0550371/" aria-label="Eddie Marsan on IMDB"><Image src={imdblogo} alt="IMDB logo" class="ab-imdb" /></a></td>
                 </tr>
                 <tr class="ab-tr">
-                    <td class="ab-td">Toby Jones</td>
+                    <td class="ab-td" role="rowheader">Toby Jones</td>
                     <td class="ab-td">Eric Gray</td>
                     <td class="ab-td"><Image src={jones} alt="Toby Jones" class="ab-pfp" /></td>
-                    <td class="ab-td"><a href="https://www.imdb.com/name/nm0429363/"><Image src={imdblogo} alt="IMDB logo" class="ab-imdb" /></a></td>
+                    <td class="ab-td"><a href="https://www.imdb.com/name/nm0429363/" aria-label="Toby Jones on IMDB"><Image src={imdblogo} alt="IMDB logo" class="ab-imdb" /></a></td>
                 </tr>
                 <tr class="ab-tr">
-                    <td class="ab-td">James Faulkner</td>
+                    <td class="ab-td" role="rowheader">James Faulkner</td>
                     <td class="ab-td">Chief 'C'</td>
                     <td class="ab-td"><Image src={faulkner} alt="James Faulkner" class="ab-pfp" /></td>
-                    <td class="ab-td"><a href="https://www.imdb.com/name/nm0269077/"><Image src={imdblogo} alt="IMDB logo" class="ab-imdb" /></a></td>
+                    <td class="ab-td"><a href="https://www.imdb.com/name/nm0269077/" aria-label="James Faulkner on IMDB"><Image src={imdblogo} alt="IMDB logo" class="ab-imdb" /></a></td>
                 </tr>
                 <tr class="ab-tr">
-                    <td class="ab-td">Roland Møller</td>
+                    <td class="ab-td" role="rowheader">Roland Møller</td>
                     <td class="ab-td">Aleksander Bremovych</td>
                     <td class="ab-td"><Image src={møller} alt="Roland Møller" class="ab-pfp" /></td>
-                    <td class="ab-td"><a href="https://www.imdb.com/name/nm3435612/"><Image src={imdblogo} alt="IMDB logo" class="ab-imdb" /></a></td>
+                    <td class="ab-td"><a href="https://www.imdb.com/name/nm3435612/" aria-label="Roland Møller on IMDB"><Image src={imdblogo} alt="IMDB logo" class="ab-imdb" /></a></td>
                 </tr>
                 <tr class="ab-tr">
-                    <td class="ab-td">Sofia Boutella</td>
+                    <td class="ab-td" role="rowheader">Sofia Boutella</td>
                     <td class="ab-td">Delphine Lasalle</td>
                     <td class="ab-td"><Image src={boutella} alt="Sofia Boutella" class="ab-pfp" /></td>
-                    <td class="ab-td"><a href="https://www.imdb.com/name/nm1154749/"><Image src={imdblogo} alt="IMDB logo" class="ab-imdb" /></a></td>
+                    <td class="ab-td"><a href="https://www.imdb.com/name/nm1154749/" aria-label="Sofia Boutella on IMDB"><Image src={imdblogo} alt="IMDB logo" class="ab-imdb" /></a></td>
                 </tr>
                 <tr class="ab-tr">
-                    <td class="ab-td">Bill Skarsgård</td>
+                    <td class="ab-td" role="rowheader">Bill Skarsgård</td>
                     <td class="ab-td">Merkel</td>
                     <td class="ab-td"><Image src={skarsgård} alt="Bill Skarsgård" class="ab-pfp" /></td>
-                    <td class="ab-td"><a href="https://www.imdb.com/name/nm0803889/"><Image src={imdblogo} alt="IMDB logo" class="ab-imdb" /></a></td>
+                    <td class="ab-td"><a href="https://www.imdb.com/name/nm0803889/" aria-label="Bill Skarsgård on IMDB"><Image src={imdblogo} alt="IMDB logo" class="ab-imdb" /></a></td>
                 </tr>
                 <tr class="ab-tr">
-                    <td class="ab-td">Sam Hargrave</td>
+                    <td class="ab-td" role="rowheader">Sam Hargrave</td>
                     <td class="ab-td">James Gascoine</td>
                     <td class="ab-td"><Image src={hargrave} alt="Sam Hargrave" class="ab-pfp" /></td>
-                    <td class="ab-td"><a href="https://www.imdb.com/name/nm1092087/"><Image src={imdblogo} alt="IMDB logo" class="ab-imdb" /></a></td>
+                    <td class="ab-td"><a href="https://www.imdb.com/name/nm1092087/" aria-label="Sam Hargrave on IMDB"><Image src={imdblogo} alt="IMDB logo" class="ab-imdb" /></a></td>
                 </tr>
                 <tr class="ab-tr">
-                    <td class="ab-td">Jóhannes Haukur Jóhannesson</td>
+                    <td class="ab-td" role="rowheader">Jóhannes Haukur Jóhannesson</td>
                     <td class="ab-td">Yuri Bakhtin</td>
                     <td class="ab-td"><Image src={jóhannesson} alt="Jóhannes Haukur Jóhannesson" class="ab-pfp" /></td>
-                    <td class="ab-td"><a href="https://www.imdb.com/name/nm1778512/"><Image src={imdblogo} alt="IMDB logo" class="ab-imdb" /></a></td>
+                    <td class="ab-td"><a href="https://www.imdb.com/name/nm1778512/" aria-label="Jóhannes Haukur Jóhannesson on IMDB"><Image src={imdblogo} alt="IMDB logo" class="ab-imdb" /></a></td>
                 </tr>
                 <tr class="ab-tr">
-                    <td class="ab-td">Til Schweiger</td>
+                    <td class="ab-td" role="rowheader">Til Schweiger</td>
                     <td class="ab-td">Watchmaker</td>
                     <td class="ab-td"><Image src={schweiger} alt="Til Schweiger" class="ab-pfp" /></td>
-                    <td class="ab-td"><a href="https://www.imdb.com/name/nm0001709/"><Image src={imdblogo} alt="IMDB logo" class="ab-imdb" /></a></td>
+                    <td class="ab-td"><a href="https://www.imdb.com/name/nm0001709/" aria-label="Til Schweiger on IMDB"><Image src={imdblogo} alt="IMDB logo" class="ab-imdb" /></a></td>
                 </tr>
             </table>
             <table class="ab-table">
                 <caption class="ab-caption"><h3 class="ab-h3">Release Information</h3></caption>
                 <tr class="ab-tr">
-                    <td class="ab-td">Release Date (US)</td>
+                    <td class="ab-td" role="rowheader">Release Date (US)</td>
                     <td class="ab-td">July 28, 2017</td>
                 </tr>
                 <tr class="ab-tr">
-                    <td class="ab-td">MPAA Rating</td>
+                    <td class="ab-td" role="rowheader">MPAA Rating</td>
                     <td class="ab-td">R</td>
                 </tr>
                 <tr class="ab-tr">
-                    <td class="ab-td">Director</td>
-                    <td class="ab-td"><a href="https://www.imdb.com/name/nm0500610/" class="ab-link">David Leitch</a></td>
+                    <td class="ab-td" role="rowheader">Director</td>
+                    <td class="ab-td"><a href="https://www.imdb.com/name/nm0500610/" class="ab-link" aria-label="Director David Leitch on IMDB">David Leitch</a></td>
                 </tr>
                 <tr class="ab-tr">
-                    <td class="ab-td">Screenplay</td>
+                    <td class="ab-td" role="rowheader">Screenplay</td>
                     <td class="ab-td">
                         <ul class="ab-screenwriters ab-li">
-                            <li class="ab-li"><a href="https://www.imdb.com/name/nm0426500/" class="ab-link">Kurt Johnstad</a></li>
-                            <li class="ab-li"><a href="https://www.imdb.com/name/nm2985952/" class="ab-link">Anthony Johnston</a></li>
-                            <li class="ab-li"><a href="https://www.imdb.com/name/nm8697009/" class="ab-link">Sam Hart</a></li>
+                            <li class="ab-li"><a href="https://www.imdb.com/name/nm0426500/" class="ab-link" aria-label="Screenwriter Kurt Johnstad on IMDB">Kurt Johnstad</a></li>
+                            <li class="ab-li"><a href="https://www.imdb.com/name/nm2985952/" class="ab-link" aria-label="Screenwriter Anthony Johnston on IMDB">Anthony Johnston</a></li>
+                            <li class="ab-li"><a href="https://www.imdb.com/name/nm8697009/" class="ab-link" aria-label="Screenwriter Sam Hart on IMDB">Sam Hart</a></li>
                         </ul>
                     </td>
                 </tr>
                 <tr class="ab-tr">
-                    <td class="ab-td">Based on</td>
-                    <td class="ab-td"><a href="https://antonyjohnston.com/work/coldestcity/" class="ab-link"><i>The Coldest City</i> by Antony Johnston</a></td>
+                    <td class="ab-td" role="rowheader">Based on</td>
+                    <td class="ab-td"><a href="https://antonyjohnston.com/work/coldestcity/" class="ab-link" aria-label="The comic book 'The Coldest City' by Antony Johnston on the author's website"><i>The Coldest City</i> by Antony Johnston</a></td>
                 </tr>
             </table>
         </section>

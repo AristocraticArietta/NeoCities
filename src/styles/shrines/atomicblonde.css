@@ -275,7 +275,7 @@
 }
 .ab-p {
     color: var(--ab-white);
-    text-align: justify;
+    text-align: left;
 }
 .ab-ul, .ab-li {
     color: var(--ab-white);

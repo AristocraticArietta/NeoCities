@@ -1,5 +1,6 @@
+<a class="skip" href="#main">Skip to main content</a>
 <div class="shrines-nav-wrapper" x-data="{ toggleNav : false }">
-    <button @click="toggleNav = !toggleNav" :aria-expanded="toggleNav" class="shrines-nav-button">Navigation</button>
+    <button @click="toggleNav = !toggleNav" :aria-expanded="toggleNav" class="shrines-nav-button" aria-label="Toggle navigation menu back to main site" >Navigation</button>
     <nav class="shrines-nav" x-show="toggleNav" x-transition>
         <a href="/" class="shrines-nav-link">Home</a>
         <a href="/fun-stuff/" class="shrines-nav-link">Fun Stuff</a>
